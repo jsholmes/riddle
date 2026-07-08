@@ -280,34 +280,15 @@ fn run() -> std::io::Result<()> {
                 disp.full_refresh(surf.w, surf.h);
                 // Let the flashing refresh finish before the panel loses power.
                 std::thread::sleep(Duration::from_millis(800));
-                // Suspend, and confirm via the kernel's success counter. The
-                // EPD regulator refuses to sleep while its post-update vpdd
-                // timer (≤30s) runs — the whole suspend aborts with "Some
-                // devices failed to suspend" — so retry until it sticks.
-                let count0 = power::suspend_count();
-                let mut attempts = 0;
-                'sleeping: loop {
-                    if p.grabbed {
-                        let _ = std::process::Command::new("systemctl").arg("suspend").status();
-                    }
-                    attempts += 1;
-                    let t0 = Instant::now();
-                    while t0.elapsed() < Duration::from_secs(6) {
-                        std::thread::sleep(Duration::from_millis(400));
-                        if power::suspend_count() > count0 {
-                            break 'sleeping;
-                        }
-                    }
-                    if attempts >= 8 {
-                        eprintln!("riddle: suspend never happened ({attempts} tries); waking the page");
-                        break;
-                    }
-                    eprintln!("riddle: suspend aborted (EPD discharge timer), retrying");
-                }
-                eprintln!("riddle: waking");
+                // Discard key bounce from the initiating press; anything the
+                // button says after this point means "never mind, wake up".
+                p.drain_pressed();
+                let outcome = power::suspend_until_wake(p);
                 help::restore_sleep(&mut surf, &saved);
                 disp.full_refresh(surf.w, surf.h);
-                power::wifi_heal();
+                if outcome == power::SleepOutcome::Woke {
+                    power::wifi_heal();
+                }
                 // Discard input that queued while asleep — stale pen events
                 // would otherwise replay as phantom ink on the restored page.
                 if let Some(ref mut pd) = pen_dev {
