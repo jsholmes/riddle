@@ -38,6 +38,9 @@ const IDLE_COMMIT: Duration = Duration::from_millis(2800);
 /// How long the diary waits on a silent oracle before giving up on the turn.
 /// Generous: thinking models can lead with a long silence.
 const ORACLE_PATIENCE: Duration = Duration::from_secs(120);
+/// How long the oracle may stay silent before the thinking blot starts
+/// pulsing. A prompt reply arrives in stillness; the blot is for real waits.
+const BLOT_PATIENCE: Duration = Duration::from_secs(4);
 const REPLY_PX: f32 = 96.0;
 const MARGIN_X: i32 = 120;
 
@@ -104,6 +107,15 @@ fn main() {
             let png = args.get(2).map(String::as_str).unwrap_or(PNG_PATH);
             std::process::exit(oracle_test(png));
         }
+        // Dev harness: feed a canned reply (prose + ⟦ink:…⟧ sketches)
+        // through the real parse→plan→replay pipeline onto an offscreen
+        // page and write PNG snapshots. No device, no display, no oracle.
+        Some("--draw-test") => {
+            let reply = args.get(2).map(String::as_str).unwrap_or(
+                "Here is a house. \u{27e6}ink: M 200,800 L 200,450 L 500,250 L 800,450 L 800,800 L 200,800 | M 500,800 L 500,600 L 620,600 L 620,800\u{27e7} Do you like it?",
+            );
+            std::process::exit(draw_test(reply));
+        }
         Some("--version" | "-V") => {
             println!("riddle {}", env!("CARGO_PKG_VERSION"));
             return;
@@ -154,6 +166,11 @@ fn oracle_test(png: &str) -> i32 {
                 println!("[would conjure memory {id} — {}]", memory::spoken_date(id));
                 got.push_str("(show)");
             }
+            Ok(Ok(Event::Draw(polys))) => {
+                let pts: usize = polys.iter().map(|p| p.len()).sum();
+                println!("[would sketch: {} strokes, {} points]", polys.len(), pts);
+                got.push_str("(sketch)");
+            }
             Ok(Ok(Event::Transcript(t))) => eprintln!("\n[transcript] {t}"),
             Ok(Err(e)) => {
                 eprintln!("\noracle error: {e}");
@@ -164,6 +181,110 @@ fn oracle_test(png: &str) -> i32 {
     }
     println!("\n--- reply complete ({}ms, {} chars) ---", t0.elapsed().as_millis(), got.len());
     if got.trim().is_empty() { 1 } else { 0 }
+}
+
+/// Offscreen run of the reply pipeline: stream a canned reply through the
+/// real parser, build the same WritePlan the diary would, replay every
+/// stroke onto an in-memory page, and write it to /tmp/riddle-draw-test.png
+/// (plus a mid-animation frame) for eyeballing. Exits 0 if anything inked.
+fn draw_test(reply: &str) -> i32 {
+    let font = match FontRef::try_from_slice(FONT_TTF) {
+        Ok(f) => f,
+        Err(e) => {
+            eprintln!("draw-test: font: {e}");
+            return 1;
+        }
+    };
+    let (w, h) = (SCREEN_W, SCREEN_H);
+    let stride = w * 4;
+    let mut buf = vec![0u8; stride * h];
+    let mut surf = Surface::new(buf.as_mut_ptr(), buf.len(), w, h, stride, surface::PixFmt::Rgb32);
+    surf.fill_rect(0, 0, w, h, WHITE);
+
+    // Stream the reply in small slices to exercise the incremental parser.
+    let mut parser = oracle::StreamParser::new(Vec::new());
+    let mut events = Vec::new();
+    let mut fed = String::new();
+    for (i, ch) in reply.chars().enumerate() {
+        fed.push(ch);
+        if i % 7 == 0 {
+            events.extend(parser.advance(&fed, false));
+        }
+    }
+    events.extend(parser.advance(reply, true));
+
+    let mut plan = empty_plan();
+    let mut started = false;
+    for ev in events {
+        match ev {
+            Ok(Event::Ink(t)) => {
+                if started {
+                    append_reply(&font, &mut plan, &t);
+                } else {
+                    plan = plan_reply(&font, &t, None);
+                    started = true;
+                }
+            }
+            Ok(Event::Draw(polys)) => {
+                append_drawing(&mut plan, &polys);
+                started = true;
+            }
+            Ok(Event::Show(_)) | Ok(Event::Transcript(_)) => {}
+            Err(e) => eprintln!("draw-test: event error: {e}"),
+        }
+    }
+
+    let dump = |buf: &[u8], name: &str| {
+        let path = format!("/tmp/riddle-draw-test{name}.png");
+        let mut gray = vec![0u8; w * h];
+        for y in 0..h {
+            for x in 0..w {
+                gray[y * w + x] = buf[y * stride + x * 4 + 2]; // R of B,G,R,FF
+            }
+        }
+        let file = match std::fs::File::create(&path) {
+            Ok(f) => f,
+            Err(e) => {
+                eprintln!("draw-test: {path}: {e}");
+                return;
+            }
+        };
+        let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
+        enc.set_color(png::ColorType::Grayscale);
+        enc.set_depth(png::BitDepth::Eight);
+        match enc.write_header().and_then(|mut wr| wr.write_image_data(&gray)) {
+            Ok(()) => eprintln!("draw-test: wrote {path}"),
+            Err(e) => eprintln!("draw-test: {path}: {e}"),
+        }
+    };
+
+    let total_points: usize = plan.strokes.iter().map(|s| s.len()).sum();
+    let mut inked = 0usize;
+    let mut mid_dumped = false;
+    for stroke in &plan.strokes {
+        for i in 0..stroke.len() {
+            let (x, y) = stroke[i];
+            if i > 0 {
+                let (px, py) = stroke[i - 1];
+                surf.brush_line(px, py, x, y, 2, BLACK);
+            } else {
+                surf.stamp(x, y, 2, BLACK);
+            }
+            inked += 1;
+        }
+        if !mid_dumped && inked >= total_points / 2 {
+            dump(&buf, "-mid");
+            mid_dumped = true;
+        }
+    }
+    dump(&buf, "");
+    eprintln!(
+        "draw-test: {} strokes, {} points, region {:?}",
+        plan.strokes.len(),
+        total_points,
+        plan.region.rect()
+    );
+    if total_points > 0 { 0 } else { 1 }
 }
 
 /// What the diary sends alongside the page: its memory of recent turns and
@@ -247,6 +368,9 @@ fn run() -> std::io::Result<()> {
     let mut turn_reply = String::new();
     let mut turn_transcript: Option<String> = None;
     let mut turn_failed = false;
+    // Where this turn's ink lived (the writer's words, then the reply too):
+    // the end-of-turn ghost-removal flash covers this instead of the panel.
+    let mut turn_region = BBox::empty();
     // Raw stylus contact, tracked in every state (the guide dismisses on it).
     // `stylus_on` is the level; `stylus_tapped` latches any contact seen this
     // loop iteration, so a tap that starts AND ends within one drain still
@@ -461,6 +585,7 @@ fn run() -> std::io::Result<()> {
                             let _ = std::fs::remove_file(PNG_PATH);
                         }
                         let region = user_ink.bbox;
+                        turn_region = region;
                         State::Drinking { stage: 0, next: Instant::now(), region, rx }
                     }
                 }
@@ -509,6 +634,12 @@ fn run() -> std::io::Result<()> {
                             let plan = plan_reply(&font, &text, None);
                             State::Replying { plan, next: Instant::now(), rx: Some(rx) }
                         }
+                        Ok(Event::Draw(polys)) => {
+                            // The reply opens with a sketch.
+                            let mut plan = empty_plan();
+                            append_drawing(&mut plan, &polys);
+                            State::Replying { plan, next: Instant::now(), rx: Some(rx) }
+                        }
                         Ok(Event::Transcript(t)) => {
                             // Transcript with no prose (model skipped the
                             // reply): remember the words, keep waiting.
@@ -532,7 +663,9 @@ fn run() -> std::io::Result<()> {
                         disp.update(SCREEN_W as i32 / 2 - 14, SCREEN_H as i32 / 2 - 14, 28, 28, true);
                         let plan = plan_reply(&font, &oracle_excuse("timed out"), None);
                         State::Replying { plan, next: Instant::now(), rx: None }
-                    } else if pulse.elapsed() >= Duration::from_millis(600) {
+                    } else if pulse.elapsed() >= Duration::from_millis(600)
+                        && (blot_on || since.elapsed() >= BLOT_PATIENCE)
+                    {
                         let (cx, cy) = (SCREEN_W as i32 / 2, SCREEN_H as i32 / 2);
                         if blot_on {
                             surf.fill_rect(cx as usize - 14, cy as usize - 14, 28, 28, WHITE);
@@ -565,6 +698,14 @@ fn run() -> std::io::Result<()> {
                                 append_reply(&font, &mut plan, &more);
                                 false
                             }
+                        }
+                        Ok(Ok(Event::Draw(polys))) => {
+                            if plan.next_y > SCREEN_H as i32 - 360 {
+                                eprintln!("riddle: page too full for the sketch");
+                            } else {
+                                append_drawing(&mut plan, &polys);
+                            }
+                            false
                         }
                         Ok(Ok(Event::Transcript(t))) => {
                             turn_transcript = Some(t);
@@ -666,6 +807,7 @@ fn run() -> std::io::Result<()> {
                     // The writer interrupts: today's page returns at once.
                     surf.paste_rect(0, 0, SCREEN_W, SCREEN_H, &saved);
                     disp.full_refresh(surf.w, surf.h);
+                    turn_region = BBox::empty();
                     State::MemoryShown { saved: None, until: Instant::now(), region: plan.region }
                 } else if Instant::now() >= next {
                     // The memory pours back faster than Tom writes: it is
@@ -715,6 +857,7 @@ fn run() -> std::io::Result<()> {
                         // The paper swallows its memory; today's page returns.
                         surf.paste_rect(0, 0, SCREEN_W, SCREEN_H, &s);
                         disp.full_refresh(surf.w, surf.h);
+                        turn_region = BBox::empty();
                         eprintln!("riddle: memory dismissed");
                         State::MemoryShown { saved: None, until, region }
                     } else {
@@ -727,16 +870,29 @@ fn run() -> std::io::Result<()> {
             },
 
             State::FadingReply { stage, next, region } => {
-                const STAGES: u32 = 10;
+                // The reply dissolves exactly as the writer's ink does when
+                // the diary drinks it: same stages, same pace.
+                const STAGES: u32 = 14;
                 if Instant::now() >= next {
                     ink::dissolve_pass(&mut surf, region, stage, STAGES);
                     let (x, y, w, h) = region.rect();
                     disp.update(x, y, w, h, true);
                     if stage + 1 >= STAGES {
-                        disp.full_refresh(surf.w, surf.h);
+                        // Ghost removal flashes only where this turn's ink
+                        // lived — the writer's words and the reply — not the
+                        // whole panel.
+                        if !region.is_empty() {
+                            turn_region.add(region.x0, region.y0, 0);
+                            turn_region.add(region.x1, region.y1, 0);
+                        }
+                        if !turn_region.is_empty() {
+                            let (x, y, w, h) = turn_region.rect();
+                            disp.flash(x, y, w, h);
+                        }
+                        turn_region = BBox::empty();
                         State::Listening { last_pen: None }
                     } else {
-                        State::FadingReply { stage: stage + 1, next: Instant::now() + Duration::from_millis(80), region }
+                        State::FadingReply { stage: stage + 1, next: Instant::now() + Duration::from_millis(70), region }
                     }
                 } else {
                     State::FadingReply { stage, next, region }
@@ -889,6 +1045,53 @@ fn plan_reply(font: &FontRef, text: &str, y_start: Option<i32>) -> WritePlan {
     }
 
     WritePlan { strokes, stroke_i: 0, point_i: 0, region, next_y: y }
+}
+
+/// Splice a sketch into the write animation: the model's 0–1000 square is
+/// scaled into a box below what's written and resampled to pen-point spacing
+/// so the quill draws it at handwriting pace.
+fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
+    const SIDE: i32 = 760; // the sketch box's edge, in pixels
+    const STEP: f32 = 2.5; // spacing between replayed points
+    let x0 = (SCREEN_W as i32 - SIDE) / 2;
+    let y0 = (plan.next_y + 40).min(SCREEN_H as i32 - SIDE - 60).max(60);
+    let scale = SIDE as f32 / 1000.0;
+    for poly in polys {
+        if poly.len() < 2 {
+            continue;
+        }
+        let map = |&(px, py): &(f32, f32)| (x0 + (px * scale) as i32, y0 + (py * scale) as i32);
+        let mut stroke: Vec<(i32, i32)> = Vec::new();
+        let mut last = map(&poly[0]);
+        stroke.push(last);
+        for p in &poly[1..] {
+            let (tx, ty) = map(p);
+            let (dx, dy) = ((tx - last.0) as f32, (ty - last.1) as f32);
+            let steps = ((dx * dx + dy * dy).sqrt() / STEP).ceil().max(1.0) as i32;
+            for i in 1..=steps {
+                let t = i as f32 / steps as f32;
+                stroke.push((last.0 + (dx * t) as i32, last.1 + (dy * t) as i32));
+            }
+            last = (tx, ty);
+        }
+        for &(x, y) in &stroke {
+            plan.region.add(x, y, 5);
+        }
+        plan.strokes.push(stroke);
+    }
+    plan.next_y = y0 + SIDE + 40;
+}
+
+/// A plan with nothing in it yet, opening at the reply's default height —
+/// the starting point when a sketch (not prose) leads the reply.
+fn empty_plan() -> WritePlan {
+    WritePlan {
+        strokes: Vec::new(),
+        stroke_i: 0,
+        point_i: 0,
+        region: BBox::empty(),
+        next_y: (SCREEN_H as i32) / 4,
+    }
 }
 
 /// Splice a streamed continuation chunk into a running write animation.

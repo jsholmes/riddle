@@ -119,6 +119,26 @@ impl Display {
         let _ = (w, h);
     }
 
+    /// Flashing clear of one region (ghost removal where the ink lived,
+    /// without blinking the whole panel). qtfb has no regional flash, so
+    /// there it falls back to the full one.
+    pub fn flash(&self, x: i32, y: i32, w: i32, h: i32) {
+        match self {
+            Display::Qtfb(c) => {
+                let _ = c.request_full_refresh();
+            }
+            #[allow(unused_variables)]
+            Display::Quill => {
+                #[cfg(feature = "takeover")]
+                unsafe {
+                    quill_ffi::quill_swap(x, y, w, h, 4, 1);
+                    quill_ffi::quill_process_events();
+                }
+            }
+        }
+        let _ = (x, y, w, h);
+    }
+
     /// Drain window-system events. For qtfb this also detects window close
     /// (returns Err); the takeover backend has no window to lose.
     pub fn pump(&self) -> io::Result<Vec<crate::qtfb::InputEvent>> {
