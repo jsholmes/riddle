@@ -71,14 +71,93 @@ impl Drop for PowerButton {
     }
 }
 
+fn read_sysfs_u64(path: impl AsRef<std::path::Path>) -> Option<u64> {
+    std::fs::read_to_string(path).ok()?.trim().parse().ok()
+}
+
 /// The kernel's successful-suspend counter — the authoritative "we slept"
 /// signal. (Clock heuristics fail here: on this kernel CLOCK_MONOTONIC keeps
 /// advancing across deep sleep, verified on-device.)
 pub fn suspend_count() -> u64 {
-    std::fs::read_to_string("/sys/power/suspend_stats/success")
-        .ok()
-        .and_then(|s| s.trim().parse().ok())
-        .unwrap_or(0)
+    read_sysfs_u64("/sys/power/suspend_stats/success").unwrap_or(0)
+}
+
+/// True while any kernel wakeup source is active. The EPD regulator holds one
+/// for up to ~30s after ANY panel update — including the just-drawn sleep
+/// page — and a suspend attempted inside that window aborts ("Some devices
+/// failed to suspend"). `active_time_ms` is nonzero exactly while a source is
+/// active, so this is a cheap "will suspend stick yet?" probe.
+fn wakeup_source_active() -> bool {
+    let Ok(dir) = std::fs::read_dir("/sys/class/wakeup") else {
+        return false;
+    };
+    dir.flatten()
+        .any(|e| read_sysfs_u64(e.path().join("active_time_ms")).is_some_and(|ms| ms > 0))
+}
+
+#[derive(Clone, Copy, PartialEq)]
+pub enum SleepOutcome {
+    /// The device suspended and resumed (or suspend never stuck and we gave up).
+    Woke,
+    /// A button press arrived while still awake: never mind, stay up.
+    Cancelled,
+}
+
+/// Suspend (confirmed via the kernel's success counter) and block until wake.
+/// The sleep page just drawn arms the EPD discharge timer, so wait for wakeup
+/// sources to clear before each attempt instead of hammering suspend, and
+/// keep reading the button: while we're still awake a press is a cancel, not
+/// input for the suspended device to lose.
+pub fn suspend_until_wake(btn: &mut PowerButton) -> SleepOutcome {
+    use std::time::{Duration, Instant};
+    let count0 = suspend_count();
+    let mut attempts = 0;
+    let outcome = 'sleeping: loop {
+        // Outwait active wakeup sources: the ≤30s EPD timer before the first
+        // attempt, only short-lived stragglers before retries.
+        let budget = Duration::from_secs(if attempts == 0 { 35 } else { 5 });
+        let hold = Instant::now();
+        loop {
+            // Count first: in the ungrabbed fallback logind may suspend us
+            // any time, making the next press a wake, not a cancel.
+            if suspend_count() > count0 {
+                break 'sleeping SleepOutcome::Woke;
+            }
+            if btn.drain_pressed() {
+                break 'sleeping SleepOutcome::Cancelled;
+            }
+            if !wakeup_source_active() || hold.elapsed() >= budget {
+                break;
+            }
+            std::thread::sleep(Duration::from_millis(250));
+        }
+        if btn.grabbed {
+            let _ = std::process::Command::new("systemctl").arg("suspend").status();
+        }
+        attempts += 1;
+        let t0 = Instant::now();
+        while t0.elapsed() < Duration::from_secs(6) {
+            std::thread::sleep(Duration::from_millis(400));
+            if suspend_count() > count0 {
+                break 'sleeping SleepOutcome::Woke;
+            }
+            if btn.drain_pressed() {
+                break 'sleeping SleepOutcome::Cancelled;
+            }
+        }
+        if attempts >= 8 {
+            eprintln!("riddle: suspend never happened ({attempts} tries); waking the page");
+            return SleepOutcome::Woke;
+        }
+        if attempts == 1 {
+            eprintln!("riddle: suspend aborted (wakeup source held), retrying quietly");
+        }
+    };
+    match outcome {
+        SleepOutcome::Woke => eprintln!("riddle: waking (suspend attempts: {attempts})"),
+        SleepOutcome::Cancelled => eprintln!("riddle: sleep cancelled (power button)"),
+    }
+    outcome
 }
 
 /// After resume, Wi-Fi is often stranded: wpa_supplicant fails a few attempts
