@@ -105,9 +105,7 @@ impl Ink {
     }
 
     /// Rasterize the ink region to a grayscale PNG for the oracle.
-    /// Crops to the ink bounding box and box-downscales so the long side stays
-    /// ≤ 800px (at least 2x): the model reads handwriting fine at that scale,
-    /// and image pixels are the dominant vision-token / latency cost.
+    /// Crops to the ink bounding box (see `region_to_png` for the scaling).
     pub fn to_png(&self, surf: &Surface, path: &str) -> std::io::Result<()> {
         if self.bbox.is_empty() {
             return Err(std::io::Error::other("no ink"));
@@ -117,34 +115,54 @@ impl Ink {
         let y0 = (by - 20).max(0) as usize;
         let x1 = ((bx + bw + 20) as usize).min(surf.w);
         let y1 = ((by + bh + 20) as usize).min(surf.h);
-        let f = ((x1 - x0).max(y1 - y0)).div_ceil(800).max(2);
-        let (w, h) = ((x1 - x0) / f, (y1 - y0) / f);
-
-        let mut gray = vec![0u8; w * h];
-        for oy in 0..h {
-            for ox in 0..w {
-                let mut acc = 0u32;
-                for sy in 0..f {
-                    for sx in 0..f {
-                        acc += surf.luma((x0 + ox * f + sx) as i32, (y0 + oy * f + sy) as i32) as u32;
-                    }
-                }
-                gray[oy * w + ox] = (acc / (f * f) as u32) as u8;
-            }
-        }
-
-        let file = std::fs::File::create(path)?;
-        let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
-        enc.set_color(png::ColorType::Grayscale);
-        enc.set_depth(png::BitDepth::Eight);
-        // Fast deflate: encode time matters more than a few KB on the tablet.
-        enc.set_compression(png::Compression::Fast);
-        let mut writer = enc.write_header().map_err(std::io::Error::other)?;
-        writer
-            .write_image_data(&gray)
-            .map_err(std::io::Error::other)?;
-        Ok(())
+        region_to_png(surf, x0, y0, x1, y1, path)
     }
+}
+
+/// Rasterize a page region to a grayscale PNG for the oracle, box-downscaled
+/// so the long side stays ≤ 800px (at least 2x): the model reads handwriting
+/// fine at that scale, and image pixels are the dominant vision-token /
+/// latency cost. Game turns send the whole page (0,0..w,h) so the oracle
+/// sees the board exactly as the writer does.
+pub fn region_to_png(
+    surf: &Surface,
+    x0: usize,
+    y0: usize,
+    x1: usize,
+    y1: usize,
+    path: &str,
+) -> std::io::Result<()> {
+    let (x1, y1) = (x1.min(surf.w), y1.min(surf.h));
+    if x1 <= x0 || y1 <= y0 {
+        return Err(std::io::Error::other("empty region"));
+    }
+    let f = ((x1 - x0).max(y1 - y0)).div_ceil(800).max(2);
+    let (w, h) = ((x1 - x0) / f, (y1 - y0) / f);
+
+    let mut gray = vec![0u8; w * h];
+    for oy in 0..h {
+        for ox in 0..w {
+            let mut acc = 0u32;
+            for sy in 0..f {
+                for sx in 0..f {
+                    acc += surf.luma((x0 + ox * f + sx) as i32, (y0 + oy * f + sy) as i32) as u32;
+                }
+            }
+            gray[oy * w + ox] = (acc / (f * f) as u32) as u8;
+        }
+    }
+
+    let file = std::fs::File::create(path)?;
+    let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
+    enc.set_color(png::ColorType::Grayscale);
+    enc.set_depth(png::BitDepth::Eight);
+    // Fast deflate: encode time matters more than a few KB on the tablet.
+    enc.set_compression(png::Compression::Fast);
+    let mut writer = enc.write_header().map_err(std::io::Error::other)?;
+    writer
+        .write_image_data(&gray)
+        .map_err(std::io::Error::other)?;
+    Ok(())
 }
 
 /// Deterministic per-pixel hash for the dissolve pattern.

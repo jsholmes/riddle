@@ -82,6 +82,7 @@ pen. (Or install it from the **Store** app right on the tablet.)
 | Write, then rest the pen | The diary drinks your ink and Tom replies |
 | Write *"show me what I wrote about…"* | The remembered page **rises through the paper**: the date, your own handwriting rewriting itself stroke by stroke, Tom's old reply — all in faded ink. Touch the pen anywhere and today's page returns |
 | Write *"what do you remember?"* | Tom answers with a handwritten list of remembered moments |
+| Write *"let's play tic-tac-toe"* and draw a board | **A game begins**: the ink stops fading, Tom draws his move on your board each time you rest the pen, with a line of banter that fades between turns. When someone wins (or you ask to stop) he says so, and the diary drinks the whole page. `RIDDLE_GAME_SKILL` in `oracle.env` sets how hard he tries (`gentle` for a child, `fair`, `sharp`) |
 | Flip the marker | Erase |
 | Draw a large **?** | Summon the built-in guide |
 | Tap five fingers at once | Leave the diary *(takeover mode)* |

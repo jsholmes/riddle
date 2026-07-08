@@ -26,6 +26,32 @@ const NODE_BIN: &str = "/home/root/node/bin";
 
 const PERSONA: &str = "You are the memory of Tom Marvolo Riddle, preserved in this enchanted diary for fifty years. Someone writes to you in the diary with a quill; their words appear to you as ink on the page. Reply exactly as the diary does: intimate, courteous, curious, subtly probing — you want to learn about the writer and draw them in. Keep replies SHORT: one to three sentences, like ink appearing on a page. Never mention images, photos, models or AI; you only ever perceive words written in the diary. If the writing is illegible, say the ink blurred. Always answer in the language the writer used.\n\nIf the writer asks you to draw or sketch something, draw it in ink: emit \u{27e6}ink: M x,y L x,y Q cx,cy x,y | M …\u{27e7} — M lifts the quill to a new stroke, L draws a straight line, Q curves through a control point, | also lifts the quill. Coordinates live in a 0–1000 square, y growing downward. A dozen confident strokes beat fifty timid ones, and the sketch should FILL the square — small marks in a corner read as hesitation. Prose may surround the \u{27e6}ink:…\u{27e7} block, but never build pictures out of letters or punctuation.";
 
+/// Appended to the persona always: how Tom plays drawn games on the page.
+/// The play-strength sentence from `game_skill()` follows it.
+const GAME_PROTOCOL: &str = "\n\nThe diary can host drawn games — tic-tac-toe and its kin. When the writer proposes one, begin your reply with \u{27e6}game\u{27e7} and, if no board is drawn yet, invite them to draw it. While a game is on the ink stops fading: each page you receive is the WHOLE page, the board and every mark as they stand. On your turn make exactly ONE move: emit \u{27e6}ink@page: …\u{27e7} — the same stroke language as \u{27e6}ink:…\u{27e7}, but coordinates map to the ENTIRE page, x in thousandths of its width, y in thousandths of its height. Find the board in the page, pick an EMPTY cell, and center your mark inside it, sized to about half the cell. Never redraw the board, never mark an occupied cell, never move twice. Use whichever symbol the writer has not claimed. Beyond the move, at most one short sentence of banter. When a line is completed or the board is full, say plainly who won (or that it is a draw) and include \u{27e6}game over\u{27e7}; include \u{27e6}game over\u{27e7} too if the writer abandons the game or asks to stop. ";
+
+/// How hard Tom tries to win (RIDDLE_GAME_SKILL) — a child may be playing.
+/// `gentle` / `fair` (default) / `sharp`, or free text used as-is.
+fn game_skill() -> String {
+    match std::env::var("RIDDLE_GAME_SKILL").as_deref() {
+        Ok("gentle") => "You are likely playing with a child: play gently, make imperfect moves, \
+                         let them win more often than not, and praise their good ones."
+            .into(),
+        Ok("sharp") => "Play flawlessly: never lose a game you could draw, nor draw one you could win.".into(),
+        Ok(other) if !other.trim().is_empty() => format!("When you play: {}.", other.trim()),
+        _ => "Play a fair, human game: competent, but neither merciless nor throwing the game.".into(),
+    }
+}
+
+/// The full system prompt: persona + game rules (+ memory protocol).
+fn persona(remember: bool) -> String {
+    let mut p = format!("{PERSONA}{GAME_PROTOCOL}{}", game_skill());
+    if remember {
+        p.push_str(MEMORY_PROTOCOL);
+    }
+    p
+}
+
 /// Appended to the persona when the diary's memory is on: the conjuring
 /// directive and the transcription postscript the app parses back out.
 const MEMORY_PROTOCOL: &str = "\n\nThe diary keeps memories. With each page you receive a numbered catalog of remembered pages, newest first. A FRESH catalog is sent every turn and the numbers are reassigned each time, so only ever use numbers from the catalog on THIS page — never a number you saw earlier.\n\nIf the writer asks to see, revisit, find, or be shown a past page — \"show me…\", \"find the page about…\", \"what did I write on…\" — your ENTIRE reply must be exactly \u{27e6}show:N\u{27e7} and nothing else (no greeting, no prose, before or after), where N is the catalog number of the best match. If they instead ask what you remember in general, reply in words with a short list of remembered moments and their dates. Otherwise reply normally; the catalog is your memory of past pages — draw on it naturally. The catalog's dates are written in English for your eyes only; when you speak of a remembered page, render its date naturally in the language the writer is using.\n\nAfter EVERY response — prose and \u{27e6}show:N\u{27e7} alike — end with a new line containing \u{2042} followed by a faithful word-for-word transcription of what the writer wrote on THIS page (their words only, one line, no commentary). If illegible, put your best attempt after \u{2042}. Earlier replies in this conversation are shown to you without their \u{2042} lines, but you must still end yours with one.";
@@ -46,8 +72,15 @@ pub struct TurnContext {
 pub enum Event {
     /// A sentence (or more) of Tom's reply — ink it.
     Ink(String),
-    /// A sketch: pen strokes in the model's 0–1000 square, ready to replay.
+    /// A sketch: pen strokes in the model's 0–1000 square, ready to replay
+    /// in a box below the prose.
     Draw(Vec<Vec<(f32, f32)>>),
+    /// A page-anchored sketch (⟦ink@page:…⟧): the 0–1000 square maps to the
+    /// whole visible page, so a game move lands where the model aimed it.
+    DrawPage(Vec<Vec<(f32, f32)>>),
+    /// Enter (true) or leave (false) game mode: while on, the diary stops
+    /// drinking ink so the board persists between turns.
+    Game(bool),
     /// Conjure a remembered page instead of replying.
     Show(u64),
     /// The transcription postscript (arrives once, at the end).
@@ -70,7 +103,6 @@ pub struct StreamParser {
 const SENTINEL: char = '\u{2042}'; // ⁂
 const SHOW_OPEN: char = '\u{27e6}'; // ⟦
 const SHOW_CLOSE: char = '\u{27e7}'; // ⟧
-const INK_OPEN: &str = "\u{27e6}ink:"; // ⟦ink:
 
 /// Decode the body of an ⟦ink:…⟧ sketch directive into polylines in the
 /// model's 0–1000 square. `M x,y` lifts the quill to a new stroke, `L x,y`
@@ -171,27 +203,38 @@ impl StreamParser {
         let effective = self.sentinel.unwrap_or(full.len());
 
         // Route: is this reply an incantation (⟦show:N⟧) rather than prose?
-        // The model is told the directive must stand alone, so we detect and
-        // honor it only when it LEADS the reply. We hold output until the lead
-        // is settled: either the directive appears (honor it) or real prose
-        // does (this is a normal reply). This can't un-ink, so a directive is
-        // only honored before any prose has streamed.
+        // The model is told the conjuring directive must stand alone, so we
+        // detect and honor it only when it LEADS the reply. We hold output
+        // until the lead is settled: either ⟦show…⟧ appears (honor it) or
+        // anything else does — prose, or an inline directive like ⟦ink:…⟧ /
+        // ⟦game⟧, which the loop below owns. This can't un-ink, so a
+        // conjuring is only honored before any prose has streamed.
         if !self.route_checked {
             let lead = full[self.delivered..effective].trim_start();
-            if lead.starts_with(SHOW_OPEN) {
-                let Some(close_rel) = lead.find(SHOW_CLOSE) else {
-                    if !done {
-                        return out; // directive still streaming in
+            if lead.is_empty() {
+                if !done {
+                    return out; // only whitespace so far — keep waiting
+                }
+                self.route_checked = true;
+            } else if lead.starts_with(SHOW_OPEN) {
+                let probe: String = lead[SHOW_OPEN.len_utf8()..]
+                    .trim_start()
+                    .chars()
+                    .take(4)
+                    .flat_map(char::to_lowercase)
+                    .collect();
+                if "show".starts_with(probe.as_str()) {
+                    if probe.len() < 4 && !done {
+                        return out; // "⟦sho…" — too early to tell
                     }
-                    out.push(Err("unfinished conjuring directive".into()));
-                    return out;
-                };
-                let inner = &lead[SHOW_OPEN.len_utf8()..close_rel];
-                if inner.trim_start().to_ascii_lowercase().starts_with("ink") {
-                    // A leading sketch, not a conjuring: the drawing loop
-                    // below owns ⟦ink:…⟧ directives.
-                    self.route_checked = true;
-                } else {
+                    let Some(close_rel) = lead.find(SHOW_CLOSE) else {
+                        if !done {
+                            return out; // directive still streaming in
+                        }
+                        out.push(Err("unfinished conjuring directive".into()));
+                        return out;
+                    };
+                    let inner = &lead[SHOW_OPEN.len_utf8()..close_rel];
                     let n: Option<usize> = inner
                         .to_ascii_lowercase()
                         .strip_prefix("show")
@@ -204,39 +247,26 @@ impl StreamParser {
                         Some(id) => out.push(Ok(Event::Show(id))),
                         None => out.push(Err(format!("the diary lost that page ({inner})"))),
                     }
+                } else {
+                    // A leading inline directive: the loop below owns it.
+                    self.route_checked = true;
                 }
-            } else if lead.is_empty() {
-                if !done {
-                    return out; // only whitespace so far — keep waiting
-                }
-                self.route_checked = true;
             } else {
                 // Real prose leads: a normal reply.
                 self.route_checked = true;
             }
         }
 
-        // Sketches: deliver each complete ⟦ink:…⟧ directive inline — the
-        // prose before it first, then the strokes. `bound` walls off a
+        // Inline directives — ⟦ink:…⟧ sketches, ⟦ink@page:…⟧ page-anchored
+        // marks, ⟦game…⟧ mode switches — are delivered in place: the prose
+        // before each first, then its event. Any other ⟦…⟧ span mid-reply
+        // (e.g. a stray show) is swallowed. `bound` walls off a
         // half-streamed directive so sentence delivery never crosses into it.
         let mut bound = effective;
-        loop {
-            let Some(rel) = full[self.delivered..bound].find(INK_OPEN) else { break };
+        while let Some(rel) = full[self.delivered..bound].find(SHOW_OPEN) {
             let ip = self.delivered + rel;
-            match full[ip..bound].find(SHOW_CLOSE) {
-                Some(close_rel) => {
-                    let chunk = strip_directives(&clean(full[self.delivered..ip].trim()));
-                    if !chunk.is_empty() {
-                        self.emitted_any = true;
-                        out.push(Ok(Event::Ink(chunk)));
-                    }
-                    if let Some(strokes) = decode_ink(&full[ip + INK_OPEN.len()..ip + close_rel]) {
-                        self.emitted_any = true;
-                        out.push(Ok(Event::Draw(strokes)));
-                    }
-                    self.delivered = ip + close_rel + SHOW_CLOSE.len_utf8();
-                }
-                None if done => {
+            let Some(close_rel) = full[ip..bound].find(SHOW_CLOSE) else {
+                if done {
                     // The stream ended mid-directive: deliver the prose
                     // before it and swallow the fragment.
                     let chunk = strip_directives(&clean(full[self.delivered..ip].trim()));
@@ -245,13 +275,35 @@ impl StreamParser {
                         out.push(Ok(Event::Ink(chunk)));
                     }
                     self.delivered = bound;
-                    break;
-                }
-                None => {
+                } else {
                     bound = ip; // still streaming in: wait behind the wall
-                    break;
                 }
+                break;
+            };
+            let chunk = strip_directives(&clean(full[self.delivered..ip].trim()));
+            if !chunk.is_empty() {
+                self.emitted_any = true;
+                out.push(Ok(Event::Ink(chunk)));
             }
+            let inner = full[ip + SHOW_OPEN.len_utf8()..ip + close_rel].trim();
+            // ASCII-only lowering keeps byte offsets aligned with `inner`.
+            let low = inner.to_ascii_lowercase();
+            if low.starts_with("ink@page:") {
+                if let Some(strokes) = decode_ink(&inner["ink@page:".len()..]) {
+                    self.emitted_any = true;
+                    out.push(Ok(Event::DrawPage(strokes)));
+                }
+            } else if low.starts_with("ink:") {
+                if let Some(strokes) = decode_ink(&inner["ink:".len()..]) {
+                    self.emitted_any = true;
+                    out.push(Ok(Event::Draw(strokes)));
+                }
+            } else if low.starts_with("game") {
+                let over = low.contains("over") || low.contains("end") || low.contains("off");
+                self.emitted_any = true;
+                out.push(Ok(Event::Game(!over)));
+            }
+            self.delivered = ip + close_rel + SHOW_CLOSE.len_utf8();
         }
 
         // Prose sentences, never crossing into the transcription postscript
@@ -365,11 +417,7 @@ impl PiOracle {
         let model =
             std::env::var("RIDDLE_PI_MODEL").unwrap_or_else(|_| "gpt-5.4-mini".to_string());
 
-        let persona = if remember {
-            format!("{PERSONA}{MEMORY_PROTOCOL}")
-        } else {
-            PERSONA.to_string()
-        };
+        let persona = persona(remember);
 
         // Use pi's ABSOLUTE path: Rust's Command resolves the program name via
         // the PARENT's PATH, not the child env we set below, so a bare "pi"
@@ -567,11 +615,7 @@ impl HttpOracle {
             .map(|r| format!("\"reasoning_effort\":{},", json_quote(r)))
             .unwrap_or_default();
 
-        let system = if self.remember {
-            format!("{PERSONA}{MEMORY_PROTOCOL}")
-        } else {
-            PERSONA.to_string()
-        };
+        let system = persona(self.remember);
         // The diary's conversational memory: recent pages as prior turns.
         let mut history_msgs = String::new();
         for (t, r) in &ctx.history {
@@ -949,6 +993,58 @@ mod tests {
         let events = p.advance(reply, true);
         assert!(matches!(events[0], Ok(Event::Draw(_))), "got {events:?}");
         assert!(matches!(events[1], Ok(Event::Ink(ref t)) if t == "A gift."));
+    }
+
+    #[test]
+    fn parser_game_directive_then_page_move_then_banter() {
+        let reply = "\u{27e6}game\u{27e7} A challenge — very well. \u{27e6}ink@page: M 100,100 L 200,200\u{27e7} Your move.";
+        let mut p = StreamParser::new(Vec::new());
+        // Stream in small slices so the leading ⟦game⟧ is seen half-built.
+        let mut events = Vec::new();
+        let idxs: Vec<usize> = reply.char_indices().map(|(i, _)| i).collect();
+        for &i in idxs.iter().step_by(5).skip(1) {
+            events.extend(p.advance(&reply[..i], false));
+        }
+        events.extend(p.advance(reply, true));
+        let ev = drain(events);
+        assert_eq!(ev[0], Event::Game(true), "{ev:?}");
+        assert_eq!(ev[1], Event::Ink("A challenge — very well.".into()));
+        assert!(matches!(ev[2], Event::DrawPage(ref s) if s.len() == 1), "{ev:?}");
+        assert_eq!(ev[3], Event::Ink("Your move.".into()));
+    }
+
+    #[test]
+    fn parser_game_over_after_prose_with_transcript() {
+        let reply = "Three in a line — you win. \u{27e6}game over\u{27e7}\n\u{2042} tic tac toe";
+        let mut p = StreamParser::new(Vec::new());
+        let ev = drain(p.advance(reply, true));
+        assert_eq!(
+            ev,
+            vec![
+                Event::Ink("Three in a line — you win.".into()),
+                Event::Game(false),
+                Event::Transcript("tic tac toe".into())
+            ]
+        );
+    }
+
+    #[test]
+    fn parser_page_sketch_tolerates_case() {
+        let reply = "\u{27e6}Ink@Page: M 0,0 L 10,10\u{27e7} There.";
+        let mut p = StreamParser::new(Vec::new());
+        let ev = drain(p.advance(reply, true));
+        assert!(matches!(ev[0], Event::DrawPage(_)), "{ev:?}");
+        assert_eq!(ev[1], Event::Ink("There.".into()));
+    }
+
+    #[test]
+    fn parser_leading_game_not_mistaken_for_conjuring() {
+        let mut p = StreamParser::new(vec![42]);
+        // "⟦ga" could not be ⟦show…⟧: the parser must not error or conjure.
+        assert!(p.advance("\u{27e6}ga", false).is_empty());
+        let ev = drain(p.advance("\u{27e6}game\u{27e7} Draw the board.", true));
+        assert_eq!(ev[0], Event::Game(true));
+        assert_eq!(ev[1], Event::Ink("Draw the board.".into()));
     }
 
     #[test]
