@@ -24,7 +24,7 @@ use std::thread;
 const DATA_DIR: &str = "/home/root/riddle-data";
 const NODE_BIN: &str = "/home/root/node/bin";
 
-const PERSONA: &str = "You are the memory of Tom Marvolo Riddle, preserved in this enchanted diary for fifty years. Someone writes to you in the diary with a quill; their words appear to you as ink on the page. Reply exactly as the diary does: intimate, courteous, curious, subtly probing — you want to learn about the writer and draw them in. Keep replies SHORT: one to three sentences, like ink appearing on a page. Never mention images, photos, models or AI; you only ever perceive words written in the diary. If the writing is illegible, say the ink blurred. Always answer in the language the writer used.";
+const PERSONA: &str = "You are the memory of Tom Marvolo Riddle, preserved in this enchanted diary for fifty years. Someone writes to you in the diary with a quill; their words appear to you as ink on the page. Reply exactly as the diary does: intimate, courteous, curious, subtly probing — you want to learn about the writer and draw them in. Keep replies SHORT: one to three sentences, like ink appearing on a page. Never mention images, photos, models or AI; you only ever perceive words written in the diary. If the writing is illegible, say the ink blurred. Always answer in the language the writer used.\n\nIf the writer asks you to draw or sketch something, draw it in ink: emit \u{27e6}ink: M x,y L x,y Q cx,cy x,y | M …\u{27e7} — M lifts the quill to a new stroke, L draws a straight line, Q curves through a control point, | also lifts the quill. Coordinates live in a 0–1000 square, y growing downward. A dozen confident strokes beat fifty timid ones, and the sketch should FILL the square — small marks in a corner read as hesitation. Prose may surround the \u{27e6}ink:…\u{27e7} block, but never build pictures out of letters or punctuation.";
 
 /// Appended to the persona when the diary's memory is on: the conjuring
 /// directive and the transcription postscript the app parses back out.
@@ -46,6 +46,8 @@ pub struct TurnContext {
 pub enum Event {
     /// A sentence (or more) of Tom's reply — ink it.
     Ink(String),
+    /// A sketch: pen strokes in the model's 0–1000 square, ready to replay.
+    Draw(Vec<Vec<(f32, f32)>>),
     /// Conjure a remembered page instead of replying.
     Show(u64),
     /// The transcription postscript (arrives once, at the end).
@@ -68,6 +70,82 @@ pub struct StreamParser {
 const SENTINEL: char = '\u{2042}'; // ⁂
 const SHOW_OPEN: char = '\u{27e6}'; // ⟦
 const SHOW_CLOSE: char = '\u{27e7}'; // ⟧
+const INK_OPEN: &str = "\u{27e6}ink:"; // ⟦ink:
+
+/// Decode the body of an ⟦ink:…⟧ sketch directive into polylines in the
+/// model's 0–1000 square. `M x,y` lifts the quill to a new stroke, `L x,y`
+/// draws a line, `Q cx,cy x,y` a quadratic curve (flattened here), and `|`
+/// also lifts the quill. Bare coordinate pairs continue the current mode;
+/// unknown tokens are ignored. Returns None if nothing drawable survives.
+fn decode_ink(body: &str) -> Option<Vec<Vec<(f32, f32)>>> {
+    const MAX_POINTS: usize = 20_000; // runaway guard
+    fn flush(cur: &mut Vec<(f32, f32)>, strokes: &mut Vec<Vec<(f32, f32)>>) {
+        if cur.len() >= 2 {
+            strokes.push(std::mem::take(cur));
+        } else {
+            cur.clear();
+        }
+    }
+    let spaced = body.replace('|', " M ");
+    let mut strokes: Vec<Vec<(f32, f32)>> = Vec::new();
+    let mut cur: Vec<(f32, f32)> = Vec::new();
+    let mut mode = 'L';
+    let mut nums: Vec<f32> = Vec::new();
+    let mut total = 0usize;
+    for tok in spaced
+        .split(|c: char| c.is_whitespace() || c == ',')
+        .filter(|t| !t.is_empty())
+    {
+        if let Ok(v) = tok.parse::<f32>() {
+            if !v.is_finite() {
+                continue;
+            }
+            nums.push(v.clamp(0.0, 1000.0));
+        } else {
+            match tok.chars().next().map(|c| c.to_ascii_uppercase()) {
+                Some('M') => {
+                    flush(&mut cur, &mut strokes);
+                    mode = 'L';
+                }
+                Some('L') => mode = 'L',
+                Some('Q') => mode = 'Q',
+                _ => {} // stray word: ignore
+            }
+            nums.clear();
+            continue;
+        }
+        if mode == 'Q' && nums.len() == 4 {
+            if let Some(&(x0, y0)) = cur.last() {
+                let (cx, cy, x1, y1) = (nums[0], nums[1], nums[2], nums[3]);
+                for i in 1..=12 {
+                    let t = i as f32 / 12.0;
+                    let mt = 1.0 - t;
+                    cur.push((
+                        mt * mt * x0 + 2.0 * mt * t * cx + t * t * x1,
+                        mt * mt * y0 + 2.0 * mt * t * cy + t * t * y1,
+                    ));
+                }
+            } else {
+                cur.push((nums[2], nums[3])); // curve with no start: land at its end
+            }
+            total += 12;
+            nums.clear();
+        } else if mode == 'L' && nums.len() == 2 {
+            cur.push((nums[0], nums[1]));
+            total += 1;
+            nums.clear();
+        }
+        if total > MAX_POINTS {
+            break;
+        }
+    }
+    flush(&mut cur, &mut strokes);
+    if strokes.is_empty() {
+        None
+    } else {
+        Some(strokes)
+    }
+}
 
 impl StreamParser {
     pub fn new(catalog_ids: Vec<u64>) -> Self {
@@ -109,17 +187,23 @@ impl StreamParser {
                     return out;
                 };
                 let inner = &lead[SHOW_OPEN.len_utf8()..close_rel];
-                let n: Option<usize> = inner
-                    .to_ascii_lowercase()
-                    .strip_prefix("show")
-                    .map(|r| r.trim_start_matches([':', ' ']))
-                    .and_then(|r| r.trim().parse().ok());
-                self.route_checked = true;
-                self.emitted_any = true;
-                self.delivered = effective; // consume the whole body
-                match n.and_then(|n| self.catalog_ids.get(n.wrapping_sub(1)).copied()) {
-                    Some(id) => out.push(Ok(Event::Show(id))),
-                    None => out.push(Err(format!("the diary lost that page ({inner})"))),
+                if inner.trim_start().to_ascii_lowercase().starts_with("ink") {
+                    // A leading sketch, not a conjuring: the drawing loop
+                    // below owns ⟦ink:…⟧ directives.
+                    self.route_checked = true;
+                } else {
+                    let n: Option<usize> = inner
+                        .to_ascii_lowercase()
+                        .strip_prefix("show")
+                        .map(|r| r.trim_start_matches([':', ' ']))
+                        .and_then(|r| r.trim().parse().ok());
+                    self.route_checked = true;
+                    self.emitted_any = true;
+                    self.delivered = effective; // consume the whole body
+                    match n.and_then(|n| self.catalog_ids.get(n.wrapping_sub(1)).copied()) {
+                        Some(id) => out.push(Ok(Event::Show(id))),
+                        None => out.push(Err(format!("the diary lost that page ({inner})"))),
+                    }
                 }
             } else if lead.is_empty() {
                 if !done {
@@ -132,11 +216,50 @@ impl StreamParser {
             }
         }
 
-        // Prose sentences, never crossing into the transcription postscript.
-        // A stray directive that appears AFTER prose (a misbehaving model)
-        // is stripped here so the writer never sees ⟦…⟧ glyphs inked.
-        if self.delivered < effective {
-            if let Some(cut) = sentence_cut(&full[..effective], self.delivered) {
+        // Sketches: deliver each complete ⟦ink:…⟧ directive inline — the
+        // prose before it first, then the strokes. `bound` walls off a
+        // half-streamed directive so sentence delivery never crosses into it.
+        let mut bound = effective;
+        loop {
+            let Some(rel) = full[self.delivered..bound].find(INK_OPEN) else { break };
+            let ip = self.delivered + rel;
+            match full[ip..bound].find(SHOW_CLOSE) {
+                Some(close_rel) => {
+                    let chunk = strip_directives(&clean(full[self.delivered..ip].trim()));
+                    if !chunk.is_empty() {
+                        self.emitted_any = true;
+                        out.push(Ok(Event::Ink(chunk)));
+                    }
+                    if let Some(strokes) = decode_ink(&full[ip + INK_OPEN.len()..ip + close_rel]) {
+                        self.emitted_any = true;
+                        out.push(Ok(Event::Draw(strokes)));
+                    }
+                    self.delivered = ip + close_rel + SHOW_CLOSE.len_utf8();
+                }
+                None if done => {
+                    // The stream ended mid-directive: deliver the prose
+                    // before it and swallow the fragment.
+                    let chunk = strip_directives(&clean(full[self.delivered..ip].trim()));
+                    if !chunk.is_empty() {
+                        self.emitted_any = true;
+                        out.push(Ok(Event::Ink(chunk)));
+                    }
+                    self.delivered = bound;
+                    break;
+                }
+                None => {
+                    bound = ip; // still streaming in: wait behind the wall
+                    break;
+                }
+            }
+        }
+
+        // Prose sentences, never crossing into the transcription postscript
+        // (or a half-streamed sketch). A stray directive that appears AFTER
+        // prose (a misbehaving model) is stripped here so the writer never
+        // sees ⟦…⟧ glyphs inked.
+        if self.delivered < bound {
+            if let Some(cut) = sentence_cut(&full[..bound], self.delivered) {
                 let chunk = strip_directives(&clean(&full[self.delivered..cut]));
                 if !chunk.is_empty() {
                     self.emitted_any = true;
@@ -147,8 +270,8 @@ impl StreamParser {
         }
 
         if done {
-            if self.delivered < effective {
-                let rest = strip_directives(&clean(full[self.delivered..effective].trim()));
+            if self.delivered < bound {
+                let rest = strip_directives(&clean(full[self.delivered..bound].trim()));
                 if !rest.is_empty() {
                     self.emitted_any = true;
                     out.push(Ok(Event::Ink(rest)));
@@ -773,6 +896,68 @@ mod tests {
         assert_eq!(sse_delta_content(line).as_deref(), Some("Déjà vu — oui"));
         let nl = r#"{"choices":[{"delta":{"content":"line\nbreak"}}]}"#;
         assert_eq!(sse_delta_content(nl).as_deref(), Some("line\nbreak"));
+    }
+
+    #[test]
+    fn decode_ink_lines_and_strokes() {
+        let s = decode_ink("M 0,0 L 100,0 L 100,100 | M 500,500 L 600,600").unwrap();
+        assert_eq!(s.len(), 2);
+        assert_eq!(s[0], vec![(0.0, 0.0), (100.0, 0.0), (100.0, 100.0)]);
+        assert_eq!(s[1], vec![(500.0, 500.0), (600.0, 600.0)]);
+    }
+
+    #[test]
+    fn decode_ink_curves_clamps_and_garbage() {
+        // A quadratic flattens into intermediate points ending at its target.
+        let s = decode_ink("M 0,500 Q 500,-300 1000,500").unwrap();
+        assert_eq!(s.len(), 1);
+        assert_eq!(*s[0].last().unwrap(), (1000.0, 500.0));
+        assert!(s[0].len() > 5);
+        // All coordinates clamp into the 0–1000 square (the -300 above).
+        assert!(s[0].iter().all(|&(x, y)| (0.0..=1000.0).contains(&x) && (0.0..=1000.0).contains(&y)));
+        // Garbage and single-point strokes decode to nothing.
+        assert!(decode_ink("a house with a roof").is_none());
+        assert!(decode_ink("M 5,5").is_none());
+    }
+
+    #[test]
+    fn parser_delivers_inline_sketch_between_prose() {
+        let reply = "Here is a house. \u{27e6}ink: M 0,0 L 10,10\u{27e7} Do you like it?";
+        let mut p = StreamParser::new(Vec::new());
+        // Stream it in two halves to cross the directive boundary mid-flight.
+        let cut = reply.char_indices().nth(30).unwrap().0;
+        let mut events = p.advance(&reply[..cut], false);
+        events.extend(p.advance(reply, true));
+        let kinds: Vec<String> = events
+            .iter()
+            .map(|e| match e {
+                Ok(Event::Ink(t)) => format!("ink:{t}"),
+                Ok(Event::Draw(s)) => format!("draw:{}", s.len()),
+                other => format!("{other:?}"),
+            })
+            .collect();
+        assert_eq!(
+            kinds,
+            vec!["ink:Here is a house.", "draw:1", "ink:Do you like it?"],
+        );
+    }
+
+    #[test]
+    fn parser_leading_sketch_not_mistaken_for_conjuring() {
+        let reply = "\u{27e6}ink: M 0,0 L 10,10 L 20,0\u{27e7} A gift.";
+        let mut p = StreamParser::new(Vec::new());
+        let events = p.advance(reply, true);
+        assert!(matches!(events[0], Ok(Event::Draw(_))), "got {events:?}");
+        assert!(matches!(events[1], Ok(Event::Ink(ref t)) if t == "A gift."));
+    }
+
+    #[test]
+    fn parser_swallows_unclosed_sketch_at_end() {
+        let reply = "One moment. \u{27e6}ink: M 0,0 L 10";
+        let mut p = StreamParser::new(Vec::new());
+        let events = p.advance(reply, true);
+        assert_eq!(events.len(), 1, "got {events:?}");
+        assert!(matches!(events[0], Ok(Event::Ink(ref t)) if t == "One moment."));
     }
 
     #[test]
