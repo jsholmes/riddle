@@ -43,6 +43,10 @@ const ORACLE_PATIENCE: Duration = Duration::from_secs(120);
 const BLOT_PATIENCE: Duration = Duration::from_secs(4);
 const REPLY_PX: f32 = 96.0;
 const MARGIN_X: i32 = 120;
+/// Where Tom's banter sits during a game: a strip near the page bottom,
+/// clear of most boards. It is erased stroke-by-stroke (not rect-faded)
+/// when the writer next moves, so a board crossing it survives.
+const GAME_TEXT_Y: i32 = SCREEN_H as i32 - 430;
 
 const USAGE: &str = "\
 riddle — the diary of Tom Riddle
@@ -53,6 +57,12 @@ usage:
   riddle --oracle-test [PNG]  run one oracle turn against PNG (default
                               /tmp/riddle-page.png) and print the streamed
                               reply; verifies key + endpoint + model
+  riddle --draw-test [REPLY]  render a canned (or given) reply — prose and
+                              ⟦ink:…⟧ sketches — through the real reply
+                              pipeline to /tmp/riddle-draw-test.png
+  riddle --draw-test game     simulate a scripted tic-tac-toe exchange
+                              (board, moves, banter that erases between
+                              turns) to /tmp/riddle-draw-test-game-*.png
   riddle --version            print the version
 
 configuration lives in oracle.env next to the binary — see
@@ -64,7 +74,9 @@ type OracleRx = mpsc::Receiver<Result<Event, String>>;
 enum State {
     Listening { last_pen: Option<Instant> },
     Drinking { stage: u32, next: Instant, region: BBox, rx: OracleRx },
-    Thinking { rx: OracleRx, pulse: Instant, blot_on: bool, since: Instant },
+    /// `quiet`: a game turn — the page holds the board, so no thinking blot
+    /// is ever stamped (its erase square would nick whatever it covered).
+    Thinking { rx: OracleRx, pulse: Instant, blot_on: bool, since: Instant, quiet: bool },
     Replying { plan: WritePlan, next: Instant, rx: Option<OracleRx> },
     Lingering { until: Instant, region: BBox },
     FadingReply { stage: u32, next: Instant, region: BBox },
@@ -90,6 +102,9 @@ struct ConjurePlan {
 
 struct WritePlan {
     strokes: Vec<Vec<(i32, i32)>>,
+    /// is_prose[i]: stroke i is lettering. In game mode lettering is erased
+    /// when the writer next moves, while drawing strokes (the moves) stay.
+    is_prose: Vec<bool>,
     stroke_i: usize,
     point_i: usize,
     region: BBox,
@@ -111,6 +126,9 @@ fn main() {
         // through the real parse→plan→replay pipeline onto an offscreen
         // page and write PNG snapshots. No device, no display, no oracle.
         Some("--draw-test") => {
+            if args.get(2).map(String::as_str) == Some("game") {
+                std::process::exit(draw_test_game());
+            }
             let reply = args.get(2).map(String::as_str).unwrap_or(
                 "Here is a house. \u{27e6}ink: M 200,800 L 200,450 L 500,250 L 800,450 L 800,800 L 200,800 | M 500,800 L 500,600 L 620,600 L 620,800\u{27e7} Do you like it?",
             );
@@ -171,6 +189,15 @@ fn oracle_test(png: &str) -> i32 {
                 println!("[would sketch: {} strokes, {} points]", polys.len(), pts);
                 got.push_str("(sketch)");
             }
+            Ok(Ok(Event::DrawPage(polys))) => {
+                let pts: usize = polys.iter().map(|p| p.len()).sum();
+                println!("[would draw on the page: {} strokes, {} points]", polys.len(), pts);
+                got.push_str("(sketch)");
+            }
+            Ok(Ok(Event::Game(on))) => {
+                println!("[game {}]", if on { "begins" } else { "ends" });
+                got.push_str("(game)");
+            }
             Ok(Ok(Event::Transcript(t))) => eprintln!("\n[transcript] {t}"),
             Ok(Err(e)) => {
                 eprintln!("\noracle error: {e}");
@@ -229,33 +256,20 @@ fn draw_test(reply: &str) -> i32 {
                 append_drawing(&mut plan, &polys);
                 started = true;
             }
+            Ok(Event::DrawPage(polys)) => {
+                append_drawing_page(&mut plan, &polys);
+                started = true;
+            }
+            Ok(Event::Game(on)) => {
+                eprintln!("draw-test: game {}", if on { "begins" } else { "ends" });
+            }
             Ok(Event::Show(_)) | Ok(Event::Transcript(_)) => {}
             Err(e) => eprintln!("draw-test: event error: {e}"),
         }
     }
 
     let dump = |buf: &[u8], name: &str| {
-        let path = format!("/tmp/riddle-draw-test{name}.png");
-        let mut gray = vec![0u8; w * h];
-        for y in 0..h {
-            for x in 0..w {
-                gray[y * w + x] = buf[y * stride + x * 4 + 2]; // R of B,G,R,FF
-            }
-        }
-        let file = match std::fs::File::create(&path) {
-            Ok(f) => f,
-            Err(e) => {
-                eprintln!("draw-test: {path}: {e}");
-                return;
-            }
-        };
-        let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
-        enc.set_color(png::ColorType::Grayscale);
-        enc.set_depth(png::BitDepth::Eight);
-        match enc.write_header().and_then(|mut wr| wr.write_image_data(&gray)) {
-            Ok(()) => eprintln!("draw-test: wrote {path}"),
-            Err(e) => eprintln!("draw-test: {path}: {e}"),
-        }
+        dump_gray_png(buf, w, h, stride, &format!("/tmp/riddle-draw-test{name}.png"));
     };
 
     let total_points: usize = plan.strokes.iter().map(|s| s.len()).sum();
@@ -285,6 +299,134 @@ fn draw_test(reply: &str) -> i32 {
         plan.region.rect()
     );
     if total_points > 0 { 0 } else { 1 }
+}
+
+/// Write an RGB32 page buffer as a grayscale PNG (dev harnesses only).
+fn dump_gray_png(buf: &[u8], w: usize, h: usize, stride: usize, path: &str) {
+    let mut gray = vec![0u8; w * h];
+    for y in 0..h {
+        for x in 0..w {
+            gray[y * w + x] = buf[y * stride + x * 4 + 2]; // R of B,G,R,FF
+        }
+    }
+    let file = match std::fs::File::create(path) {
+        Ok(f) => f,
+        Err(e) => {
+            eprintln!("draw-test: {path}: {e}");
+            return;
+        }
+    };
+    let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
+    enc.set_color(png::ColorType::Grayscale);
+    enc.set_depth(png::BitDepth::Eight);
+    match enc.write_header().and_then(|mut wr| wr.write_image_data(&gray)) {
+        Ok(()) => eprintln!("draw-test: wrote {path}"),
+        Err(e) => eprintln!("draw-test: {path}: {e}"),
+    }
+}
+
+/// Offscreen multi-turn game simulation: a scripted "writer" draws a grid
+/// and X's straight onto the page, and scripted Tom replies (⟦game⟧,
+/// ⟦ink@page:…⟧ moves, banter, ⟦game over⟧) run through the real
+/// parse→plan→replay path, with the previous turn's banter erased before
+/// each writer move exactly as the game loop does. Writes one PNG per turn
+/// to /tmp/riddle-draw-test-game-turn{N}.png for eyeballing.
+fn draw_test_game() -> i32 {
+    let font = match FontRef::try_from_slice(FONT_TTF) {
+        Ok(f) => f,
+        Err(e) => {
+            eprintln!("draw-test: font: {e}");
+            return 1;
+        }
+    };
+    let (w, h) = (SCREEN_W, SCREEN_H);
+    let stride = w * 4;
+    let mut buf = vec![0u8; stride * h];
+    let mut surf = Surface::new(buf.as_mut_ptr(), buf.len(), w, h, stride, surface::PixFmt::Rgb32);
+    surf.fill_rect(0, 0, w, h, WHITE);
+
+    // The writer's hand: a 3x3 grid (300px cells) centered on the page.
+    let cell = |cx: i32, cy: i32| (510 + 300 * cx, 780 + 300 * cy);
+    for i in 1..3i32 {
+        surf.brush_line(360 + 300 * i, 630, 360 + 300 * i, 1530, 3, BLACK);
+        surf.brush_line(360, 630 + 300 * i, 1260, 630 + 300 * i, 3, BLACK);
+    }
+
+    // The writer plays X down the right column; Tom answers with page-
+    // anchored O's (cell centers in thousandths: page center = 500,500),
+    // then concedes. Directive coordinates map x/1620, y/2160 → 0–1000.
+    let turns: [((i32, i32), &str); 3] = [
+        (
+            (2, 0),
+            "\u{27e6}game\u{27e7} A challenge — very well, the first move was yours. \
+             \u{27e6}ink@page: M 552,500 Q 552,539 500,539 Q 448,539 448,500 Q 448,461 500,461 Q 552,461 552,500\u{27e7} \
+             The center suits me.",
+        ),
+        (
+            (2, 1),
+            "\u{27e6}ink@page: M 367,361 Q 367,400 315,400 Q 263,400 263,361 Q 263,322 315,322 Q 367,322 367,361\u{27e7} \
+             You play with purpose.",
+        ),
+        ((2, 2), "Three in a line — the game is yours. \u{27e6}game over\u{27e7}"),
+    ];
+
+    let mut banter: Vec<Vec<(i32, i32)>> = Vec::new();
+    let mut errors = 0usize;
+    for (i, ((cx, cy), reply)) in turns.iter().enumerate() {
+        // The writer marks an X…
+        let (x, y) = cell(*cx, *cy);
+        surf.brush_line(x - 80, y - 80, x + 80, y + 80, 3, BLACK);
+        surf.brush_line(x + 80, y - 80, x - 80, y + 80, 3, BLACK);
+        // …the diary takes back Tom's previous banter (the commit step)…
+        erase_strokes(&mut surf, &mut banter);
+        // …and Tom replies through the real parser, streamed in slices.
+        let mut parser = oracle::StreamParser::new(Vec::new());
+        let mut events = Vec::new();
+        let mut fed = String::new();
+        for (j, ch) in reply.chars().enumerate() {
+            fed.push(ch);
+            if j % 7 == 0 {
+                events.extend(parser.advance(&fed, false));
+            }
+        }
+        events.extend(parser.advance(reply, true));
+
+        let mut plan = empty_plan_at(GAME_TEXT_Y);
+        for ev in events {
+            match ev {
+                Ok(Event::Ink(t)) => append_reply(&font, &mut plan, &t),
+                Ok(Event::DrawPage(polys)) => append_drawing_page(&mut plan, &polys),
+                Ok(Event::Draw(polys)) => append_drawing(&mut plan, &polys),
+                Ok(Event::Game(on)) => {
+                    eprintln!("draw-test: game {}", if on { "begins" } else { "ends" })
+                }
+                Ok(Event::Show(_)) | Ok(Event::Transcript(_)) => {}
+                Err(e) => {
+                    eprintln!("draw-test: event error: {e}");
+                    errors += 1;
+                }
+            }
+        }
+        for stroke in &plan.strokes {
+            for (k, &(sx, sy)) in stroke.iter().enumerate() {
+                if k > 0 {
+                    let (px, py) = stroke[k - 1];
+                    surf.brush_line(px, py, sx, sy, 2, BLACK);
+                } else {
+                    surf.stamp(sx, sy, 2, BLACK);
+                }
+            }
+        }
+        banter = plan
+            .strokes
+            .iter()
+            .zip(&plan.is_prose)
+            .filter(|&(_, &p)| p)
+            .map(|(s, _)| s.clone())
+            .collect();
+        dump_gray_png(&buf, w, h, stride, &format!("/tmp/riddle-draw-test-game-turn{}.png", i + 1));
+    }
+    if errors == 0 { 0 } else { 1 }
 }
 
 /// What the diary sends alongside the page: its memory of recent turns and
@@ -371,6 +513,19 @@ fn run() -> std::io::Result<()> {
     // Where this turn's ink lived (the writer's words, then the reply too):
     // the end-of-turn ghost-removal flash covers this instead of the panel.
     let mut turn_region = BBox::empty();
+    // Drawn-game mode (⟦game⟧ … ⟦game over⟧). While on, the diary stops
+    // drinking: the board persists and each commit sends the WHOLE page.
+    let mut game_on = false;
+    // ⟦game over⟧ arrived this turn: when the farewell finishes, the diary
+    // drinks the entire page — board, marks and all.
+    let mut game_ending = false;
+    // Tom's banter strokes from the last game reply, erased (stroke by
+    // stroke, so the board underneath survives) when the writer next moves.
+    let mut game_banter: Vec<Vec<(i32, i32)>> = Vec::new();
+    // Whether this turn's writer ink was drunk. If ⟦game⟧ arrives after a
+    // drink (writer proposed and drew the board in one breath), the strokes
+    // in turn_strokes are re-inked so the board comes back.
+    let mut drank_this_turn = false;
     // Raw stylus contact, tracked in every state (the guide dismisses on it).
     // `stylus_on` is the level; `stylus_tapped` latches any contact seen this
     // loop iteration, so a tap that starts AND ends within one drain still
@@ -542,7 +697,7 @@ fn run() -> std::io::Result<()> {
                         // commit (and no phantom "?" from erased strokes).
                         user_ink.clear();
                         State::Listening { last_pen: None }
-                    } else if help::looks_like_question_mark(user_ink.stroke_list()) {
+                    } else if !game_on && help::looks_like_question_mark(user_ink.stroke_list()) {
                         // Absorb the "?" and open the guide instead of asking.
                         let (qx, qy, qw, qh) = user_ink.bbox.rect();
                         surf.fill_rect(qx as usize, qy as usize, qw as usize, qh as usize, WHITE);
@@ -559,6 +714,46 @@ fn run() -> std::io::Result<()> {
                         let y = (user_ink.bbox.y1 + 90).min(SCREEN_H as i32 - 400);
                         let plan = plan_reply(&font, &oracle_excuse("no oracle"), Some(y));
                         State::Replying { plan, next: Instant::now(), rx: None }
+                    } else if game_on {
+                        // A move in a drawn game: nothing is drunk — the
+                        // board must persist. Tom's previous banter is
+                        // erased, then the WHOLE page goes to the oracle so
+                        // it sees the board exactly as the writer does.
+                        let erased = erase_strokes(&mut surf, &mut game_banter);
+                        if !erased.is_empty() {
+                            let (x, y, w, h) = erased.rect();
+                            disp.update(x, y, w, h, false);
+                        }
+                        if let Err(e) =
+                            ink::region_to_png(&surf, 0, 0, SCREEN_W, SCREEN_H, PNG_PATH)
+                        {
+                            eprintln!("riddle: rasterize failed: {e}");
+                        }
+                        turn_id = std::time::SystemTime::now()
+                            .duration_since(std::time::UNIX_EPOCH)
+                            .map(|d| d.as_secs())
+                            .unwrap_or(0);
+                        turn_strokes = user_ink.stroke_list().to_vec();
+                        turn_reply.clear();
+                        turn_transcript = None;
+                        turn_failed = false;
+                        drank_this_turn = false;
+                        turn_region = BBox::empty();
+                        let (tx, rx) = mpsc::channel();
+                        if let Some(ref o) = oracle {
+                            o.ask(PNG_PATH, &build_ctx(&store), tx);
+                        }
+                        if std::env::var_os("RIDDLE_KEEP_PAGE").is_none() {
+                            let _ = std::fs::remove_file(PNG_PATH);
+                        }
+                        user_ink.clear();
+                        State::Thinking {
+                            rx,
+                            pulse: Instant::now(),
+                            blot_on: false,
+                            since: Instant::now(),
+                            quiet: true,
+                        }
                     } else {
                         if let Err(e) = user_ink.to_png(&surf, PNG_PATH) {
                             eprintln!("riddle: rasterize failed: {e}");
@@ -586,6 +781,7 @@ fn run() -> std::io::Result<()> {
                         }
                         let region = user_ink.bbox;
                         turn_region = region;
+                        drank_this_turn = true;
                         State::Drinking { stage: 0, next: Instant::now(), region, rx }
                     }
                 }
@@ -600,7 +796,13 @@ fn run() -> std::io::Result<()> {
                     disp.update(x, y, w, h, true);
                     if stage + 1 >= STAGES {
                         user_ink.clear();
-                        State::Thinking { rx, pulse: Instant::now(), blot_on: false, since: Instant::now() }
+                        State::Thinking {
+                            rx,
+                            pulse: Instant::now(),
+                            blot_on: false,
+                            since: Instant::now(),
+                            quiet: false,
+                        }
                     } else {
                         State::Drinking { stage: stage + 1, next: Instant::now() + Duration::from_millis(70), region, rx }
                     }
@@ -609,10 +811,15 @@ fn run() -> std::io::Result<()> {
                 }
             }
 
-            State::Thinking { rx, pulse, blot_on, since } => match rx.try_recv() {
+            State::Thinking { rx, pulse, blot_on, since, quiet } => match rx.try_recv() {
                 Ok(result) => {
-                    surf.fill_rect(SCREEN_W / 2 - 14, SCREEN_H / 2 - 14, 28, 28, WHITE);
-                    disp.update(SCREEN_W as i32 / 2 - 14, SCREEN_H as i32 / 2 - 14, 28, 28, true);
+                    // Never touch the blot square once a game is on: ⟦game⟧
+                    // may have just restored the board across page center,
+                    // and this white patch would nick it.
+                    if !quiet && !game_on {
+                        surf.fill_rect(SCREEN_W / 2 - 14, SCREEN_H / 2 - 14, 28, 28, WHITE);
+                        disp.update(SCREEN_W as i32 / 2 - 14, SCREEN_H as i32 / 2 - 14, 28, 28, true);
+                    }
                     // First streamed event: start writing now; keep the
                     // receiver so the rest of the reply can append itself.
                     match result {
@@ -631,7 +838,8 @@ fn run() -> std::io::Result<()> {
                         }
                         Ok(Event::Ink(text)) => {
                             turn_reply.push_str(&text);
-                            let plan = plan_reply(&font, &text, None);
+                            let y = if game_on { Some(GAME_TEXT_Y) } else { None };
+                            let plan = plan_reply(&font, &text, y);
                             State::Replying { plan, next: Instant::now(), rx: Some(rx) }
                         }
                         Ok(Event::Draw(polys)) => {
@@ -640,16 +848,47 @@ fn run() -> std::io::Result<()> {
                             append_drawing(&mut plan, &polys);
                             State::Replying { plan, next: Instant::now(), rx: Some(rx) }
                         }
+                        Ok(Event::DrawPage(polys)) => {
+                            // The reply opens with a move on the board; any
+                            // banter that follows goes to the game strip.
+                            let mut plan =
+                                if game_on { empty_plan_at(GAME_TEXT_Y) } else { empty_plan() };
+                            append_drawing_page(&mut plan, &polys);
+                            State::Replying { plan, next: Instant::now(), rx: Some(rx) }
+                        }
+                        Ok(Event::Game(on)) => {
+                            eprintln!("riddle: game {}", if on { "begins" } else { "ends" });
+                            if on && !game_on && drank_this_turn && !turn_strokes.is_empty() {
+                                // The proposal and the board were drunk
+                                // together this turn: give the ink back.
+                                let r = restore_strokes(&mut surf, &turn_strokes);
+                                if !r.is_empty() {
+                                    let (x, y, w, h) = r.rect();
+                                    disp.update(x, y, w, h, false);
+                                }
+                            }
+                            if on {
+                                // A (re)start cancels any pending end.
+                                game_ending = false;
+                            } else if game_on {
+                                // Only a game that was on can end; a stray
+                                // ⟦game over⟧ must not drink the page.
+                                game_ending = true;
+                            }
+                            game_on = on;
+                            State::Thinking { rx, pulse, blot_on, since, quiet }
+                        }
                         Ok(Event::Transcript(t)) => {
                             // Transcript with no prose (model skipped the
                             // reply): remember the words, keep waiting.
                             turn_transcript = Some(t);
-                            State::Thinking { rx, pulse, blot_on, since }
+                            State::Thinking { rx, pulse, blot_on, since, quiet }
                         }
                         Err(e) => {
                             eprintln!("riddle: oracle failed: {e}");
                             turn_failed = true;
-                            let plan = plan_reply(&font, &oracle_excuse(&e), None);
+                            let y = if game_on { Some(GAME_TEXT_Y) } else { None };
+                            let plan = plan_reply(&font, &oracle_excuse(&e), y);
                             State::Replying { plan, next: Instant::now(), rx: None }
                         }
                     }
@@ -659,11 +898,16 @@ fn run() -> std::io::Result<()> {
                         // The oracle never answered (stalled stream, dead pi):
                         // stop pulsing and say so instead of thinking forever.
                         eprintln!("riddle: oracle timed out after {}s", ORACLE_PATIENCE.as_secs());
-                        surf.fill_rect(SCREEN_W / 2 - 14, SCREEN_H / 2 - 14, 28, 28, WHITE);
-                        disp.update(SCREEN_W as i32 / 2 - 14, SCREEN_H as i32 / 2 - 14, 28, 28, true);
-                        let plan = plan_reply(&font, &oracle_excuse("timed out"), None);
+                        if !quiet {
+                            surf.fill_rect(SCREEN_W / 2 - 14, SCREEN_H / 2 - 14, 28, 28, WHITE);
+                            disp.update(SCREEN_W as i32 / 2 - 14, SCREEN_H as i32 / 2 - 14, 28, 28, true);
+                        }
+                        let y = if game_on { Some(GAME_TEXT_Y) } else { None };
+                        let plan = plan_reply(&font, &oracle_excuse("timed out"), y);
                         State::Replying { plan, next: Instant::now(), rx: None }
-                    } else if pulse.elapsed() >= Duration::from_millis(600)
+                    } else if !quiet
+                        && !game_on
+                        && pulse.elapsed() >= Duration::from_millis(600)
                         && (blot_on || since.elapsed() >= BLOT_PATIENCE)
                     {
                         let (cx, cy) = (SCREEN_W as i32 / 2, SCREEN_H as i32 / 2);
@@ -677,12 +921,24 @@ fn run() -> std::io::Result<()> {
                         // end-of-turn flash sweeps its patch too.
                         turn_region.add(cx - 14, cy - 14, 0);
                         turn_region.add(cx + 14, cy + 14, 0);
-                        State::Thinking { rx, pulse: Instant::now(), blot_on: !blot_on, since }
+                        State::Thinking { rx, pulse: Instant::now(), blot_on: !blot_on, since, quiet }
                     } else {
-                        State::Thinking { rx, pulse, blot_on, since }
+                        State::Thinking { rx, pulse, blot_on, since, quiet }
                     }
                 }
-                Err(mpsc::TryRecvError::Disconnected) => State::Listening { last_pen: None },
+                Err(mpsc::TryRecvError::Disconnected) => {
+                    if game_ending {
+                        // ⟦game over⟧ with no farewell: drink the page anyway.
+                        game_ending = false;
+                        game_banter = Vec::new();
+                        State::Lingering {
+                            until: Instant::now() + Duration::from_secs(3),
+                            region: full_page(),
+                        }
+                    } else {
+                        State::Listening { last_pen: None }
+                    }
+                }
             },
 
             State::Replying { mut plan, next, mut rx } => {
@@ -709,6 +965,32 @@ fn run() -> std::io::Result<()> {
                             } else {
                                 append_drawing(&mut plan, &polys);
                             }
+                            false
+                        }
+                        Ok(Ok(Event::DrawPage(polys))) => {
+                            // Page-anchored: lands where the model aimed it,
+                            // outside the prose flow — no room check needed.
+                            append_drawing_page(&mut plan, &polys);
+                            false
+                        }
+                        Ok(Ok(Event::Game(on))) => {
+                            eprintln!("riddle: game {}", if on { "begins" } else { "ends" });
+                            if on && !game_on && drank_this_turn && !turn_strokes.is_empty() {
+                                let r = restore_strokes(&mut surf, &turn_strokes);
+                                if !r.is_empty() {
+                                    let (x, y, w, h) = r.rect();
+                                    disp.update(x, y, w, h, false);
+                                }
+                            }
+                            if on {
+                                // A (re)start cancels any pending end.
+                                game_ending = false;
+                            } else if game_on {
+                                // Only a game that was on can end; a stray
+                                // ⟦game over⟧ must not drink the page.
+                                game_ending = true;
+                            }
+                            game_on = on;
                             false
                         }
                         Ok(Ok(Event::Transcript(t))) => {
@@ -757,8 +1039,12 @@ fn run() -> std::io::Result<()> {
                         disp.update(x, y, w, h, true);
                     }
                     if plan.stroke_i >= plan.strokes.len() && rx.is_none() {
-                        // The turn is complete: the diary remembers it.
-                        if !turn_failed && !turn_reply.is_empty() {
+                        // The turn is complete: the diary remembers it —
+                        // except game turns, which would only clutter the
+                        // memory with board after board. (`game_ending`
+                        // covers the final turn, whose ⟦game over⟧ already
+                        // cleared `game_on`: its strokes are one lone move.)
+                        if !turn_failed && !turn_reply.is_empty() && !game_on && !game_ending {
                             if let Some(ref mut s) = store {
                                 s.append(
                                     turn_id,
@@ -769,10 +1055,33 @@ fn run() -> std::io::Result<()> {
                             }
                         }
                         turn_strokes = Vec::new();
-                        let chars: usize = plan.strokes.iter().map(|s| s.len()).sum();
-                        let linger = Duration::from_millis(4000 + (chars as u64) * 2);
-                        let region = plan.region;
-                        State::Lingering { until: Instant::now() + linger.min(Duration::from_secs(20)), region }
+                        if game_on {
+                            // The board stays; only Tom's lettering is kept
+                            // aside, to be erased when the writer next moves.
+                            game_banter = plan
+                                .strokes
+                                .iter()
+                                .zip(&plan.is_prose)
+                                .filter(|&(_, &p)| p)
+                                .map(|(s, _)| s.clone())
+                                .collect();
+                            State::Listening { last_pen: None }
+                        } else if game_ending {
+                            // The game just ended: let the farewell rest,
+                            // then the diary drinks the whole page — board,
+                            // marks, banter and all.
+                            game_ending = false;
+                            game_banter = Vec::new();
+                            State::Lingering {
+                                until: Instant::now() + Duration::from_secs(6),
+                                region: full_page(),
+                            }
+                        } else {
+                            let chars: usize = plan.strokes.iter().map(|s| s.len()).sum();
+                            let linger = Duration::from_millis(4000 + (chars as u64) * 2);
+                            let region = plan.region;
+                            State::Lingering { until: Instant::now() + linger.min(Duration::from_secs(20)), region }
+                        }
                     } else {
                         State::Replying { plan, next: Instant::now() + Duration::from_millis(14), rx }
                     }
@@ -1048,14 +1357,17 @@ fn plan_reply(font: &FontRef, text: &str, y_start: Option<i32>) -> WritePlan {
         y += line_h;
     }
 
-    WritePlan { strokes, stroke_i: 0, point_i: 0, region, next_y: y }
+    let is_prose = vec![true; strokes.len()];
+    WritePlan { strokes, is_prose, stroke_i: 0, point_i: 0, region, next_y: y }
 }
 
-/// Splice a sketch into the write animation: the model's 0–1000 square is
-/// scaled into a box below what's written and resampled to pen-point spacing
-/// so the quill draws it at handwriting pace.
-fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
-    const SIDE: i32 = 760; // the sketch box's edge, in pixels
+/// Resample decoded 0–1000 polylines to pen-point spacing under `map` and
+/// add them to the plan as drawing (non-prose) strokes.
+fn splice_polys(
+    plan: &mut WritePlan,
+    polys: &[Vec<(f32, f32)>],
+    map: impl Fn(f32, f32) -> (i32, i32),
+) {
     const STEP: f32 = 2.5; // spacing between replayed points
     // The decode cap bounds the model's POINTS, but resampling multiplies
     // them: one page-diagonal segment becomes ~1000 replayed points. Cap the
@@ -1063,9 +1375,6 @@ fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
     // not hours.
     const MAX_SPLICED: usize = 60_000;
     let mut total: usize = plan.strokes.iter().map(|s| s.len()).sum();
-    let x0 = (SCREEN_W as i32 - SIDE) / 2;
-    let y0 = (plan.next_y + 40).min(SCREEN_H as i32 - SIDE - 60).max(60);
-    let scale = SIDE as f32 / 1000.0;
     for poly in polys {
         if poly.len() < 2 {
             continue;
@@ -1074,12 +1383,11 @@ fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
             eprintln!("riddle: drawing truncated at {total} points");
             break;
         }
-        let map = |&(px, py): &(f32, f32)| (x0 + (px * scale) as i32, y0 + (py * scale) as i32);
         let mut stroke: Vec<(i32, i32)> = Vec::new();
-        let mut last = map(&poly[0]);
+        let mut last = map(poly[0].0, poly[0].1);
         stroke.push(last);
-        for p in &poly[1..] {
-            let (tx, ty) = map(p);
+        for &(px, py) in &poly[1..] {
+            let (tx, ty) = map(px, py);
             let (dx, dy) = ((tx - last.0) as f32, (ty - last.1) as f32);
             let steps = ((dx * dx + dy * dy).sqrt() / STEP).ceil().max(1.0) as i32;
             for i in 1..=steps {
@@ -1096,21 +1404,96 @@ fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
         for &(x, y) in &stroke {
             plan.region.add(x, y, 5);
         }
+        plan.is_prose.push(false);
         plan.strokes.push(stroke);
     }
+}
+
+/// Splice a sketch into the write animation: the model's 0–1000 square is
+/// scaled into a box below what's written and resampled to pen-point spacing
+/// so the quill draws it at handwriting pace.
+fn append_drawing(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
+    const SIDE: i32 = 760; // the sketch box's edge, in pixels
+    let x0 = (SCREEN_W as i32 - SIDE) / 2;
+    let y0 = (plan.next_y + 40).min(SCREEN_H as i32 - SIDE - 60).max(60);
+    let scale = SIDE as f32 / 1000.0;
+    splice_polys(plan, polys, |px, py| (x0 + (px * scale) as i32, y0 + (py * scale) as i32));
     plan.next_y = y0 + SIDE + 40;
 }
 
-/// A plan with nothing in it yet, opening at the reply's default height —
-/// the starting point when a sketch (not prose) leads the reply.
-fn empty_plan() -> WritePlan {
+/// Splice a page-anchored sketch (⟦ink@page:…⟧): the model's 0–1000 square
+/// maps to the WHOLE visible page — x in thousandths of the width, y of the
+/// height — so a game move lands inside the cell the model saw in the
+/// committed page image. Lives outside the prose flow: next_y is untouched.
+fn append_drawing_page(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
+    let (sx, sy) = (SCREEN_W as f32 / 1000.0, SCREEN_H as f32 / 1000.0);
+    splice_polys(plan, polys, move |px, py| ((px * sx) as i32, (py * sy) as i32));
+}
+
+/// A plan with nothing in it yet, opening at `y` — the starting point when a
+/// drawing (not prose) leads the reply.
+fn empty_plan_at(y: i32) -> WritePlan {
     WritePlan {
         strokes: Vec::new(),
+        is_prose: Vec::new(),
         stroke_i: 0,
         point_i: 0,
         region: BBox::empty(),
-        next_y: (SCREEN_H as i32) / 4,
+        next_y: y,
     }
+}
+
+/// An empty plan at the reply's default height.
+fn empty_plan() -> WritePlan {
+    empty_plan_at((SCREEN_H as i32) / 4)
+}
+
+/// The whole visible page as a region (the game-over drink).
+fn full_page() -> BBox {
+    let mut b = BBox::empty();
+    b.add(0, 0, 0);
+    b.add(SCREEN_W as i32 - 1, SCREEN_H as i32 - 1, 0);
+    b
+}
+
+/// Erase previously-replayed strokes by brushing white back over them —
+/// surgical, so a game board crossing the same area survives where a
+/// rect-fade would not. Radius 4 out-brushes the radius-2 quill. Clears the
+/// stroke list (a second call is a no-op) and returns the touched region.
+fn erase_strokes(surf: &mut Surface, strokes: &mut Vec<Vec<(i32, i32)>>) -> BBox {
+    let mut region = BBox::empty();
+    for stroke in strokes.iter() {
+        for (i, &(x, y)) in stroke.iter().enumerate() {
+            if i > 0 {
+                let (px, py) = stroke[i - 1];
+                surf.brush_line(px, py, x, y, 4, WHITE);
+            } else {
+                surf.stamp(x, y, 4, WHITE);
+            }
+            region.add(x, y, 6);
+        }
+    }
+    strokes.clear();
+    region
+}
+
+/// Re-ink writer strokes that were drunk earlier this turn — the writer
+/// proposed a game and drew the board in the same breath, and ⟦game⟧ means
+/// the diary must give the board back. Returns the touched region.
+fn restore_strokes(surf: &mut Surface, strokes: &[Vec<(i32, i32, i32)>]) -> BBox {
+    let mut region = BBox::empty();
+    for stroke in strokes {
+        for (i, &(x, y, r)) in stroke.iter().enumerate() {
+            if i > 0 {
+                let (px, py, pr) = stroke[i - 1];
+                surf.brush_line(px, py, x, y, r.min(pr + 1), BLACK);
+            } else {
+                surf.stamp(x, y, r, BLACK);
+            }
+            region.add(x, y, r + 2);
+        }
+    }
+    region
 }
 
 /// Splice a streamed continuation chunk into a running write animation.
@@ -1121,13 +1504,14 @@ fn append_reply(font: &FontRef, plan: &mut WritePlan, more: &str) {
     }
     plan.region.add(cont.region.x0, cont.region.y0, 0);
     plan.region.add(cont.region.x1, cont.region.y1, 0);
+    plan.is_prose.extend(cont.is_prose);
     plan.strokes.extend(cont.strokes);
     plan.next_y = cont.next_y;
 }
 
 #[cfg(test)]
 mod splice_tests {
-    use super::{append_drawing, empty_plan};
+    use super::{append_drawing_page, empty_plan};
 
     #[test]
     fn resampled_drawing_is_bounded() {
@@ -1137,7 +1521,7 @@ mod splice_tests {
             .map(|i| (if i % 2 == 0 { 0.0 } else { 1000.0 }, (i % 1000) as f32))
             .collect();
         let mut plan = empty_plan();
-        append_drawing(&mut plan, &[poly]);
+        append_drawing_page(&mut plan, &[poly]);
         let total: usize = plan.strokes.iter().map(|s| s.len()).sum();
         assert!(total <= 60_000, "resample must stay bounded, got {total}");
         assert!(total >= 2, "the drawing should not vanish entirely");
