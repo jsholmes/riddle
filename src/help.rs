@@ -108,6 +108,9 @@ const BODY_TAKEOVER: &[&str] = &[
     "Tap five fingers at once to leave.",
     "The power button sleeps the diary.",
     "",
+    "Challenge Tom to a game in ink;",
+    "a large ? puts a game away at once.",
+    "",
     "A large ? summons this guide.",
 ];
 /// Windowed mode: AppLoad owns the window and xochitl owns the button.
@@ -121,6 +124,9 @@ const BODY_WINDOWED: &[&str] = &[
     "",
     "Flip the marker to erase.",
     "Close the diary from AppLoad.",
+    "",
+    "Challenge Tom to a game in ink;",
+    "a large ? puts a game away at once.",
     "",
     "A large ? summons this guide.",
 ];

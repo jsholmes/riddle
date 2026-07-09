@@ -292,6 +292,11 @@ fn draw_test(reply: &str) -> i32 {
         }
     }
     dump(&buf, "");
+    // Also the page as a game-turn oracle would see it: ruled for aiming.
+    match ink::page_to_png_ruled(&surf, "/tmp/riddle-draw-test-oracle.png") {
+        Ok(()) => eprintln!("draw-test: wrote /tmp/riddle-draw-test-oracle.png (ruled oracle view)"),
+        Err(e) => eprintln!("draw-test: ruled view: {e}"),
+    }
     eprintln!(
         "draw-test: {} strokes, {} points, region {:?}",
         plan.strokes.len(),
@@ -708,6 +713,18 @@ fn run() -> std::io::Result<()> {
                         disp.update(px, py, pw, ph, false);
                         eprintln!("riddle: guide shown");
                         State::Help { panel: Some(panel), until: Instant::now() + Duration::from_secs(45) }
+                    } else if game_on && help::looks_like_question_mark(user_ink.stroke_list()) {
+                        // The big "?" during a game puts the game away AT
+                        // ONCE — local, instant, no waiting on a slow spirit.
+                        let (qx, qy, qw, qh) = user_ink.bbox.rect();
+                        surf.fill_rect(qx as usize, qy as usize, qw as usize, qh as usize, WHITE);
+                        disp.update(qx, qy, qw, qh, false);
+                        user_ink.clear();
+                        game_on = false;
+                        game_ending = false;
+                        game_banter = Vec::new();
+                        eprintln!("riddle: game ends (writer's ? gesture)");
+                        State::Lingering { until: Instant::now(), region: full_page() }
                     } else if oracle.is_none() {
                         // No spirit at all: don't eat ink that nothing will
                         // answer — leave the writing and put the reason below.
@@ -724,9 +741,7 @@ fn run() -> std::io::Result<()> {
                             let (x, y, w, h) = erased.rect();
                             disp.update(x, y, w, h, false);
                         }
-                        if let Err(e) =
-                            ink::region_to_png(&surf, 0, 0, SCREEN_W, SCREEN_H, PNG_PATH)
-                        {
+                        if let Err(e) = ink::page_to_png_ruled(&surf, PNG_PATH) {
                             eprintln!("riddle: rasterize failed: {e}");
                         }
                         turn_id = std::time::SystemTime::now()
@@ -881,6 +896,11 @@ fn run() -> std::io::Result<()> {
                         Ok(Event::Transcript(t)) => {
                             // Transcript with no prose (model skipped the
                             // reply): remember the words, keep waiting.
+                            if game_on && !game_ending && wants_to_stop(&t) {
+                                eprintln!("riddle: game ends (writer asked; transcript failsafe)");
+                                game_on = false;
+                                game_ending = true;
+                            }
                             turn_transcript = Some(t);
                             State::Thinking { rx, pulse, blot_on, since, quiet }
                         }
@@ -994,6 +1014,11 @@ fn run() -> std::io::Result<()> {
                             false
                         }
                         Ok(Ok(Event::Transcript(t))) => {
+                            if game_on && !game_ending && wants_to_stop(&t) {
+                                eprintln!("riddle: game ends (writer asked; transcript failsafe)");
+                                game_on = false;
+                                game_ending = true;
+                            }
                             turn_transcript = Some(t);
                             false // the disconnect is still coming
                         }
@@ -1430,6 +1455,44 @@ fn append_drawing_page(plan: &mut WritePlan, polys: &[Vec<(f32, f32)>]) {
     splice_polys(plan, polys, move |px, py| ((px * sx) as i32, (py * sy) as i32));
 }
 
+/// Does the writer's transcribed page read as "stop the game"? A local
+/// failsafe behind the model's own ⟦game over⟧: the writer's wish to stop
+/// must never hang on the spirit's cooperation (or a slow turn). Phrases
+/// match on word boundaries, and a nearby negation ("I do NOT want to stop
+/// playing!") keeps the game alive — a missed stop still has the writer's
+/// "?" gesture; a false stop drinks their board.
+fn wants_to_stop(transcript: &str) -> bool {
+    const PHRASES: [&str; 12] = [
+        "stop playing", "stop the game", "stop this game", "quit the game",
+        "let's stop", "lets stop", "done playing", "no more game",
+        "no more games", "enough of this game", "end the game", "end this game",
+    ];
+    const NEGATIONS: [&str; 5] = ["don't", "dont", "do not", "never", "not"];
+    let t = transcript.to_lowercase();
+    for p in PHRASES {
+        let mut from = 0;
+        while let Some(rel) = t[from..].find(p) {
+            let i = from + rel;
+            let end = i + p.len();
+            let boundary = |b: Option<&u8>| !b.is_some_and(|c| c.is_ascii_alphanumeric());
+            if boundary(t.as_bytes().get(i.wrapping_sub(1)).filter(|_| i > 0))
+                && boundary(t.as_bytes().get(end))
+            {
+                // Look a few words back for a negation.
+                let mut lead = i.saturating_sub(32);
+                while !t.is_char_boundary(lead) {
+                    lead += 1;
+                }
+                if !NEGATIONS.iter().any(|n| t[lead..i].contains(n)) {
+                    return true;
+                }
+            }
+            from = end;
+        }
+    }
+    false
+}
+
 /// A plan with nothing in it yet, opening at `y` — the starting point when a
 /// drawing (not prose) leads the reply.
 fn empty_plan_at(y: i32) -> WritePlan {
@@ -1525,5 +1588,30 @@ mod splice_tests {
         let total: usize = plan.strokes.iter().map(|s| s.len()).sum();
         assert!(total <= 60_000, "resample must stay bounded, got {total}");
         assert!(total >= 2, "the drawing should not vanish entirely");
+    }
+}
+
+#[cfg(test)]
+mod stop_tests {
+    use super::wants_to_stop;
+
+    #[test]
+    fn stop_phrases_end_games_and_chatter_does_not() {
+        assert!(wants_to_stop("Let's stop playig this."));
+        assert!(wants_to_stop("Can we STOP THE GAME now"));
+        assert!(wants_to_stop("I'm done playing, Tom."));
+        assert!(wants_to_stop("please, no more games"));
+        assert!(!wants_to_stop("Don't stop now, your move!"));
+        assert!(!wants_to_stop("I will play the top corner"));
+    }
+
+    #[test]
+    fn enthusiasm_and_negation_do_not_end_the_game() {
+        // A wish to KEEP playing must never drink the board.
+        assert!(!wants_to_stop("I don't want to stop playing!"));
+        assert!(!wants_to_stop("I never want to stop playing"));
+        assert!(!wants_to_stop("do not stop the game"));
+        // Word boundaries: gameplay banter around the words is not a plea.
+        assert!(!wants_to_stop("my unstoppable gameplan"));
     }
 }
