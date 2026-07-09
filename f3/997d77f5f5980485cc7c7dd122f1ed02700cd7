@@ -1,0 +1,21 @@
+HANDOFF.md
+  s_00d291913afd40::t_f07ad411b7838e 144-150
+  s_00d291913afd40::t_4837c45e7b1d67 1-143,164-238
+  s_00d291913afd40::t_374d622860ed52 151-163
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "f3997d77f5f5980485cc7c7dd122f1ed02700cd7",
+  "prompts": {},
+  "sessions": {
+    "s_00d291913afd40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ee681fa-0717-4b0b-8767-bf7777bfe149",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
