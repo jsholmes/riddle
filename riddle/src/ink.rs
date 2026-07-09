@@ -132,6 +132,74 @@ pub fn region_to_png(
     y1: usize,
     path: &str,
 ) -> std::io::Result<()> {
+    let (gray, w, h) = downsample(surf, x0, y0, x1, y1)?;
+    write_gray_png(&gray, w, h, path)
+}
+
+/// The whole page for a game turn: downsampled as usual, then overlaid with
+/// a faint measuring grid — a line every 100 thousandths, the hundreds digit
+/// lettered along the top (x) and left (y) edges. The ruler exists only in
+/// the oracle's copy, never on the panel: it lets the model READ its move's
+/// coordinates off the page instead of estimating them.
+pub fn page_to_png_ruled(surf: &Surface, path: &str) -> std::io::Result<()> {
+    let (mut gray, w, h) = downsample(surf, 0, 0, surf.w, surf.h)?;
+    for k in 1..10usize {
+        let gx = k * w / 10;
+        for y in 0..h {
+            let p = &mut gray[y * w + gx];
+            *p = (*p).min(208); // faint line; board ink stays darker
+        }
+        let gy = k * h / 10;
+        for x in 0..w {
+            let p = &mut gray[gy * w + x];
+            *p = (*p).min(208);
+        }
+        draw_digit(&mut gray, w, h, gx + 3, 3, k as u8, 2, 96);
+        draw_digit(&mut gray, w, h, 3, gy + 3, k as u8, 2, 96);
+    }
+    write_gray_png(&gray, w, h, path)
+}
+
+/// 3×5 bitmap digits for the ruler labels (rows of 3 bits, MSB left).
+const DIGITS: [[u8; 5]; 10] = [
+    [0b111, 0b101, 0b101, 0b101, 0b111],
+    [0b010, 0b110, 0b010, 0b010, 0b111],
+    [0b111, 0b001, 0b111, 0b100, 0b111],
+    [0b111, 0b001, 0b111, 0b001, 0b111],
+    [0b101, 0b101, 0b111, 0b001, 0b001],
+    [0b111, 0b100, 0b111, 0b001, 0b111],
+    [0b111, 0b100, 0b111, 0b101, 0b111],
+    [0b111, 0b001, 0b010, 0b010, 0b010],
+    [0b111, 0b101, 0b111, 0b101, 0b111],
+    [0b111, 0b101, 0b111, 0b001, 0b111],
+];
+
+fn draw_digit(gray: &mut [u8], w: usize, h: usize, x0: usize, y0: usize, d: u8, scale: usize, shade: u8) {
+    let glyph = &DIGITS[(d % 10) as usize];
+    for (row, bits) in glyph.iter().enumerate() {
+        for col in 0..3usize {
+            if bits & (0b100 >> col) == 0 {
+                continue;
+            }
+            for dy in 0..scale {
+                for dx in 0..scale {
+                    let (x, y) = (x0 + col * scale + dx, y0 + row * scale + dy);
+                    if x < w && y < h {
+                        gray[y * w + x] = shade;
+                    }
+                }
+            }
+        }
+    }
+}
+
+fn downsample(
+    surf: &Surface,
+    x0: usize,
+    y0: usize,
+    x1: usize,
+    y1: usize,
+) -> std::io::Result<(Vec<u8>, usize, usize)> {
     let (x1, y1) = (x1.min(surf.w), y1.min(surf.h));
     if x1 <= x0 || y1 <= y0 {
         return Err(std::io::Error::other("empty region"));
@@ -151,7 +219,10 @@ pub fn region_to_png(
             gray[oy * w + ox] = (acc / (f * f) as u32) as u8;
         }
     }
+    Ok((gray, w, h))
+}
 
+fn write_gray_png(gray: &[u8], w: usize, h: usize, path: &str) -> std::io::Result<()> {
     let file = std::fs::File::create(path)?;
     let mut enc = png::Encoder::new(std::io::BufWriter::new(file), w as u32, h as u32);
     enc.set_color(png::ColorType::Grayscale);
@@ -160,7 +231,7 @@ pub fn region_to_png(
     enc.set_compression(png::Compression::Fast);
     let mut writer = enc.write_header().map_err(std::io::Error::other)?;
     writer
-        .write_image_data(&gray)
+        .write_image_data(gray)
         .map_err(std::io::Error::other)?;
     Ok(())
 }
