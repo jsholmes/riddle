@@ -1,0 +1,25 @@
+riddle/src/main.rs
+  s_0e8f9281378060::t_65b6665ac5dec8 570,573
+  s_0e8f9281378060::t_8b58222d921c7a 567-569,574-575
+riddle/src/power.rs
+  s_0e8f9281378060::t_61e8ce3a6863c8 146
+  s_0e8f9281378060::t_3abf738755e9bf 70-73,78-79,86,90-123,125-145,148-154,156
+  s_0e8f9281378060::t_2522536a8ca819 81-85,87-89,124,147,155
+  s_0e8f9281378060::t_84427137afab9d 80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "961a545e00d2f50a6e391eba8c3e7d87a5b9d19b",
+  "prompts": {},
+  "sessions": {
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
