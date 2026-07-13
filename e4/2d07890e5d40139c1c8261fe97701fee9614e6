@@ -1,0 +1,59 @@
+src/main.rs
+  s_0e8f9281378060::t_65b6665ac5dec8 570,573
+  s_0e8f9281378060::t_8b58222d921c7a 567-569,574-575
+  s_0e8f9281378060::t_7c8451be1b2ca2 1441-1444,1446-1451,1453-1474,1573,1597
+  s_e943be9326de3f::t_1ce585cc4393d2 1378-1379,1389-1391,1406-1407
+  s_00d291913afd40::t_b93317614d57ac 1562-1572,1574
+  s_0e8f9281378060::t_1ecf9ec00e71b5 1378-1383,1380-1383,1388-1391,1405-1409
+  s_0e8f9281378060::t_f284307e16528c 921,921-924
+  s_e943be9326de3f::t_df77fbf53f313e 922-924,1388,1405,1408-1409
+  s_0e8f9281378060::t_92098d2caabb16 1556-1561,1557-1574
+  s_0e8f9281378060::t_bbdcd62f09db36 1556
+  s_0e8f9281378060::t_6f4c075cf60db3 986-991,994
+  s_0e8f9281378060::t_946bf7c768de59 812-815
+  s_0e8f9281378060::t_c992e459723766 866-871,874
+  s_0e8f9281378060::t_03d7b9c2a48450 910
+  s_0e8f9281378060::t_14a185873ef674 1049-1053
+  s_0e8f9281378060::t_a6638320f1b542 1584,1588-1596
+src/power.rs
+  s_0e8f9281378060::t_61e8ce3a6863c8 150
+  s_0e8f9281378060::t_3abf738755e9bf 74-77,82-83,90,94-127,129-149,152-158,160
+  s_0e8f9281378060::t_2522536a8ca819 85-89,91-93,128,151,159
+  s_0e8f9281378060::t_84427137afab9d 84
+src/oracle.rs
+  s_0e8f9281378060::t_5a0a225d0e0685 331-338
+  s_0e8f9281378060::t_054e7aefa8f431 1053-1068
+  s_0e8f9281378060::t_51a0a012a0a3d6 1052
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e42d07890e5d40139c1c8261fe97701fee9614e6",
+  "prompts": {},
+  "sessions": {
+    "s_00d291913afd40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ee681fa-0717-4b0b-8767-bf7777bfe149",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_e943be9326de3f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acbf4c8d-b63f-42ed-a684-e26f535b4f34",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
