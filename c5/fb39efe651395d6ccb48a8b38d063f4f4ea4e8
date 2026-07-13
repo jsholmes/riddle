@@ -1,0 +1,41 @@
+src/main.rs
+  s_0e8f9281378060::t_7c8451be1b2ca2 1529
+  s_e943be9326de3f::t_1ce585cc4393d2 1361-1362,1372-1374,1389-1390
+  s_00d291913afd40::t_b93317614d57ac 1518-1528,1530
+  s_0e8f9281378060::t_1ecf9ec00e71b5 1363-1366
+  s_0e8f9281378060::t_f284307e16528c 911
+  s_e943be9326de3f::t_df77fbf53f313e 912-914,1371,1388,1391-1392
+  s_0e8f9281378060::t_92098d2caabb16 1512-1517
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "c5fb39efe651395d6ccb48a8b38d063f4f4ea4e8",
+  "prompts": {},
+  "sessions": {
+    "s_00d291913afd40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ee681fa-0717-4b0b-8767-bf7777bfe149",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_e943be9326de3f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "acbf4c8d-b63f-42ed-a684-e26f535b4f34",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
