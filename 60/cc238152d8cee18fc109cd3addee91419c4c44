@@ -1,0 +1,28 @@
+src/oracle.rs
+  s_0e8f9281378060::t_5a0a225d0e0685 331-338
+  s_0e8f9281378060::t_054e7aefa8f431 1053-1068
+  s_0e8f9281378060::t_51a0a012a0a3d6 1052
+src/main.rs
+  s_0e8f9281378060::t_6f4c075cf60db3 986-991,994
+  s_0e8f9281378060::t_d4d1eb59261ec3 705
+  s_0e8f9281378060::t_946bf7c768de59 812-815
+  s_0e8f9281378060::t_c992e459723766 866-871,874
+  s_0e8f9281378060::t_03d7b9c2a48450 910
+  s_0e8f9281378060::t_14a185873ef674 1049-1053
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "60cc238152d8cee18fc109cd3addee91419c4c44",
+  "prompts": {},
+  "sessions": {
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
