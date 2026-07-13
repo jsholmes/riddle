@@ -1,0 +1,2436 @@
+src/main.rs
+  s_0e8f9281378060::t_1ecf9ec00e71b5 1361-1366,1371-1374,1388-1392
+  s_0e8f9281378060::t_f284307e16528c 911-914
+  s_0e8f9281378060::t_92098d2caabb16 1513-1530
+  s_0e8f9281378060::t_bbdcd62f09db36 1512
+riddle/target/.rustc_info.json
+  s_0e8f9281378060::t_282bd15c967134 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph_rasterizer-5c5ab26ccea6c187/invoked.timestamp
+  s_00d291913afd40::t_f0fbfc7ecfcf40 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph_rasterizer-5c5ab26ccea6c187/lib-ab_glyph_rasterizer
+  s_00d291913afd40::t_b69635d5eed582 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/adler2-54d0a24fb49d9b83/invoked.timestamp
+  s_00d291913afd40::t_cc1540e30f7c32 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/adler2-54d0a24fb49d9b83/lib-adler2.json
+  s_00d291913afd40::t_77d23d3f0ae3a3 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/base64-ed93a1357ce36faa/lib-base64
+  s_0e8f9281378060::t_580be998d0cc4b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/base64-ed93a1357ce36faa/lib-base64.json
+  s_00d291913afd40::t_0b0fc9fbd5a18f 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/bitflags-5f6ff30d0c5dc320/invoked.timestamp
+  s_00d291913afd40::t_051761665d7d81 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/bitflags-5f6ff30d0c5dc320/lib-bitflags
+  s_00d291913afd40::t_0a449b2c4899b9 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/bitflags-5f6ff30d0c5dc320/lib-bitflags.json
+  s_0e8f9281378060::t_3c62694e41efc3 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/cfg-if-3e292547cfa4b25a/lib-cfg_if
+  s_00d291913afd40::t_5ab7849121c6ff 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/cfg-if-3e292547cfa4b25a/lib-cfg_if.json
+  s_00d291913afd40::t_3978690b02bff3 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/fdeflate-6a3219ad0bd7c9e9/invoked.timestamp
+  s_00d291913afd40::t_fdd7553deeda1d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/fdeflate-6a3219ad0bd7c9e9/lib-fdeflate.json
+  s_00d291913afd40::t_fc7075ecc0039e 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/form_urlencoded-ef407df5cc139225/invoked.timestamp
+  s_00d291913afd40::t_acad15efd20497 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/form_urlencoded-ef407df5cc139225/lib-form_urlencoded.json
+  s_00d291913afd40::t_1c28143e45e74f 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/litemap-78ea1a230a13d9a6/lib-litemap.json
+  s_00d291913afd40::t_c0374da5d8c5c0 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/log-c3ae960784dc766c/lib-log
+  s_00d291913afd40::t_2cd2361ec2bb54 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/log-c3ae960784dc766c/lib-log.json
+  s_00d291913afd40::t_40362ed254e5b7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/miniz_oxide-7ab02affec4a9508/invoked.timestamp
+  s_00d291913afd40::t_e81b87a66d1c49 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/miniz_oxide-7ab02affec4a9508/lib-miniz_oxide
+  s_0e8f9281378060::t_f8ec1bcad32c94 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/miniz_oxide-7ab02affec4a9508/lib-miniz_oxide.json
+  s_0e8f9281378060::t_51a98d0fa5b353 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/once_cell-a1e01fb28f01eb7e/invoked.timestamp
+  s_00d291913afd40::t_afc7f5ec5c3ea3 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/once_cell-a1e01fb28f01eb7e/lib-once_cell
+  s_00d291913afd40::t_fef5b66b0eeb6a 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/percent-encoding-17a69f8600bf7d33/lib-percent_encoding
+  s_00d291913afd40::t_cadda2661d090d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/percent-encoding-17a69f8600bf7d33/lib-percent_encoding.json
+  s_00d291913afd40::t_26698306fb5e11 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/rustls-pki-types-eb7c62419fa886f1/invoked.timestamp
+  s_0e8f9281378060::t_b58d2c823701bf 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/rustls-pki-types-eb7c62419fa886f1/lib-rustls_pki_types.json
+  s_00d291913afd40::t_3153b3fed01aa8 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/simd-adler32-38c69c0aba78813a/lib-simd_adler32
+  s_00d291913afd40::t_2eb03e1d4edd6d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/simd-adler32-38c69c0aba78813a/lib-simd_adler32.json
+  s_00d291913afd40::t_a8e0626a5b4baa 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/smallvec-1b99b3774e56fff7/invoked.timestamp
+  s_00d291913afd40::t_fa8d7195c8adae 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/smallvec-1b99b3774e56fff7/lib-smallvec
+  s_00d291913afd40::t_13f8a901d32e6e 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/smallvec-1b99b3774e56fff7/lib-smallvec.json
+  s_0e8f9281378060::t_6b8a40d023f273 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/stable_deref_trait-61be03aafcdc8159/lib-stable_deref_trait
+  s_00d291913afd40::t_62e97af689e54d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/subtle-389f4eb08be2d860/invoked.timestamp
+  s_00d291913afd40::t_fe24143b8e893f 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/subtle-389f4eb08be2d860/lib-subtle
+  s_00d291913afd40::t_0a7e7f5b797a5f 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/subtle-389f4eb08be2d860/lib-subtle.json
+  s_0e8f9281378060::t_05de298a4e29b1 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ttf-parser-73b717f54f38ef22/invoked.timestamp
+  s_00d291913afd40::t_710c3071f680cd 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/untrusted-43c11d6c4ca28378/invoked.timestamp
+  s_00d291913afd40::t_98d00a01948df7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/untrusted-43c11d6c4ca28378/lib-untrusted
+  s_00d291913afd40::t_5e615cba2217f9 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/untrusted-43c11d6c4ca28378/lib-untrusted.json
+  s_00d291913afd40::t_d7e1321a5ef74d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/utf8_iter-e381ed083c55465e/invoked.timestamp
+  s_00d291913afd40::t_110e70b35ad025 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/utf8_iter-e381ed083c55465e/lib-utf8_iter.json
+  s_00d291913afd40::t_a564e3e86e30f5 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-0355f2f4c7569e2d/invoked.timestamp
+  s_00d291913afd40::t_2af5c5b3cf0ec2 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-0355f2f4c7569e2d/lib-webpki_roots
+  s_00d291913afd40::t_594f4994ee2c10 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-0355f2f4c7569e2d/lib-webpki_roots.json
+  s_0e8f9281378060::t_4ccf7456c45994 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-4d1b5af9a16b786a/invoked.timestamp
+  s_0e8f9281378060::t_e102a13d011cdb 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-4d1b5af9a16b786a/lib-webpki_roots
+  s_00d291913afd40::t_6da9f4871bceb4 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/writeable-ef3992c8d9648f78/lib-writeable
+  s_00d291913afd40::t_edeaf955625d39 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/zeroize-e67475f11ee61919/invoked.timestamp
+  s_00d291913afd40::t_e49c79cf51904a 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/zeroize-e67475f11ee61919/lib-zeroize.json
+  s_00d291913afd40::t_77e83ea2a600f5 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/crc32fast-55ff0ec86478c760/invoked.timestamp
+  s_00d291913afd40::t_44cfde5e5a8282 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_normalizer_data-c3b4a96ea43235de/invoked.timestamp
+  s_00d291913afd40::t_f82d490dccd759 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/libc-a850d107caa26a35/invoked.timestamp
+  s_00d291913afd40::t_2ba125ba56f3f4 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/riddle-f3acc488977c14e0/invoked.timestamp
+  s_00d291913afd40::t_b67e1a7451527a 1
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/base64-ed93a1357ce36faa.d
+  s_00d291913afd40::t_1a96f325763bde 1-20
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/smallvec-1b99b3774e56fff7.d
+  s_0e8f9281378060::t_4cf0601ee388ec 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/subtle-389f4eb08be2d860.d
+  s_0e8f9281378060::t_c1292d7e6c16d3 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/ttf_parser-73b717f54f38ef22.d
+  s_00d291913afd40::t_fa9cc3d821899a 1-70
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/webpki_roots-0355f2f4c7569e2d.d
+  s_00d291913afd40::t_b2ecebc8e740fb 1-5
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph-a2f4d660fd1c30aa/invoked.timestamp
+  s_0e8f9281378060::t_cc5c58943b4f2d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph-a2f4d660fd1c30aa/lib-ab_glyph
+  s_0e8f9281378060::t_bbe18741025966 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph-a2f4d660fd1c30aa/lib-ab_glyph.json
+  s_0e8f9281378060::t_def81f0b3dc0ad 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph_rasterizer-40c714a820f6338e/invoked.timestamp
+  s_0e8f9281378060::t_412e61105258a7 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph_rasterizer-40c714a820f6338e/lib-ab_glyph_rasterizer
+  s_0e8f9281378060::t_1518512fe3a5a3 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ab_glyph_rasterizer-40c714a820f6338e/lib-ab_glyph_rasterizer.json
+  s_0e8f9281378060::t_b88fe4c6200f33 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/adler2-21998b94a2855677/invoked.timestamp
+  s_0e8f9281378060::t_7b34f6bb168e9a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/adler2-21998b94a2855677/lib-adler2
+  s_0e8f9281378060::t_1761aa243bdc84 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/adler2-21998b94a2855677/lib-adler2.json
+  s_0e8f9281378060::t_3d4f651a310b0b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/base64-b065252071331ff3/invoked.timestamp
+  s_0e8f9281378060::t_4de88e50ae4cf9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/base64-b065252071331ff3/lib-base64
+  s_0e8f9281378060::t_585a0bbc80a403 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/base64-b065252071331ff3/lib-base64.json
+  s_0e8f9281378060::t_2b152adbea2513 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/bitflags-14c50be6fec3e146/invoked.timestamp
+  s_0e8f9281378060::t_277c6f8423b84b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/bitflags-14c50be6fec3e146/lib-bitflags
+  s_0e8f9281378060::t_ebf149d5614b5f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/bitflags-14c50be6fec3e146/lib-bitflags.json
+  s_0e8f9281378060::t_051790672f9a58 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/cfg-if-fb84376f5db6b925/invoked.timestamp
+  s_0e8f9281378060::t_65916fbb7c435d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/cfg-if-fb84376f5db6b925/lib-cfg_if
+  s_0e8f9281378060::t_afa40ab0c12e6b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/cfg-if-fb84376f5db6b925/lib-cfg_if.json
+  s_0e8f9281378060::t_f96aad06165ba8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/crc32fast-68e18fc58cc82a97/invoked.timestamp
+  s_0e8f9281378060::t_67ed3722f68a9c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/crc32fast-68e18fc58cc82a97/lib-crc32fast
+  s_0e8f9281378060::t_4ad9f1d6e83e36 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/crc32fast-68e18fc58cc82a97/lib-crc32fast.json
+  s_0e8f9281378060::t_15880826e09061 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/crc32fast-c2c53670132a19fd/run-build-script-build-script-build
+  s_0e8f9281378060::t_3537d30359e702 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/crc32fast-c2c53670132a19fd/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_d7fedbc2c376ca 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/errno-af8e2ece9404ee84/invoked.timestamp
+  s_0e8f9281378060::t_6087f1e95abf07 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/errno-af8e2ece9404ee84/lib-errno
+  s_0e8f9281378060::t_a185d0f3f1d7e4 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/errno-af8e2ece9404ee84/lib-errno.json
+  s_0e8f9281378060::t_87e84789f43345 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/fdeflate-7e05e5b6471e8fd2/invoked.timestamp
+  s_0e8f9281378060::t_e99ab4ea6f8545 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/fdeflate-7e05e5b6471e8fd2/lib-fdeflate
+  s_0e8f9281378060::t_c1fcdba2fdbefc 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/fdeflate-7e05e5b6471e8fd2/lib-fdeflate.json
+  s_0e8f9281378060::t_75f5733c0eeef2 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/flate2-cb31b979e9a1e165/invoked.timestamp
+  s_0e8f9281378060::t_6a2b26221e4340 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/flate2-cb31b979e9a1e165/lib-flate2
+  s_0e8f9281378060::t_1cd5e346d73c2a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/flate2-cb31b979e9a1e165/lib-flate2.json
+  s_0e8f9281378060::t_b176d6ad81c8d8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/form_urlencoded-20844e059dfcc05e/invoked.timestamp
+  s_0e8f9281378060::t_b46b6e57b5435b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/form_urlencoded-20844e059dfcc05e/lib-form_urlencoded
+  s_0e8f9281378060::t_c5b146f3589b4a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/form_urlencoded-20844e059dfcc05e/lib-form_urlencoded.json
+  s_0e8f9281378060::t_3d095ebcaa3da8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/getrandom-4ad0e5eb9e1dbe2f/invoked.timestamp
+  s_0e8f9281378060::t_ce2dd038792fa9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/getrandom-4ad0e5eb9e1dbe2f/lib-getrandom
+  s_0e8f9281378060::t_1520951a1860ee 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/getrandom-4ad0e5eb9e1dbe2f/lib-getrandom.json
+  s_0e8f9281378060::t_bdd590a9f6a0fc 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_collections-7c7c44d9948ba8bd/invoked.timestamp
+  s_0e8f9281378060::t_dbd4b197aa2d7c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_collections-7c7c44d9948ba8bd/lib-icu_collections
+  s_0e8f9281378060::t_2d11dd0f85664c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_collections-7c7c44d9948ba8bd/lib-icu_collections.json
+  s_0e8f9281378060::t_7b1decaa2cb6df 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_locale_core-7f391a6e70b83396/invoked.timestamp
+  s_0e8f9281378060::t_2a50f86370f0d9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_locale_core-7f391a6e70b83396/lib-icu_locale_core
+  s_0e8f9281378060::t_433021b95a4ca0 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_locale_core-7f391a6e70b83396/lib-icu_locale_core.json
+  s_0e8f9281378060::t_3c26cd764f2696 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer-507bd6a3207c19a9/invoked.timestamp
+  s_0e8f9281378060::t_888fffe90081df 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer-507bd6a3207c19a9/lib-icu_normalizer
+  s_0e8f9281378060::t_4393fbb30eab52 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer-507bd6a3207c19a9/lib-icu_normalizer.json
+  s_0e8f9281378060::t_31e8171a63989a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer_data-650b9b6f7eb58816/invoked.timestamp
+  s_0e8f9281378060::t_d81348773fd662 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer_data-650b9b6f7eb58816/lib-icu_normalizer_data
+  s_0e8f9281378060::t_e2f3b7cbde3d21 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer_data-650b9b6f7eb58816/lib-icu_normalizer_data.json
+  s_0e8f9281378060::t_fe8b35a2eb2ccc 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer_data-d9409b2f5c345515/run-build-script-build-script-build
+  s_0e8f9281378060::t_5a532fa181d7a8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_normalizer_data-d9409b2f5c345515/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_f589673a113cd2 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties-5ca9cd20e4abcca5/invoked.timestamp
+  s_0e8f9281378060::t_cf8edfe43bb89e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties-5ca9cd20e4abcca5/lib-icu_properties
+  s_0e8f9281378060::t_5d8351465189ef 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties-5ca9cd20e4abcca5/lib-icu_properties.json
+  s_0e8f9281378060::t_93a1e00be4ccd1 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties_data-1245d826b3268369/run-build-script-build-script-build
+  s_0e8f9281378060::t_f7aaa54c82bc9c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties_data-1245d826b3268369/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_5022a8a1d50446 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties_data-162000e88f5354bd/invoked.timestamp
+  s_0e8f9281378060::t_af98619b4fca74 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties_data-162000e88f5354bd/lib-icu_properties_data
+  s_0e8f9281378060::t_d86587ff367615 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_properties_data-162000e88f5354bd/lib-icu_properties_data.json
+  s_0e8f9281378060::t_95ea10dfd858ff 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_provider-3617ef1e509a53a7/invoked.timestamp
+  s_0e8f9281378060::t_85692ca8d2bfdb 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_provider-3617ef1e509a53a7/lib-icu_provider
+  s_0e8f9281378060::t_5d33c4483825a8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/icu_provider-3617ef1e509a53a7/lib-icu_provider.json
+  s_0e8f9281378060::t_e6bb4e5a9e1a1a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna-71e6c8e65ecb868e/invoked.timestamp
+  s_0e8f9281378060::t_bcddd02399b1aa 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna-71e6c8e65ecb868e/lib-idna
+  s_0e8f9281378060::t_c3e24e69cb2c3f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna-71e6c8e65ecb868e/lib-idna.json
+  s_0e8f9281378060::t_e08c8c15effc45 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna_adapter-b12744b82b3ae9c5/invoked.timestamp
+  s_0e8f9281378060::t_40f510a8fd6f86 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna_adapter-b12744b82b3ae9c5/lib-idna_adapter
+  s_0e8f9281378060::t_6020f21979b736 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/idna_adapter-b12744b82b3ae9c5/lib-idna_adapter.json
+  s_0e8f9281378060::t_a38c954edeafa0 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/libc-4468035c859b3852/invoked.timestamp
+  s_0e8f9281378060::t_649b7b267c9c5f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/libc-4468035c859b3852/lib-libc
+  s_0e8f9281378060::t_e26445ad6edfc8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/libc-4468035c859b3852/lib-libc.json
+  s_0e8f9281378060::t_2b0a7d00506367 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/libc-9e07b2b2ee005b44/run-build-script-build-script-build
+  s_0e8f9281378060::t_ef3278b55dbfe4 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/libc-9e07b2b2ee005b44/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_d754137718f2e3 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/litemap-fdc2f2f38fc960e1/invoked.timestamp
+  s_0e8f9281378060::t_f9eed329b39d25 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/litemap-fdc2f2f38fc960e1/lib-litemap
+  s_0e8f9281378060::t_8c8a11f8bad358 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/litemap-fdc2f2f38fc960e1/lib-litemap.json
+  s_0e8f9281378060::t_2a716f596d2432 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/log-d294331c1d4abfda/invoked.timestamp
+  s_0e8f9281378060::t_e76ba4a96a9efa 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/log-d294331c1d4abfda/lib-log
+  s_0e8f9281378060::t_143385abb9b66f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/log-d294331c1d4abfda/lib-log.json
+  s_0e8f9281378060::t_0e949409356a37 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/miniz_oxide-5fe92dff481d253a/invoked.timestamp
+  s_0e8f9281378060::t_0529f7d364993d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/miniz_oxide-5fe92dff481d253a/lib-miniz_oxide
+  s_0e8f9281378060::t_c1daf6ba783c85 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/miniz_oxide-5fe92dff481d253a/lib-miniz_oxide.json
+  s_0e8f9281378060::t_fa37399d887598 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/once_cell-f05f4595c6150f96/invoked.timestamp
+  s_0e8f9281378060::t_bc1f739e92660c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/once_cell-f05f4595c6150f96/lib-once_cell
+  s_0e8f9281378060::t_5546c2ba8eda7e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/once_cell-f05f4595c6150f96/lib-once_cell.json
+  s_0e8f9281378060::t_3f6c5ce9c99f22 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/owned_ttf_parser-3a1e6ef680b25a03/invoked.timestamp
+  s_0e8f9281378060::t_2684036151b328 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/owned_ttf_parser-3a1e6ef680b25a03/lib-owned_ttf_parser
+  s_0e8f9281378060::t_d4a3a764fef5cb 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/owned_ttf_parser-3a1e6ef680b25a03/lib-owned_ttf_parser.json
+  s_0e8f9281378060::t_b286e02bc594ce 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/percent-encoding-079932dd7aee15de/invoked.timestamp
+  s_0e8f9281378060::t_4977982c4f6bb2 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/percent-encoding-079932dd7aee15de/lib-percent_encoding
+  s_0e8f9281378060::t_489165c9bc6d97 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/percent-encoding-079932dd7aee15de/lib-percent_encoding.json
+  s_0e8f9281378060::t_64ba1f0ff81ffb 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/png-50b99da23fba5209/invoked.timestamp
+  s_0e8f9281378060::t_657073bd8ce319 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/png-50b99da23fba5209/lib-png
+  s_0e8f9281378060::t_4d374d81a2ed52 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/png-50b99da23fba5209/lib-png.json
+  s_0e8f9281378060::t_e0c0379f04be75 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/potential_utf-aca91d77fb9debc2/invoked.timestamp
+  s_0e8f9281378060::t_1f70139fe34925 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/potential_utf-aca91d77fb9debc2/lib-potential_utf
+  s_0e8f9281378060::t_2d3ae8106e3657 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/potential_utf-aca91d77fb9debc2/lib-potential_utf.json
+  s_0e8f9281378060::t_24fc8a32d00253 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-472916315814f431/run-build-script-build-script-build
+  s_0e8f9281378060::t_e59c78b2a6452a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-472916315814f431/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_1b7d268a9e5ff0 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-6a0e2dc6abc0a127/bin-riddle
+  s_0e8f9281378060::t_afc5e1bc9871e4 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-6a0e2dc6abc0a127/bin-riddle.json
+  s_0e8f9281378060::t_62469f8c004011 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-6a0e2dc6abc0a127/invoked.timestamp
+  s_0e8f9281378060::t_44673525a3abfc 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/riddle-6a0e2dc6abc0a127/output-bin-riddle
+  s_0e8f9281378060::t_913a0ac7d045b9 1-11
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ring-49eaf5b9e1acdfe0/run-build-script-build-script-build
+  s_0e8f9281378060::t_53869ded84f5e6 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ring-49eaf5b9e1acdfe0/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_3d2078c57fdb91 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ring-e4b6214a43b61f00/invoked.timestamp
+  s_0e8f9281378060::t_df0c68a35fb045 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ring-e4b6214a43b61f00/lib-ring
+  s_0e8f9281378060::t_a81b8a1046d57a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ring-e4b6214a43b61f00/lib-ring.json
+  s_0e8f9281378060::t_8ef5259627f8b9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-773b79cab89af274/run-build-script-build-script-build
+  s_0e8f9281378060::t_042239c7604592 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-773b79cab89af274/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_c97cfb7385439d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-a91c2616faa2929b/invoked.timestamp
+  s_0e8f9281378060::t_a46e123c66b169 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-a91c2616faa2929b/lib-rustls
+  s_0e8f9281378060::t_dd18285553d63c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-a91c2616faa2929b/lib-rustls.json
+  s_0e8f9281378060::t_89eff2c9b49163 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-pki-types-2ff61259a418e2e7/invoked.timestamp
+  s_0e8f9281378060::t_3b205592a2ace9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-pki-types-2ff61259a418e2e7/lib-rustls_pki_types
+  s_0e8f9281378060::t_981d7043b96175 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-pki-types-2ff61259a418e2e7/lib-rustls_pki_types.json
+  s_0e8f9281378060::t_4c415370194597 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-webpki-fb8587abba2d035e/invoked.timestamp
+  s_0e8f9281378060::t_051000f2d6544a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-webpki-fb8587abba2d035e/lib-webpki
+  s_0e8f9281378060::t_caff69f433d0c7 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/rustls-webpki-fb8587abba2d035e/lib-webpki.json
+  s_0e8f9281378060::t_da02ae9115ad55 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-64506f77507ebd4e/invoked.timestamp
+  s_0e8f9281378060::t_369d918d86ce45 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-64506f77507ebd4e/lib-signal_hook
+  s_0e8f9281378060::t_24bb995924313f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-64506f77507ebd4e/lib-signal_hook.json
+  s_0e8f9281378060::t_6be890c6a36d15 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-e46c83adf4722f4b/run-build-script-build-script-build
+  s_0e8f9281378060::t_dbc2efc2158087 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-e46c83adf4722f4b/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_0c5ea0ef6a31b0 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-registry-dd0922666d94078e/invoked.timestamp
+  s_0e8f9281378060::t_a16fad92e81768 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-registry-dd0922666d94078e/lib-signal_hook_registry
+  s_0e8f9281378060::t_c39248621e0a49 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/signal-hook-registry-dd0922666d94078e/lib-signal_hook_registry.json
+  s_0e8f9281378060::t_0750c29861e29e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/simd-adler32-5e82fdf239c789db/invoked.timestamp
+  s_0e8f9281378060::t_253f1aa2014a26 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/simd-adler32-5e82fdf239c789db/lib-simd_adler32
+  s_0e8f9281378060::t_aba0a62d25446b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/simd-adler32-5e82fdf239c789db/lib-simd_adler32.json
+  s_0e8f9281378060::t_e9f119912a53e1 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/smallvec-e1520c3b28bfb554/invoked.timestamp
+  s_0e8f9281378060::t_fa92618b00e61c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/smallvec-e1520c3b28bfb554/lib-smallvec
+  s_0e8f9281378060::t_f4eadbc202077f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/smallvec-e1520c3b28bfb554/lib-smallvec.json
+  s_0e8f9281378060::t_11bf4f96217fe1 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/stable_deref_trait-e87b5a66f2b213c6/invoked.timestamp
+  s_0e8f9281378060::t_2153c629e3ac5b 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/stable_deref_trait-e87b5a66f2b213c6/lib-stable_deref_trait
+  s_0e8f9281378060::t_fb9b8a322b337c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/stable_deref_trait-e87b5a66f2b213c6/lib-stable_deref_trait.json
+  s_0e8f9281378060::t_0ddcb3241c4aba 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/subtle-95b0114cf940b389/invoked.timestamp
+  s_0e8f9281378060::t_739a8e90ea8598 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/subtle-95b0114cf940b389/lib-subtle
+  s_0e8f9281378060::t_e7a4dc656285df 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/subtle-95b0114cf940b389/lib-subtle.json
+  s_0e8f9281378060::t_e2254c2d57a584 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/tinystr-8554f30ad45638a2/invoked.timestamp
+  s_0e8f9281378060::t_826aa8510b48b7 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/tinystr-8554f30ad45638a2/lib-tinystr
+  s_0e8f9281378060::t_366d3bcb76e5a5 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/tinystr-8554f30ad45638a2/lib-tinystr.json
+  s_0e8f9281378060::t_8db249dc9c940a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ttf-parser-8cf95aa340438c59/invoked.timestamp
+  s_0e8f9281378060::t_a9e4b102bfde37 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ttf-parser-8cf95aa340438c59/lib-ttf_parser
+  s_0e8f9281378060::t_21571dc8f59b96 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ttf-parser-8cf95aa340438c59/lib-ttf_parser.json
+  s_0e8f9281378060::t_e236be77364eea 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/untrusted-39f1d97f4d629af1/invoked.timestamp
+  s_0e8f9281378060::t_07d87085ee09d1 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/untrusted-39f1d97f4d629af1/lib-untrusted
+  s_0e8f9281378060::t_564a5bf74f15e5 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/untrusted-39f1d97f4d629af1/lib-untrusted.json
+  s_0e8f9281378060::t_2fa976bb3240c3 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ureq-299cafab75a9e139/invoked.timestamp
+  s_0e8f9281378060::t_ae4fc14d24022e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ureq-299cafab75a9e139/lib-ureq
+  s_0e8f9281378060::t_b24d3c54f7b457 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/ureq-299cafab75a9e139/lib-ureq.json
+  s_0e8f9281378060::t_54ffbcdde4328c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/url-3cf5a86261e6061f/invoked.timestamp
+  s_0e8f9281378060::t_be64af5227ee31 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/url-3cf5a86261e6061f/lib-url
+  s_0e8f9281378060::t_e0d1ed1eadc403 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/url-3cf5a86261e6061f/lib-url.json
+  s_0e8f9281378060::t_18bcc336d3aebd 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/utf8_iter-8c7c08a372accd74/invoked.timestamp
+  s_0e8f9281378060::t_5bd846087bca39 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/utf8_iter-8c7c08a372accd74/lib-utf8_iter
+  s_0e8f9281378060::t_1b7ce50c10a0f7 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/utf8_iter-8c7c08a372accd74/lib-utf8_iter.json
+  s_0e8f9281378060::t_bd821931872d2e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-746106763af79ab5/invoked.timestamp
+  s_0e8f9281378060::t_420f6da19f7166 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-746106763af79ab5/lib-webpki_roots
+  s_0e8f9281378060::t_fbd4e63af187a7 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-746106763af79ab5/lib-webpki_roots.json
+  s_0e8f9281378060::t_f373ca8365dc94 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-c0ef6f1660c49cb2/invoked.timestamp
+  s_0e8f9281378060::t_ed70c9545271d3 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-c0ef6f1660c49cb2/lib-webpki_roots
+  s_0e8f9281378060::t_b74111ffe263e1 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/webpki-roots-c0ef6f1660c49cb2/lib-webpki_roots.json
+  s_0e8f9281378060::t_8e0c0c62c0c6eb 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/writeable-8d786db6bc1d421e/invoked.timestamp
+  s_0e8f9281378060::t_b992c9a51f364a 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/writeable-8d786db6bc1d421e/lib-writeable
+  s_0e8f9281378060::t_d0a24f1efdc068 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/writeable-8d786db6bc1d421e/lib-writeable.json
+  s_0e8f9281378060::t_7e18ff4af0809d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/yoke-7c0d880d4d4206c4/invoked.timestamp
+  s_0e8f9281378060::t_8e254089e6a187 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/yoke-7c0d880d4d4206c4/lib-yoke
+  s_0e8f9281378060::t_c8ef578ef25f6c 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/yoke-7c0d880d4d4206c4/lib-yoke.json
+  s_0e8f9281378060::t_18938ee03189a8 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerofrom-950a748aaec9417f/invoked.timestamp
+  s_0e8f9281378060::t_adef05f5b41912 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerofrom-950a748aaec9417f/lib-zerofrom
+  s_0e8f9281378060::t_eb2b389b9f696f 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerofrom-950a748aaec9417f/lib-zerofrom.json
+  s_0e8f9281378060::t_5d4b943cd67ad9 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zeroize-d3f593d225336dc5/invoked.timestamp
+  s_0e8f9281378060::t_64cc0083cee4cf 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zeroize-d3f593d225336dc5/lib-zeroize
+  s_0e8f9281378060::t_349355831c3279 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zeroize-d3f593d225336dc5/lib-zeroize.json
+  s_0e8f9281378060::t_977f21f0c5ad70 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerotrie-787e78a6cc2c3b82/invoked.timestamp
+  s_0e8f9281378060::t_88941802b98603 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerotrie-787e78a6cc2c3b82/lib-zerotrie
+  s_0e8f9281378060::t_e94385718aff48 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerotrie-787e78a6cc2c3b82/lib-zerotrie.json
+  s_0e8f9281378060::t_9eef5598d9026d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerovec-b8a32eef59744253/invoked.timestamp
+  s_0e8f9281378060::t_628f026cdfa47e 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerovec-b8a32eef59744253/lib-zerovec
+  s_0e8f9281378060::t_f17ac3038d5f2d 1
+riddle/target/aarch64-unknown-linux-gnu/release/.fingerprint/zerovec-b8a32eef59744253/lib-zerovec.json
+  s_0e8f9281378060::t_efb328e408cfde 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/crc32fast-c2c53670132a19fd/invoked.timestamp
+  s_0e8f9281378060::t_4e3b4f816829a5 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/crc32fast-c2c53670132a19fd/output
+  s_0e8f9281378060::t_84f29b770bf72a 1-2
+riddle/target/aarch64-unknown-linux-gnu/release/build/crc32fast-c2c53670132a19fd/root-output
+  s_0e8f9281378060::t_eaad5dcfca9c47 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_normalizer_data-d9409b2f5c345515/invoked.timestamp
+  s_0e8f9281378060::t_7ba1e91293fb02 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_normalizer_data-d9409b2f5c345515/output
+  s_0e8f9281378060::t_ab756e967b834c 1-2
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_normalizer_data-d9409b2f5c345515/root-output
+  s_0e8f9281378060::t_1593d0daeb7124 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_properties_data-1245d826b3268369/invoked.timestamp
+  s_0e8f9281378060::t_a6645edb456f17 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_properties_data-1245d826b3268369/output
+  s_0e8f9281378060::t_cb6ab688f663a4 1-2
+riddle/target/aarch64-unknown-linux-gnu/release/build/icu_properties_data-1245d826b3268369/root-output
+  s_0e8f9281378060::t_a6b3d2cd24fe25 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/libc-9e07b2b2ee005b44/invoked.timestamp
+  s_0e8f9281378060::t_fa057c3e897486 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/libc-9e07b2b2ee005b44/output
+  s_0e8f9281378060::t_7d85be2956b5b0 1-27
+riddle/target/aarch64-unknown-linux-gnu/release/build/libc-9e07b2b2ee005b44/root-output
+  s_0e8f9281378060::t_c2cf3c9d59126e 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/riddle-472916315814f431/invoked.timestamp
+  s_0e8f9281378060::t_44ddedaf5c6301 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/riddle-472916315814f431/output
+  s_0e8f9281378060::t_fe9104a814230d 1-6
+riddle/target/aarch64-unknown-linux-gnu/release/build/riddle-472916315814f431/root-output
+  s_0e8f9281378060::t_da9d7627afc50d 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/ring-49eaf5b9e1acdfe0/invoked.timestamp
+  s_0e8f9281378060::t_f14779b76a5f23 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/ring-49eaf5b9e1acdfe0/output
+  s_0e8f9281378060::t_91ac2e81610774 1-134
+riddle/target/aarch64-unknown-linux-gnu/release/build/ring-49eaf5b9e1acdfe0/root-output
+  s_0e8f9281378060::t_8648ba08baf3c4 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/rustls-773b79cab89af274/invoked.timestamp
+  s_0e8f9281378060::t_44ffc63cad6731 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/rustls-773b79cab89af274/root-output
+  s_0e8f9281378060::t_16a8854143e430 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/signal-hook-e46c83adf4722f4b/invoked.timestamp
+  s_0e8f9281378060::t_f37bf0ab72c5e9 1
+riddle/target/aarch64-unknown-linux-gnu/release/build/signal-hook-e46c83adf4722f4b/root-output
+  s_0e8f9281378060::t_03c566d6f771b6 1
+riddle/target/aarch64-unknown-linux-gnu/release/deps/ab_glyph-a2f4d660fd1c30aa.d
+  s_0e8f9281378060::t_432bfec781225c 1-18
+riddle/target/aarch64-unknown-linux-gnu/release/deps/ab_glyph_rasterizer-40c714a820f6338e.d
+  s_0e8f9281378060::t_ade200a3d44cb1 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/adler2-21998b94a2855677.d
+  s_0e8f9281378060::t_274630bac0c868 1-8
+riddle/target/aarch64-unknown-linux-gnu/release/deps/base64-b065252071331ff3.d
+  s_0e8f9281378060::t_46c0d2facf42ef 1-22
+riddle/target/aarch64-unknown-linux-gnu/release/deps/bitflags-14c50be6fec3e146.d
+  s_0e8f9281378060::t_71bf06a3d71ad5 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/cfg_if-fb84376f5db6b925.d
+  s_0e8f9281378060::t_8993353cc52bf1 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/crc32fast-68e18fc58cc82a97.d
+  s_0e8f9281378060::t_018c5609e0cda8 1-12
+riddle/target/aarch64-unknown-linux-gnu/release/deps/errno-af8e2ece9404ee84.d
+  s_0e8f9281378060::t_5df018161cdc64 1-8
+riddle/target/aarch64-unknown-linux-gnu/release/deps/fdeflate-7e05e5b6471e8fd2.d
+  s_0e8f9281378060::t_44f1c4a97ddac8 1-11
+riddle/target/aarch64-unknown-linux-gnu/release/deps/flate2-cb31b979e9a1e165.d
+  s_0e8f9281378060::t_8aece783d2ea0e 1-25
+riddle/target/aarch64-unknown-linux-gnu/release/deps/form_urlencoded-20844e059dfcc05e.d
+  s_0e8f9281378060::t_2ce2fc3564d546 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/getrandom-4ad0e5eb9e1dbe2f.d
+  s_0e8f9281378060::t_27016a96a4dba4 1-13
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_collections-7c7c44d9948ba8bd.d
+  s_0e8f9281378060::t_8fda5e9b89b342 1-19
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_locale_core-7f391a6e70b83396.d
+  s_0e8f9281378060::t_b85d42849e55b0 1-66
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_normalizer-507bd6a3207c19a9.d
+  s_0e8f9281378060::t_0788bc425950d9 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_normalizer_data-650b9b6f7eb58816.d
+  s_0e8f9281378060::t_bc9355f7571070 1-15
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_properties-5ca9cd20e4abcca5.d
+  s_0e8f9281378060::t_f13ca1edba7f7c 1-18
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_properties_data-162000e88f5354bd.d
+  s_0e8f9281378060::t_d9558dd2cfbb7d 1-145
+riddle/target/aarch64-unknown-linux-gnu/release/deps/icu_provider-3617ef1e509a53a7.d
+  s_0e8f9281378060::t_4fb4251139b584 1-19
+riddle/target/aarch64-unknown-linux-gnu/release/deps/idna-71e6c8e65ecb868e.d
+  s_0e8f9281378060::t_6eefb76ee0ac0a 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/idna_adapter-b12744b82b3ae9c5.d
+  s_0e8f9281378060::t_128c704556f1af 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/libc-4468035c859b3852.d
+  s_0e8f9281378060::t_5edfbb12c2c7ff 1-46
+riddle/target/aarch64-unknown-linux-gnu/release/deps/litemap-fdc2f2f38fc960e1.d
+  s_0e8f9281378060::t_04696c41e8ba86 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/log-d294331c1d4abfda.d
+  s_0e8f9281378060::t_4017ee96eaa2f0 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/miniz_oxide-5fe92dff481d253a.d
+  s_0e8f9281378060::t_d7d00dea635b26 1-18
+riddle/target/aarch64-unknown-linux-gnu/release/deps/once_cell-f05f4595c6150f96.d
+  s_0e8f9281378060::t_11cabeeb6a31a5 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/owned_ttf_parser-3a1e6ef680b25a03.d
+  s_0e8f9281378060::t_b9c671d4a0b479 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/percent_encoding-079932dd7aee15de.d
+  s_0e8f9281378060::t_c6a13feeeaee3b 1-8
+riddle/target/aarch64-unknown-linux-gnu/release/deps/png-50b99da23fba5209.d
+  s_0e8f9281378060::t_7ca845903bbc73 1-23
+riddle/target/aarch64-unknown-linux-gnu/release/deps/potential_utf-aca91d77fb9debc2.d
+  s_0e8f9281378060::t_86183e65ceec9c 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/riddle-6a0e2dc6abc0a127.d
+  s_0e8f9281378060::t_3db9386c2b5171 1-20
+riddle/target/aarch64-unknown-linux-gnu/release/deps/ring-e4b6214a43b61f00.d
+  s_0e8f9281378060::t_10af42ed15bb0b 1-160
+riddle/target/aarch64-unknown-linux-gnu/release/deps/rustls-a91c2616faa2929b.d
+  s_0e8f9281378060::t_de57c1f8494157 1-98
+riddle/target/aarch64-unknown-linux-gnu/release/deps/rustls_pki_types-2ff61259a418e2e7.d
+  s_0e8f9281378060::t_139eeac30b6b62 1-30
+riddle/target/aarch64-unknown-linux-gnu/release/deps/signal_hook-64506f77507ebd4e.d
+  s_0e8f9281378060::t_64a47bf386cb2c 1-16
+riddle/target/aarch64-unknown-linux-gnu/release/deps/signal_hook_registry-dd0922666d94078e.d
+  s_0e8f9281378060::t_1d764e2885a7f9 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/simd_adler32-5e82fdf239c789db.d
+  s_0e8f9281378060::t_5f9c3a86d83b84 1-16
+riddle/target/aarch64-unknown-linux-gnu/release/deps/smallvec-e1520c3b28bfb554.d
+  s_0e8f9281378060::t_e09b8e0fd6ac58 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/stable_deref_trait-e87b5a66f2b213c6.d
+  s_0e8f9281378060::t_5c8333d2b57be2 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/subtle-95b0114cf940b389.d
+  s_0e8f9281378060::t_e729a4cb6c64fc 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/tinystr-8554f30ad45638a2.d
+  s_0e8f9281378060::t_f1b126484d19df 1-14
+riddle/target/aarch64-unknown-linux-gnu/release/deps/ttf_parser-8cf95aa340438c59.d
+  s_0e8f9281378060::t_88b41c038bd188 1-72
+riddle/target/aarch64-unknown-linux-gnu/release/deps/untrusted-39f1d97f4d629af1.d
+  s_0e8f9281378060::t_f2ff6fa7c98ac9 1-10
+riddle/target/aarch64-unknown-linux-gnu/release/deps/ureq-299cafab75a9e139.d
+  s_0e8f9281378060::t_19808dd0aea429 1-25
+riddle/target/aarch64-unknown-linux-gnu/release/deps/url-3cf5a86261e6061f.d
+  s_0e8f9281378060::t_1050c16b850d4f 1-13
+riddle/target/aarch64-unknown-linux-gnu/release/deps/utf8_iter-8c7c08a372accd74.d
+  s_0e8f9281378060::t_05bb3ce70b895a 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/webpki-fb8587abba2d035e.d
+  s_0e8f9281378060::t_5e9e62742adf6a 1-26
+riddle/target/aarch64-unknown-linux-gnu/release/deps/webpki_roots-746106763af79ab5.d
+  s_0e8f9281378060::t_f3250a60feb962 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/webpki_roots-c0ef6f1660c49cb2.d
+  s_0e8f9281378060::t_8279eb5481949a 1-7
+riddle/target/aarch64-unknown-linux-gnu/release/deps/writeable-8d786db6bc1d421e.d
+  s_0e8f9281378060::t_b3e64742d9b84e 1-13
+riddle/target/aarch64-unknown-linux-gnu/release/deps/yoke-7c0d880d4d4206c4.d
+  s_0e8f9281378060::t_bd5b4d61b1571e 1-15
+riddle/target/aarch64-unknown-linux-gnu/release/deps/zerofrom-950a748aaec9417f.d
+  s_0e8f9281378060::t_eae9933b30093c 1-9
+riddle/target/aarch64-unknown-linux-gnu/release/deps/zeroize-d3f593d225336dc5.d
+  s_0e8f9281378060::t_9cac96e1b6a38f 1-11
+riddle/target/aarch64-unknown-linux-gnu/release/deps/zerotrie-787e78a6cc2c3b82.d
+  s_0e8f9281378060::t_5f3612ff941b79 1-21
+riddle/target/aarch64-unknown-linux-gnu/release/deps/zerovec-b8a32eef59744253.d
+  s_0e8f9281378060::t_ba29b34ebad5db 1-30
+riddle/target/aarch64-unknown-linux-gnu/release/riddle.d
+  s_0e8f9281378060::t_1cfaa5cb85c6aa 1
+riddle/target/debug/.fingerprint/ab_glyph-0d714b87ad523c0c/invoked.timestamp
+  s_0e8f9281378060::t_5e12f7fb70e55b 1
+riddle/target/debug/.fingerprint/ab_glyph-0d714b87ad523c0c/lib-ab_glyph
+  s_0e8f9281378060::t_6622f6b97fcc44 1
+riddle/target/debug/.fingerprint/ab_glyph-0d714b87ad523c0c/lib-ab_glyph.json
+  s_0e8f9281378060::t_8337245297dee5 1
+riddle/target/debug/.fingerprint/ab_glyph-309c7cbffd9597c4/invoked.timestamp
+  s_0e8f9281378060::t_38cb1bb59a9411 1
+riddle/target/debug/.fingerprint/ab_glyph-309c7cbffd9597c4/lib-ab_glyph
+  s_0e8f9281378060::t_1c9c19f5eeec22 1
+riddle/target/debug/.fingerprint/ab_glyph-309c7cbffd9597c4/lib-ab_glyph.json
+  s_0e8f9281378060::t_03f4f5efdb422a 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-958a8d2151253235/invoked.timestamp
+  s_0e8f9281378060::t_ef8be08314077c 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-958a8d2151253235/lib-ab_glyph_rasterizer
+  s_0e8f9281378060::t_44342be15526f0 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-958a8d2151253235/lib-ab_glyph_rasterizer.json
+  s_0e8f9281378060::t_3ef5896f7214ab 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-cad12c37d9d92f2a/invoked.timestamp
+  s_0e8f9281378060::t_eb1876fd68239e 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-cad12c37d9d92f2a/lib-ab_glyph_rasterizer
+  s_0e8f9281378060::t_7e42f076ef876c 1
+riddle/target/debug/.fingerprint/ab_glyph_rasterizer-cad12c37d9d92f2a/lib-ab_glyph_rasterizer.json
+  s_0e8f9281378060::t_1874ad2f0e0850 1
+riddle/target/debug/.fingerprint/adler2-553450e4e87a4ba3/invoked.timestamp
+  s_0e8f9281378060::t_c270d6b4ca9209 1
+riddle/target/debug/.fingerprint/adler2-553450e4e87a4ba3/lib-adler2
+  s_0e8f9281378060::t_93bff5ebc5030e 1
+riddle/target/debug/.fingerprint/adler2-553450e4e87a4ba3/lib-adler2.json
+  s_0e8f9281378060::t_268fd047bf1e00 1
+riddle/target/debug/.fingerprint/adler2-c49499412e382432/invoked.timestamp
+  s_0e8f9281378060::t_46189d46570414 1
+riddle/target/debug/.fingerprint/adler2-c49499412e382432/lib-adler2
+  s_0e8f9281378060::t_cb7dcad97939d6 1
+riddle/target/debug/.fingerprint/adler2-c49499412e382432/lib-adler2.json
+  s_0e8f9281378060::t_f0d25c53248f02 1
+riddle/target/debug/.fingerprint/base64-32a16f0c3f5cc4c9/invoked.timestamp
+  s_0e8f9281378060::t_13b611aee5f03b 1
+riddle/target/debug/.fingerprint/base64-32a16f0c3f5cc4c9/lib-base64
+  s_0e8f9281378060::t_0c5d1fe555dd70 1
+riddle/target/debug/.fingerprint/base64-32a16f0c3f5cc4c9/lib-base64.json
+  s_0e8f9281378060::t_1ae0662d4d6143 1
+riddle/target/debug/.fingerprint/base64-f87e431b22978310/invoked.timestamp
+  s_0e8f9281378060::t_7d55608d6ed9dd 1
+riddle/target/debug/.fingerprint/base64-f87e431b22978310/lib-base64
+  s_0e8f9281378060::t_7153edb08ccdfa 1
+riddle/target/debug/.fingerprint/base64-f87e431b22978310/lib-base64.json
+  s_0e8f9281378060::t_e3989306e49e30 1
+riddle/target/debug/.fingerprint/bitflags-0f41663f91b96d60/invoked.timestamp
+  s_0e8f9281378060::t_04082ae2f15ee6 1
+riddle/target/debug/.fingerprint/bitflags-0f41663f91b96d60/lib-bitflags
+  s_0e8f9281378060::t_b391e484f93d0e 1
+riddle/target/debug/.fingerprint/bitflags-0f41663f91b96d60/lib-bitflags.json
+  s_0e8f9281378060::t_2c8528505407f3 1
+riddle/target/debug/.fingerprint/bitflags-1530101c9ae1c8e0/invoked.timestamp
+  s_0e8f9281378060::t_27ea13c8dbb040 1
+riddle/target/debug/.fingerprint/bitflags-1530101c9ae1c8e0/lib-bitflags
+  s_0e8f9281378060::t_2d70952cf21306 1
+riddle/target/debug/.fingerprint/bitflags-1530101c9ae1c8e0/lib-bitflags.json
+  s_0e8f9281378060::t_f83cb75092717e 1
+riddle/target/debug/.fingerprint/cc-125b67851188423c/invoked.timestamp
+  s_0e8f9281378060::t_cf88aee3ddd89d 1
+riddle/target/debug/.fingerprint/cc-125b67851188423c/lib-cc
+  s_0e8f9281378060::t_9ca383c7fe1cb2 1
+riddle/target/debug/.fingerprint/cc-125b67851188423c/lib-cc.json
+  s_0e8f9281378060::t_7c96af40ba4d7a 1
+riddle/target/debug/.fingerprint/cc-df403d4a81276841/invoked.timestamp
+  s_00d291913afd40::t_1893871161af51 1
+riddle/target/debug/.fingerprint/cfg-if-0ae1c8e84680e82e/invoked.timestamp
+  s_0e8f9281378060::t_16ec2c23c80c7b 1
+riddle/target/debug/.fingerprint/cfg-if-0ae1c8e84680e82e/lib-cfg_if
+  s_0e8f9281378060::t_6f338925ab198e 1
+riddle/target/debug/.fingerprint/cfg-if-0ae1c8e84680e82e/lib-cfg_if.json
+  s_0e8f9281378060::t_630b1c0cc242e8 1
+riddle/target/debug/.fingerprint/cfg-if-d3a2e93bda4adf48/invoked.timestamp
+  s_0e8f9281378060::t_d571e9aa526f6e 1
+riddle/target/debug/.fingerprint/cfg-if-d3a2e93bda4adf48/lib-cfg_if
+  s_0e8f9281378060::t_1fb039cd7df860 1
+riddle/target/debug/.fingerprint/cfg-if-d3a2e93bda4adf48/lib-cfg_if.json
+  s_0e8f9281378060::t_cc367b1900475c 1
+riddle/target/debug/.fingerprint/crc32fast-2142b8607ae96ec5/build-script-build-script-build
+  s_00d291913afd40::t_1d469500838ad2 1
+riddle/target/debug/.fingerprint/crc32fast-2142b8607ae96ec5/build-script-build-script-build.json
+  s_0e8f9281378060::t_2b68b8d811dfe8 1
+riddle/target/debug/.fingerprint/crc32fast-2142b8607ae96ec5/invoked.timestamp
+  s_00d291913afd40::t_6366a4e071c3ee 1
+riddle/target/debug/.fingerprint/crc32fast-2effd4628f3044bc/build-script-build-script-build
+  s_0e8f9281378060::t_42dbba84a1cec6 1
+riddle/target/debug/.fingerprint/crc32fast-2effd4628f3044bc/build-script-build-script-build.json
+  s_0e8f9281378060::t_ce15d7bcf9d1a5 1
+riddle/target/debug/.fingerprint/crc32fast-2effd4628f3044bc/invoked.timestamp
+  s_0e8f9281378060::t_9a6da601a5aca5 1
+riddle/target/debug/.fingerprint/crc32fast-63bb31c998f9c753/run-build-script-build-script-build
+  s_0e8f9281378060::t_1aa00685579990 1
+riddle/target/debug/.fingerprint/crc32fast-63bb31c998f9c753/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_7dc08c38a19ddc 1
+riddle/target/debug/.fingerprint/crc32fast-e022771755453b3c/invoked.timestamp
+  s_0e8f9281378060::t_7914e6130d48c1 1
+riddle/target/debug/.fingerprint/crc32fast-e022771755453b3c/lib-crc32fast
+  s_0e8f9281378060::t_7ff7d0a6eb8a3e 1
+riddle/target/debug/.fingerprint/crc32fast-e022771755453b3c/lib-crc32fast.json
+  s_0e8f9281378060::t_f9231f718b0155 1
+riddle/target/debug/.fingerprint/crc32fast-fab1ad5af680167d/invoked.timestamp
+  s_0e8f9281378060::t_a31b3a37758183 1
+riddle/target/debug/.fingerprint/crc32fast-fab1ad5af680167d/lib-crc32fast
+  s_0e8f9281378060::t_abb5531a57e790 1
+riddle/target/debug/.fingerprint/crc32fast-fab1ad5af680167d/lib-crc32fast.json
+  s_0e8f9281378060::t_abc5644c17d2a9 1
+riddle/target/debug/.fingerprint/displaydoc-c7c38215614612d9/invoked.timestamp
+  s_0e8f9281378060::t_340c9ea66eb641 1
+riddle/target/debug/.fingerprint/displaydoc-c7c38215614612d9/lib-displaydoc
+  s_0e8f9281378060::t_554f23c473f267 1
+riddle/target/debug/.fingerprint/displaydoc-c7c38215614612d9/lib-displaydoc.json
+  s_0e8f9281378060::t_f95791605f5964 1
+riddle/target/debug/.fingerprint/errno-a57adda38e92ca10/invoked.timestamp
+  s_0e8f9281378060::t_ab03e8ade63dec 1
+riddle/target/debug/.fingerprint/errno-a57adda38e92ca10/lib-errno
+  s_0e8f9281378060::t_19ddf179f9d4c7 1
+riddle/target/debug/.fingerprint/errno-a57adda38e92ca10/lib-errno.json
+  s_0e8f9281378060::t_41caf34444b0b7 1
+riddle/target/debug/.fingerprint/errno-d590717e1d54175b/invoked.timestamp
+  s_0e8f9281378060::t_7e268050a148e2 1
+riddle/target/debug/.fingerprint/errno-d590717e1d54175b/lib-errno
+  s_0e8f9281378060::t_3f35186fa9d343 1
+riddle/target/debug/.fingerprint/errno-d590717e1d54175b/lib-errno.json
+  s_0e8f9281378060::t_cd48b76988fed8 1
+riddle/target/debug/.fingerprint/fdeflate-0ddf210fb089a268/invoked.timestamp
+  s_0e8f9281378060::t_88a137ddd79c38 1
+riddle/target/debug/.fingerprint/fdeflate-0ddf210fb089a268/lib-fdeflate
+  s_0e8f9281378060::t_268577bdd0e6d0 1
+riddle/target/debug/.fingerprint/fdeflate-0ddf210fb089a268/lib-fdeflate.json
+  s_0e8f9281378060::t_aedfd2c79c645e 1
+riddle/target/debug/.fingerprint/fdeflate-9050f37563caa939/invoked.timestamp
+  s_0e8f9281378060::t_b32ce51aeee5dd 1
+riddle/target/debug/.fingerprint/fdeflate-9050f37563caa939/lib-fdeflate
+  s_0e8f9281378060::t_97a847605388a7 1
+riddle/target/debug/.fingerprint/fdeflate-9050f37563caa939/lib-fdeflate.json
+  s_0e8f9281378060::t_5867b9d45e555b 1
+riddle/target/debug/.fingerprint/find-msvc-tools-d1e32aabc1dcf5bc/invoked.timestamp
+  s_0e8f9281378060::t_538fc8e0358fe1 1
+riddle/target/debug/.fingerprint/find-msvc-tools-d1e32aabc1dcf5bc/lib-find_msvc_tools
+  s_0e8f9281378060::t_9ce90592a69223 1
+riddle/target/debug/.fingerprint/find-msvc-tools-d1e32aabc1dcf5bc/lib-find_msvc_tools.json
+  s_0e8f9281378060::t_a0d1d9b94f3e38 1
+riddle/target/debug/.fingerprint/flate2-72794c69f02ea446/invoked.timestamp
+  s_0e8f9281378060::t_e56baa9022b091 1
+riddle/target/debug/.fingerprint/flate2-72794c69f02ea446/lib-flate2
+  s_0e8f9281378060::t_c911694f5185bd 1
+riddle/target/debug/.fingerprint/flate2-72794c69f02ea446/lib-flate2.json
+  s_0e8f9281378060::t_be5edc2a048e02 1
+riddle/target/debug/.fingerprint/flate2-f91b6df211fbf4df/invoked.timestamp
+  s_0e8f9281378060::t_69e9a688ce55b0 1
+riddle/target/debug/.fingerprint/flate2-f91b6df211fbf4df/lib-flate2
+  s_0e8f9281378060::t_4bf0d39cce7598 1
+riddle/target/debug/.fingerprint/flate2-f91b6df211fbf4df/lib-flate2.json
+  s_0e8f9281378060::t_0f66b2e78f069a 1
+riddle/target/debug/.fingerprint/form_urlencoded-7745dce9dc2faf08/invoked.timestamp
+  s_0e8f9281378060::t_4ffc1ab51115c1 1
+riddle/target/debug/.fingerprint/form_urlencoded-7745dce9dc2faf08/lib-form_urlencoded
+  s_0e8f9281378060::t_edd2412381e654 1
+riddle/target/debug/.fingerprint/form_urlencoded-7745dce9dc2faf08/lib-form_urlencoded.json
+  s_0e8f9281378060::t_a50c3a0710d099 1
+riddle/target/debug/.fingerprint/form_urlencoded-95a8373e40f82648/invoked.timestamp
+  s_0e8f9281378060::t_02a1cb30bfbae3 1
+riddle/target/debug/.fingerprint/form_urlencoded-95a8373e40f82648/lib-form_urlencoded
+  s_0e8f9281378060::t_3fc6965e71fd87 1
+riddle/target/debug/.fingerprint/form_urlencoded-95a8373e40f82648/lib-form_urlencoded.json
+  s_0e8f9281378060::t_a91a3c70883a73 1
+riddle/target/debug/.fingerprint/getrandom-66c5e668d192b92b/invoked.timestamp
+  s_0e8f9281378060::t_e50a25f0a6e0eb 1
+riddle/target/debug/.fingerprint/getrandom-66c5e668d192b92b/lib-getrandom
+  s_0e8f9281378060::t_8ce3360b770fdf 1
+riddle/target/debug/.fingerprint/getrandom-66c5e668d192b92b/lib-getrandom.json
+  s_0e8f9281378060::t_cac60bb0186805 1
+riddle/target/debug/.fingerprint/getrandom-72800bc9bd311169/invoked.timestamp
+  s_0e8f9281378060::t_17bc1700a1ee62 1
+riddle/target/debug/.fingerprint/getrandom-72800bc9bd311169/lib-getrandom
+  s_0e8f9281378060::t_a28ace992ec1b9 1
+riddle/target/debug/.fingerprint/getrandom-72800bc9bd311169/lib-getrandom.json
+  s_0e8f9281378060::t_1244dedceb3369 1
+riddle/target/debug/.fingerprint/icu_collections-4ad22c718b5704b6/invoked.timestamp
+  s_0e8f9281378060::t_8ed9e6ffa72be9 1
+riddle/target/debug/.fingerprint/icu_collections-4ad22c718b5704b6/lib-icu_collections
+  s_0e8f9281378060::t_f0e19a14a4f819 1
+riddle/target/debug/.fingerprint/icu_collections-4ad22c718b5704b6/lib-icu_collections.json
+  s_0e8f9281378060::t_2ba4f546302419 1
+riddle/target/debug/.fingerprint/icu_collections-9ad3c520fee22940/invoked.timestamp
+  s_0e8f9281378060::t_62cbf0f7038802 1
+riddle/target/debug/.fingerprint/icu_collections-9ad3c520fee22940/lib-icu_collections
+  s_0e8f9281378060::t_ef2f2aa1204fd0 1
+riddle/target/debug/.fingerprint/icu_collections-9ad3c520fee22940/lib-icu_collections.json
+  s_0e8f9281378060::t_285fddad1af38d 1
+riddle/target/debug/.fingerprint/icu_locale_core-e66bd9183a676f83/invoked.timestamp
+  s_0e8f9281378060::t_5f00e3c5b0642e 1
+riddle/target/debug/.fingerprint/icu_locale_core-e66bd9183a676f83/lib-icu_locale_core
+  s_0e8f9281378060::t_bbc20929e3ebd7 1
+riddle/target/debug/.fingerprint/icu_locale_core-e66bd9183a676f83/lib-icu_locale_core.json
+  s_0e8f9281378060::t_68c69d455671c5 1
+riddle/target/debug/.fingerprint/icu_locale_core-e875b75dcdd480a8/invoked.timestamp
+  s_0e8f9281378060::t_6bbcd509b114dd 1
+riddle/target/debug/.fingerprint/icu_locale_core-e875b75dcdd480a8/lib-icu_locale_core
+  s_0e8f9281378060::t_047911aaf9a322 1
+riddle/target/debug/.fingerprint/icu_locale_core-e875b75dcdd480a8/lib-icu_locale_core.json
+  s_0e8f9281378060::t_8c255d9e4b048a 1
+riddle/target/debug/.fingerprint/icu_normalizer-680ad9b1647f09f1/invoked.timestamp
+  s_0e8f9281378060::t_59d81e7f851ae5 1
+riddle/target/debug/.fingerprint/icu_normalizer-680ad9b1647f09f1/lib-icu_normalizer
+  s_0e8f9281378060::t_3d39467600e7a7 1
+riddle/target/debug/.fingerprint/icu_normalizer-680ad9b1647f09f1/lib-icu_normalizer.json
+  s_0e8f9281378060::t_e0cb4a8d89d25b 1
+riddle/target/debug/.fingerprint/icu_normalizer-8a12e8ff0d17ac4f/invoked.timestamp
+  s_0e8f9281378060::t_79eb9b93873a4a 1
+riddle/target/debug/.fingerprint/icu_normalizer-8a12e8ff0d17ac4f/lib-icu_normalizer
+  s_0e8f9281378060::t_c5405f93413767 1
+riddle/target/debug/.fingerprint/icu_normalizer-8a12e8ff0d17ac4f/lib-icu_normalizer.json
+  s_0e8f9281378060::t_9c66f1903f05ca 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-2b0507016294efc1/run-build-script-build-script-build
+  s_0e8f9281378060::t_48e3c9c4d8714d 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-2b0507016294efc1/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_6133b34cac48c6 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-2c2d188eb244662e/invoked.timestamp
+  s_0e8f9281378060::t_8e3d395c9ca056 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-2c2d188eb244662e/lib-icu_normalizer_data
+  s_0e8f9281378060::t_4ba9043bf3720b 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-2c2d188eb244662e/lib-icu_normalizer_data.json
+  s_0e8f9281378060::t_a1d8cee87788d2 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-888ed9af342c59d4/build-script-build-script-build
+  s_0e8f9281378060::t_a04826ed1314d8 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-888ed9af342c59d4/build-script-build-script-build.json
+  s_0e8f9281378060::t_0484e2a02928b6 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-888ed9af342c59d4/invoked.timestamp
+  s_0e8f9281378060::t_f78cce5029d0f0 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-f95331a7d40976a1/invoked.timestamp
+  s_0e8f9281378060::t_5048a48144ec66 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-f95331a7d40976a1/lib-icu_normalizer_data
+  s_0e8f9281378060::t_b7738d350ca854 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-f95331a7d40976a1/lib-icu_normalizer_data.json
+  s_0e8f9281378060::t_88b941b6a92ec6 1
+riddle/target/debug/.fingerprint/icu_properties-14aa8d551e4e092e/invoked.timestamp
+  s_0e8f9281378060::t_0af863f22224e6 1
+riddle/target/debug/.fingerprint/icu_properties-14aa8d551e4e092e/lib-icu_properties
+  s_0e8f9281378060::t_612416bef0a4d3 1
+riddle/target/debug/.fingerprint/icu_properties-14aa8d551e4e092e/lib-icu_properties.json
+  s_0e8f9281378060::t_10cde1b95a2c70 1
+riddle/target/debug/.fingerprint/icu_properties-389c4cb3f3e3bee7/invoked.timestamp
+  s_0e8f9281378060::t_89c0e1966417a1 1
+riddle/target/debug/.fingerprint/icu_properties-389c4cb3f3e3bee7/lib-icu_properties
+  s_0e8f9281378060::t_b4a39576682c71 1
+riddle/target/debug/.fingerprint/icu_properties-389c4cb3f3e3bee7/lib-icu_properties.json
+  s_0e8f9281378060::t_4183299e19e8e1 1
+riddle/target/debug/.fingerprint/icu_properties_data-25001a155985658b/build-script-build-script-build
+  s_0e8f9281378060::t_df177310957e4c 1
+riddle/target/debug/.fingerprint/icu_properties_data-25001a155985658b/build-script-build-script-build.json
+  s_0e8f9281378060::t_fbe7cb29251700 1
+riddle/target/debug/.fingerprint/icu_properties_data-25001a155985658b/invoked.timestamp
+  s_0e8f9281378060::t_dc67b788599759 1
+riddle/target/debug/.fingerprint/icu_properties_data-392560d9d4e63487/run-build-script-build-script-build
+  s_0e8f9281378060::t_5e2b64d4c28807 1
+riddle/target/debug/.fingerprint/icu_properties_data-392560d9d4e63487/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_b0ac4d4a5ff424 1
+riddle/target/debug/.fingerprint/icu_properties_data-79caba66ce376897/invoked.timestamp
+  s_0e8f9281378060::t_3928fd8d2747e9 1
+riddle/target/debug/.fingerprint/icu_properties_data-79caba66ce376897/lib-icu_properties_data
+  s_0e8f9281378060::t_16ca15b1b97b5f 1
+riddle/target/debug/.fingerprint/icu_properties_data-79caba66ce376897/lib-icu_properties_data.json
+  s_0e8f9281378060::t_e059f24eceed1e 1
+riddle/target/debug/.fingerprint/icu_properties_data-f299fbd7f8418d92/invoked.timestamp
+  s_0e8f9281378060::t_fa3a9f2a67bf26 1
+riddle/target/debug/.fingerprint/icu_properties_data-f299fbd7f8418d92/lib-icu_properties_data
+  s_0e8f9281378060::t_157816cbdda67e 1
+riddle/target/debug/.fingerprint/icu_properties_data-f299fbd7f8418d92/lib-icu_properties_data.json
+  s_0e8f9281378060::t_cb758bce740c61 1
+riddle/target/debug/.fingerprint/icu_provider-886b67ad9ae0821d/invoked.timestamp
+  s_0e8f9281378060::t_4d2409943c8fbc 1
+riddle/target/debug/.fingerprint/icu_provider-886b67ad9ae0821d/lib-icu_provider
+  s_0e8f9281378060::t_5a17a5f7476edf 1
+riddle/target/debug/.fingerprint/icu_provider-886b67ad9ae0821d/lib-icu_provider.json
+  s_0e8f9281378060::t_b07980c23866a6 1
+riddle/target/debug/.fingerprint/icu_provider-ea19f9487b78c30b/invoked.timestamp
+  s_0e8f9281378060::t_5aef3e5c1c8c06 1
+riddle/target/debug/.fingerprint/icu_provider-ea19f9487b78c30b/lib-icu_provider
+  s_0e8f9281378060::t_ac3025d3fc61dc 1
+riddle/target/debug/.fingerprint/icu_provider-ea19f9487b78c30b/lib-icu_provider.json
+  s_0e8f9281378060::t_bb8db992785b6d 1
+riddle/target/debug/.fingerprint/idna-2d273c94b68c4aa2/invoked.timestamp
+  s_0e8f9281378060::t_94db09380cbf4e 1
+riddle/target/debug/.fingerprint/idna-2d273c94b68c4aa2/lib-idna
+  s_0e8f9281378060::t_145fe0fc46fac2 1
+riddle/target/debug/.fingerprint/idna-2d273c94b68c4aa2/lib-idna.json
+  s_0e8f9281378060::t_496b7724b11e4b 1
+riddle/target/debug/.fingerprint/idna-4d31a0e9dbe09fc3/invoked.timestamp
+  s_0e8f9281378060::t_ac4abc4a15e120 1
+riddle/target/debug/.fingerprint/idna-4d31a0e9dbe09fc3/lib-idna
+  s_0e8f9281378060::t_0bda6834cc216a 1
+riddle/target/debug/.fingerprint/idna-4d31a0e9dbe09fc3/lib-idna.json
+  s_0e8f9281378060::t_5f3910ec308b2b 1
+riddle/target/debug/.fingerprint/idna_adapter-70d00dda5d64f25d/invoked.timestamp
+  s_0e8f9281378060::t_2972e28d453b22 1
+riddle/target/debug/.fingerprint/idna_adapter-70d00dda5d64f25d/lib-idna_adapter
+  s_0e8f9281378060::t_ae0efd9f39501c 1
+riddle/target/debug/.fingerprint/idna_adapter-70d00dda5d64f25d/lib-idna_adapter.json
+  s_0e8f9281378060::t_b3605d8741fea1 1
+riddle/target/debug/.fingerprint/idna_adapter-71f4f1e24279b129/invoked.timestamp
+  s_0e8f9281378060::t_5b4c36b441256e 1
+riddle/target/debug/.fingerprint/idna_adapter-71f4f1e24279b129/lib-idna_adapter
+  s_0e8f9281378060::t_8e5720368c29a0 1
+riddle/target/debug/.fingerprint/idna_adapter-71f4f1e24279b129/lib-idna_adapter.json
+  s_0e8f9281378060::t_ae104da736d639 1
+riddle/target/debug/.fingerprint/libc-288fa2a08e10f745/invoked.timestamp
+  s_0e8f9281378060::t_fc208c5afdf479 1
+riddle/target/debug/.fingerprint/libc-288fa2a08e10f745/lib-libc
+  s_0e8f9281378060::t_678c84577006c0 1
+riddle/target/debug/.fingerprint/libc-288fa2a08e10f745/lib-libc.json
+  s_0e8f9281378060::t_5ab24957e576ac 1
+riddle/target/debug/.fingerprint/libc-cda0002aa538d070/invoked.timestamp
+  s_0e8f9281378060::t_1d62ff920d506e 1
+riddle/target/debug/.fingerprint/libc-cda0002aa538d070/lib-libc
+  s_0e8f9281378060::t_b4c17f9f2acaba 1
+riddle/target/debug/.fingerprint/libc-cda0002aa538d070/lib-libc.json
+  s_0e8f9281378060::t_39c5a05c0c0bbd 1
+riddle/target/debug/.fingerprint/libc-e9aa4decb4d275de/build-script-build-script-build
+  s_0e8f9281378060::t_5b6008781b53c8 1
+riddle/target/debug/.fingerprint/libc-e9aa4decb4d275de/build-script-build-script-build.json
+  s_0e8f9281378060::t_ca4254e0033fe8 1
+riddle/target/debug/.fingerprint/libc-e9aa4decb4d275de/invoked.timestamp
+  s_0e8f9281378060::t_2932e8de44df4b 1
+riddle/target/debug/.fingerprint/libc-ff35aac0c372988d/run-build-script-build-script-build
+  s_0e8f9281378060::t_fad79c7ce00f07 1
+riddle/target/debug/.fingerprint/libc-ff35aac0c372988d/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_998abc394ae145 1
+riddle/target/debug/.fingerprint/litemap-2b6b1fb223c013da/invoked.timestamp
+  s_0e8f9281378060::t_b1e5b5a69ef5fb 1
+riddle/target/debug/.fingerprint/litemap-2b6b1fb223c013da/lib-litemap
+  s_0e8f9281378060::t_64492f2fc7e03e 1
+riddle/target/debug/.fingerprint/litemap-2b6b1fb223c013da/lib-litemap.json
+  s_0e8f9281378060::t_6db39060b5310f 1
+riddle/target/debug/.fingerprint/litemap-8c5b8069baedca2d/invoked.timestamp
+  s_0e8f9281378060::t_84611be13f98e8 1
+riddle/target/debug/.fingerprint/litemap-8c5b8069baedca2d/lib-litemap
+  s_0e8f9281378060::t_ddf797a88b5363 1
+riddle/target/debug/.fingerprint/litemap-8c5b8069baedca2d/lib-litemap.json
+  s_0e8f9281378060::t_1c6005585ef205 1
+riddle/target/debug/.fingerprint/log-142e5ee6bc16c6a4/invoked.timestamp
+  s_0e8f9281378060::t_b55408620ce706 1
+riddle/target/debug/.fingerprint/log-142e5ee6bc16c6a4/lib-log
+  s_0e8f9281378060::t_eebc6a4a2448e5 1
+riddle/target/debug/.fingerprint/log-142e5ee6bc16c6a4/lib-log.json
+  s_0e8f9281378060::t_90e0defa7d58b4 1
+riddle/target/debug/.fingerprint/log-e13cb70c1f523a68/invoked.timestamp
+  s_0e8f9281378060::t_7e620cc932723c 1
+riddle/target/debug/.fingerprint/log-e13cb70c1f523a68/lib-log
+  s_0e8f9281378060::t_07b6404b545bf0 1
+riddle/target/debug/.fingerprint/log-e13cb70c1f523a68/lib-log.json
+  s_0e8f9281378060::t_1c3213b723a6be 1
+riddle/target/debug/.fingerprint/miniz_oxide-2bb138e21b86c880/invoked.timestamp
+  s_0e8f9281378060::t_545cba56928a67 1
+riddle/target/debug/.fingerprint/miniz_oxide-2bb138e21b86c880/lib-miniz_oxide
+  s_0e8f9281378060::t_1f2b3d16743560 1
+riddle/target/debug/.fingerprint/miniz_oxide-2bb138e21b86c880/lib-miniz_oxide.json
+  s_0e8f9281378060::t_12f272eedaceab 1
+riddle/target/debug/.fingerprint/miniz_oxide-2c0e8401bac858b9/invoked.timestamp
+  s_0e8f9281378060::t_f7ffa83cde582e 1
+riddle/target/debug/.fingerprint/miniz_oxide-2c0e8401bac858b9/lib-miniz_oxide
+  s_0e8f9281378060::t_e9c12ac3572df1 1
+riddle/target/debug/.fingerprint/miniz_oxide-2c0e8401bac858b9/lib-miniz_oxide.json
+  s_0e8f9281378060::t_ce986bbc003142 1
+riddle/target/debug/.fingerprint/once_cell-276e8fd83a628875/invoked.timestamp
+  s_0e8f9281378060::t_6b5bce81e6d9c6 1
+riddle/target/debug/.fingerprint/once_cell-276e8fd83a628875/lib-once_cell
+  s_0e8f9281378060::t_f58aacbd6319a3 1
+riddle/target/debug/.fingerprint/once_cell-276e8fd83a628875/lib-once_cell.json
+  s_0e8f9281378060::t_3c81e7015bfa86 1
+riddle/target/debug/.fingerprint/once_cell-a3c870353a5f2150/invoked.timestamp
+  s_0e8f9281378060::t_22ba358cba2b93 1
+riddle/target/debug/.fingerprint/once_cell-a3c870353a5f2150/lib-once_cell
+  s_0e8f9281378060::t_f3cdac381d5fe8 1
+riddle/target/debug/.fingerprint/once_cell-a3c870353a5f2150/lib-once_cell.json
+  s_0e8f9281378060::t_c5dbef8f9fb76c 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-19752d795f8c8b14/invoked.timestamp
+  s_0e8f9281378060::t_a7785fe3eab275 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-19752d795f8c8b14/lib-owned_ttf_parser
+  s_0e8f9281378060::t_ba2b0b138b45b6 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-19752d795f8c8b14/lib-owned_ttf_parser.json
+  s_0e8f9281378060::t_6732512a00e16d 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-ec8200155448ab75/invoked.timestamp
+  s_0e8f9281378060::t_6133c772d669a4 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-ec8200155448ab75/lib-owned_ttf_parser
+  s_0e8f9281378060::t_d2086236ecfcb0 1
+riddle/target/debug/.fingerprint/owned_ttf_parser-ec8200155448ab75/lib-owned_ttf_parser.json
+  s_0e8f9281378060::t_4a6e7d05d6f644 1
+riddle/target/debug/.fingerprint/percent-encoding-9c87315b2d7d6cfa/invoked.timestamp
+  s_0e8f9281378060::t_6ab349d1dd4ee6 1
+riddle/target/debug/.fingerprint/percent-encoding-9c87315b2d7d6cfa/lib-percent_encoding
+  s_0e8f9281378060::t_5115d7dc14a460 1
+riddle/target/debug/.fingerprint/percent-encoding-9c87315b2d7d6cfa/lib-percent_encoding.json
+  s_0e8f9281378060::t_79af2f186e7628 1
+riddle/target/debug/.fingerprint/percent-encoding-e9ef25200d43534f/invoked.timestamp
+  s_0e8f9281378060::t_87e126daccc219 1
+riddle/target/debug/.fingerprint/percent-encoding-e9ef25200d43534f/lib-percent_encoding
+  s_0e8f9281378060::t_4ff56a10b57663 1
+riddle/target/debug/.fingerprint/percent-encoding-e9ef25200d43534f/lib-percent_encoding.json
+  s_0e8f9281378060::t_059c6020c3217e 1
+riddle/target/debug/.fingerprint/png-5dbcc9904c388000/invoked.timestamp
+  s_0e8f9281378060::t_a13eea1d63c1d7 1
+riddle/target/debug/.fingerprint/png-5dbcc9904c388000/lib-png
+  s_0e8f9281378060::t_d11e52754e1ae2 1
+riddle/target/debug/.fingerprint/png-5dbcc9904c388000/lib-png.json
+  s_0e8f9281378060::t_f6b3c3459d9845 1
+riddle/target/debug/.fingerprint/png-f6a4e7194028e338/invoked.timestamp
+  s_0e8f9281378060::t_06aa58bea0f64c 1
+riddle/target/debug/.fingerprint/png-f6a4e7194028e338/lib-png
+  s_0e8f9281378060::t_4bb80410dd100d 1
+riddle/target/debug/.fingerprint/png-f6a4e7194028e338/lib-png.json
+  s_0e8f9281378060::t_d15940e90522be 1
+riddle/target/debug/.fingerprint/potential_utf-8bc1c0ddfd596041/invoked.timestamp
+  s_0e8f9281378060::t_e6376321670a1b 1
+riddle/target/debug/.fingerprint/potential_utf-8bc1c0ddfd596041/lib-potential_utf
+  s_0e8f9281378060::t_28679f78dcea8e 1
+riddle/target/debug/.fingerprint/potential_utf-8bc1c0ddfd596041/lib-potential_utf.json
+  s_0e8f9281378060::t_6b4b6452f5dbb6 1
+riddle/target/debug/.fingerprint/potential_utf-b218cb143eff4b5c/invoked.timestamp
+  s_0e8f9281378060::t_c8a141ff80f5ae 1
+riddle/target/debug/.fingerprint/potential_utf-b218cb143eff4b5c/lib-potential_utf
+  s_0e8f9281378060::t_fa8e1757925e86 1
+riddle/target/debug/.fingerprint/potential_utf-b218cb143eff4b5c/lib-potential_utf.json
+  s_0e8f9281378060::t_72d237b7ce8fa5 1
+riddle/target/debug/.fingerprint/proc-macro2-6ed9591127a1b6f3/invoked.timestamp
+  s_0e8f9281378060::t_8addf2affc9199 1
+riddle/target/debug/.fingerprint/proc-macro2-6ed9591127a1b6f3/lib-proc_macro2
+  s_0e8f9281378060::t_282361f2ca6620 1
+riddle/target/debug/.fingerprint/proc-macro2-6ed9591127a1b6f3/lib-proc_macro2.json
+  s_0e8f9281378060::t_44120c71f8e003 1
+riddle/target/debug/.fingerprint/proc-macro2-78dea9461882b558/build-script-build-script-build
+  s_0e8f9281378060::t_b110f02134833a 1
+riddle/target/debug/.fingerprint/proc-macro2-78dea9461882b558/build-script-build-script-build.json
+  s_0e8f9281378060::t_1e6720eb43737d 1
+riddle/target/debug/.fingerprint/proc-macro2-78dea9461882b558/invoked.timestamp
+  s_0e8f9281378060::t_884af6b9f92877 1
+riddle/target/debug/.fingerprint/proc-macro2-aa50def7f9f19485/run-build-script-build-script-build
+  s_0e8f9281378060::t_70376ea982a17e 1
+riddle/target/debug/.fingerprint/proc-macro2-aa50def7f9f19485/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_8dad429e041bbf 1
+riddle/target/debug/.fingerprint/quote-8b839510b3454d32/run-build-script-build-script-build
+  s_0e8f9281378060::t_d935806b8c2e93 1
+riddle/target/debug/.fingerprint/quote-8b839510b3454d32/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_4157a3a6fe0c57 1
+riddle/target/debug/.fingerprint/quote-95bf1eb7851a8b61/build-script-build-script-build
+  s_0e8f9281378060::t_4f6c3571d175aa 1
+riddle/target/debug/.fingerprint/quote-95bf1eb7851a8b61/build-script-build-script-build.json
+  s_0e8f9281378060::t_b2724eb776ca9a 1
+riddle/target/debug/.fingerprint/quote-95bf1eb7851a8b61/invoked.timestamp
+  s_0e8f9281378060::t_be35cd7c277f62 1
+riddle/target/debug/.fingerprint/quote-e8689463c4146eb3/invoked.timestamp
+  s_0e8f9281378060::t_8d4dfa29e432a9 1
+riddle/target/debug/.fingerprint/quote-e8689463c4146eb3/lib-quote
+  s_0e8f9281378060::t_afd840c4393fa8 1
+riddle/target/debug/.fingerprint/quote-e8689463c4146eb3/lib-quote.json
+  s_0e8f9281378060::t_a3970f1bbdfb7b 1
+riddle/target/debug/.fingerprint/riddle-0533d0088dbf3601/run-build-script-build-script-build
+  s_0e8f9281378060::t_f11db39744da1d 1
+riddle/target/debug/.fingerprint/riddle-0533d0088dbf3601/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_8380f04bd8021b 1
+riddle/target/debug/.fingerprint/riddle-478074a28c1c57f9/bin-riddle
+  s_0e8f9281378060::t_48d641b98366e1 1
+riddle/target/debug/.fingerprint/riddle-478074a28c1c57f9/bin-riddle.json
+  s_0e8f9281378060::t_dde7b889851a6a 1
+riddle/target/debug/.fingerprint/riddle-478074a28c1c57f9/invoked.timestamp
+  s_0e8f9281378060::t_81ff07b290677f 1
+riddle/target/debug/.fingerprint/riddle-478074a28c1c57f9/output-bin-riddle
+  s_0e8f9281378060::t_89db592322c259 1-11
+riddle/target/debug/.fingerprint/riddle-982b24549ccbab7f/build-script-build-script-build
+  s_00d291913afd40::t_e9797fd61d8dc8 1
+riddle/target/debug/.fingerprint/riddle-982b24549ccbab7f/build-script-build-script-build.json
+  s_0e8f9281378060::t_e579da80141584 1
+riddle/target/debug/.fingerprint/riddle-982b24549ccbab7f/invoked.timestamp
+  s_0e8f9281378060::t_518e456eb13e6f 1
+riddle/target/debug/.fingerprint/riddle-a30680cea713f208/build-script-build-script-build
+  s_0e8f9281378060::t_15cb73ce20b88f 1
+riddle/target/debug/.fingerprint/riddle-a30680cea713f208/build-script-build-script-build.json
+  s_0e8f9281378060::t_e142bbb029c721 1
+riddle/target/debug/.fingerprint/riddle-a30680cea713f208/invoked.timestamp
+  s_0e8f9281378060::t_0da37d32307033 1
+riddle/target/debug/.fingerprint/riddle-b3b97ea605851b93/build-script-build-script-build
+  s_0e8f9281378060::t_99eeba9d1e9b49 1
+riddle/target/debug/.fingerprint/riddle-b3b97ea605851b93/build-script-build-script-build.json
+  s_0e8f9281378060::t_81d7ac6da4ac90 1
+riddle/target/debug/.fingerprint/riddle-b3b97ea605851b93/invoked.timestamp
+  s_0e8f9281378060::t_9e7291b3c24b27 1
+riddle/target/debug/.fingerprint/riddle-dc3e2ad36646a2ca/invoked.timestamp
+  s_0e8f9281378060::t_e08d0e33083d54 1
+riddle/target/debug/.fingerprint/riddle-dc3e2ad36646a2ca/output-test-bin-riddle
+  s_0e8f9281378060::t_697b3e523bf812 1-11
+riddle/target/debug/.fingerprint/riddle-dc3e2ad36646a2ca/test-bin-riddle
+  s_0e8f9281378060::t_ea1654094ef1ca 1
+riddle/target/debug/.fingerprint/riddle-dc3e2ad36646a2ca/test-bin-riddle.json
+  s_0e8f9281378060::t_2f350e25d3bde3 1
+riddle/target/debug/.fingerprint/riddle-ecd1230ec8f56b18/bin-riddle
+  s_0e8f9281378060::t_53cd1d02e8f918 1
+riddle/target/debug/.fingerprint/riddle-ecd1230ec8f56b18/bin-riddle.json
+  s_0e8f9281378060::t_a0fc6e182cb9b1 1
+riddle/target/debug/.fingerprint/riddle-ecd1230ec8f56b18/invoked.timestamp
+  s_0e8f9281378060::t_68b732d3822249 1
+riddle/target/debug/.fingerprint/riddle-ecd1230ec8f56b18/output-bin-riddle
+  s_0e8f9281378060::t_77d59e2596df55 1-11
+riddle/target/debug/.fingerprint/riddle-f824382b45c5ba61/run-build-script-build-script-build
+  s_0e8f9281378060::t_609ac1bdefc0a7 1
+riddle/target/debug/.fingerprint/riddle-f824382b45c5ba61/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_4f9e08122b13bf 1
+riddle/target/debug/.fingerprint/ring-06868d34ea336bfb/build-script-build-script-build
+  s_0e8f9281378060::t_8f952c97456361 1
+riddle/target/debug/.fingerprint/ring-06868d34ea336bfb/build-script-build-script-build.json
+  s_0e8f9281378060::t_a8984ef175147b 1
+riddle/target/debug/.fingerprint/ring-06868d34ea336bfb/invoked.timestamp
+  s_0e8f9281378060::t_393e73549e2059 1
+riddle/target/debug/.fingerprint/ring-27f1b2dfc90ab0bf/run-build-script-build-script-build
+  s_0e8f9281378060::t_ca45d310868c89 1
+riddle/target/debug/.fingerprint/ring-27f1b2dfc90ab0bf/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_9983f454552b96 1
+riddle/target/debug/.fingerprint/ring-3230d7c29d7bed50/invoked.timestamp
+  s_0e8f9281378060::t_8f3618e3db5f2f 1
+riddle/target/debug/.fingerprint/ring-3230d7c29d7bed50/lib-ring
+  s_0e8f9281378060::t_6a23a0d18bcf13 1
+riddle/target/debug/.fingerprint/ring-3230d7c29d7bed50/lib-ring.json
+  s_0e8f9281378060::t_faa6b20d40229e 1
+riddle/target/debug/.fingerprint/ring-44ac32acedca5ec4/invoked.timestamp
+  s_0e8f9281378060::t_e1439ac26e634b 1
+riddle/target/debug/.fingerprint/ring-44ac32acedca5ec4/lib-ring
+  s_0e8f9281378060::t_416c2b23c409ae 1
+riddle/target/debug/.fingerprint/ring-44ac32acedca5ec4/lib-ring.json
+  s_0e8f9281378060::t_dc6720c5c51782 1
+riddle/target/debug/.fingerprint/rustls-5bda977dd27e5265/invoked.timestamp
+  s_0e8f9281378060::t_cc8ab98689a678 1
+riddle/target/debug/.fingerprint/rustls-5bda977dd27e5265/lib-rustls
+  s_0e8f9281378060::t_cd23479d0c7e78 1
+riddle/target/debug/.fingerprint/rustls-5bda977dd27e5265/lib-rustls.json
+  s_0e8f9281378060::t_72a0080572a136 1
+riddle/target/debug/.fingerprint/rustls-7ebec8db97d5a913/build-script-build-script-build
+  s_00d291913afd40::t_ea14d55aed339b 1
+riddle/target/debug/.fingerprint/rustls-c78cf05f72720b52/run-build-script-build-script-build
+  s_0e8f9281378060::t_56ab3eea31f84d 1
+riddle/target/debug/.fingerprint/rustls-c78cf05f72720b52/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_032553d8d41db6 1
+riddle/target/debug/.fingerprint/rustls-d9333984cfbd1304/invoked.timestamp
+  s_0e8f9281378060::t_80277dd4f3386c 1
+riddle/target/debug/.fingerprint/rustls-d9333984cfbd1304/lib-rustls
+  s_0e8f9281378060::t_491f40e20c33af 1
+riddle/target/debug/.fingerprint/rustls-d9333984cfbd1304/lib-rustls.json
+  s_0e8f9281378060::t_c1f9f8bf7484e1 1
+riddle/target/debug/.fingerprint/rustls-ea6ab790ebb65a2a/build-script-build-script-build
+  s_0e8f9281378060::t_2efe5b0b85327e 1
+riddle/target/debug/.fingerprint/rustls-ea6ab790ebb65a2a/build-script-build-script-build.json
+  s_0e8f9281378060::t_d1fb04be227deb 1
+riddle/target/debug/.fingerprint/rustls-ea6ab790ebb65a2a/invoked.timestamp
+  s_0e8f9281378060::t_b1c60e8fdab972 1
+riddle/target/debug/.fingerprint/rustls-pki-types-229d9a1cc1d017b4/invoked.timestamp
+  s_0e8f9281378060::t_c67f8ce72db408 1
+riddle/target/debug/.fingerprint/rustls-pki-types-229d9a1cc1d017b4/lib-rustls_pki_types
+  s_0e8f9281378060::t_582c4e353acec2 1
+riddle/target/debug/.fingerprint/rustls-pki-types-229d9a1cc1d017b4/lib-rustls_pki_types.json
+  s_0e8f9281378060::t_ced7d8085b9a4c 1
+riddle/target/debug/.fingerprint/rustls-pki-types-8fb3522483f0e6e9/invoked.timestamp
+  s_0e8f9281378060::t_1bae62acc1c20d 1
+riddle/target/debug/.fingerprint/rustls-pki-types-8fb3522483f0e6e9/lib-rustls_pki_types
+  s_0e8f9281378060::t_4903d5afd4d9ef 1
+riddle/target/debug/.fingerprint/rustls-pki-types-8fb3522483f0e6e9/lib-rustls_pki_types.json
+  s_0e8f9281378060::t_9894eb2ea1a77e 1
+riddle/target/debug/.fingerprint/rustls-webpki-dabef4acdffd3347/invoked.timestamp
+  s_0e8f9281378060::t_b53221b89320cf 1
+riddle/target/debug/.fingerprint/rustls-webpki-dabef4acdffd3347/lib-webpki
+  s_0e8f9281378060::t_eb1404fd10b92d 1
+riddle/target/debug/.fingerprint/rustls-webpki-dabef4acdffd3347/lib-webpki.json
+  s_0e8f9281378060::t_ac20cb464b3ab9 1
+riddle/target/debug/.fingerprint/rustls-webpki-dc03af6af465224e/invoked.timestamp
+  s_0e8f9281378060::t_e96f7f73a3931f 1
+riddle/target/debug/.fingerprint/rustls-webpki-dc03af6af465224e/lib-webpki
+  s_0e8f9281378060::t_dc8b4255727601 1
+riddle/target/debug/.fingerprint/rustls-webpki-dc03af6af465224e/lib-webpki.json
+  s_0e8f9281378060::t_8261e139ee89a5 1
+riddle/target/debug/.fingerprint/shlex-f9994ad8dc0f0a1d/invoked.timestamp
+  s_0e8f9281378060::t_23c6bee3449d0b 1
+riddle/target/debug/.fingerprint/shlex-f9994ad8dc0f0a1d/lib-shlex
+  s_0e8f9281378060::t_124793bf42c7ef 1
+riddle/target/debug/.fingerprint/shlex-f9994ad8dc0f0a1d/lib-shlex.json
+  s_0e8f9281378060::t_f4434ab11d60eb 1
+riddle/target/debug/.fingerprint/signal-hook-119a1978810815dc/build-script-build-script-build
+  s_00d291913afd40::t_7831bee4b88e53 1
+riddle/target/debug/.fingerprint/signal-hook-119a1978810815dc/invoked.timestamp
+  s_00d291913afd40::t_a945dd4050e8f1 1
+riddle/target/debug/.fingerprint/signal-hook-438f7716d721edba/invoked.timestamp
+  s_0e8f9281378060::t_a82fae0c2af9bc 1
+riddle/target/debug/.fingerprint/signal-hook-438f7716d721edba/lib-signal_hook
+  s_0e8f9281378060::t_50984b4e41439c 1
+riddle/target/debug/.fingerprint/signal-hook-438f7716d721edba/lib-signal_hook.json
+  s_0e8f9281378060::t_3bb93323f58963 1
+riddle/target/debug/.fingerprint/signal-hook-44b408f0e4e9244d/invoked.timestamp
+  s_0e8f9281378060::t_36bb2aae3084fe 1
+riddle/target/debug/.fingerprint/signal-hook-44b408f0e4e9244d/lib-signal_hook
+  s_0e8f9281378060::t_dfc1a991832ff9 1
+riddle/target/debug/.fingerprint/signal-hook-44b408f0e4e9244d/lib-signal_hook.json
+  s_0e8f9281378060::t_ad675fd439262d 1
+riddle/target/debug/.fingerprint/signal-hook-474d247bcb237f00/run-build-script-build-script-build
+  s_0e8f9281378060::t_5ba528cee00beb 1
+riddle/target/debug/.fingerprint/signal-hook-474d247bcb237f00/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_171800d46c9ee2 1
+riddle/target/debug/.fingerprint/signal-hook-a6a0940aea6cc6a2/build-script-build-script-build
+  s_0e8f9281378060::t_b531a702f8ce99 1
+riddle/target/debug/.fingerprint/signal-hook-a6a0940aea6cc6a2/build-script-build-script-build.json
+  s_0e8f9281378060::t_6c55685125d2c4 1
+riddle/target/debug/.fingerprint/signal-hook-a6a0940aea6cc6a2/invoked.timestamp
+  s_0e8f9281378060::t_fbb5ff25e5483c 1
+riddle/target/debug/.fingerprint/signal-hook-registry-c87696b4cdd4f3f9/invoked.timestamp
+  s_0e8f9281378060::t_cfd254aab55ac8 1
+riddle/target/debug/.fingerprint/signal-hook-registry-c87696b4cdd4f3f9/lib-signal_hook_registry
+  s_0e8f9281378060::t_bc1ddd6cbbb192 1
+riddle/target/debug/.fingerprint/signal-hook-registry-c87696b4cdd4f3f9/lib-signal_hook_registry.json
+  s_0e8f9281378060::t_837ed1c6f3c1df 1
+riddle/target/debug/.fingerprint/signal-hook-registry-da102418ae42cbf4/invoked.timestamp
+  s_0e8f9281378060::t_f46126dbeabf0d 1
+riddle/target/debug/.fingerprint/signal-hook-registry-da102418ae42cbf4/lib-signal_hook_registry
+  s_0e8f9281378060::t_86845b2486ade3 1
+riddle/target/debug/.fingerprint/signal-hook-registry-da102418ae42cbf4/lib-signal_hook_registry.json
+  s_0e8f9281378060::t_229bc6264940fc 1
+riddle/target/debug/.fingerprint/simd-adler32-1e2107c871adacc2/invoked.timestamp
+  s_0e8f9281378060::t_acbe23e00adbdc 1
+riddle/target/debug/.fingerprint/simd-adler32-1e2107c871adacc2/lib-simd_adler32
+  s_0e8f9281378060::t_b9c7b439ac3924 1
+riddle/target/debug/.fingerprint/simd-adler32-1e2107c871adacc2/lib-simd_adler32.json
+  s_0e8f9281378060::t_91ba4615c0a64c 1
+riddle/target/debug/.fingerprint/simd-adler32-e83cbe9c9008feeb/invoked.timestamp
+  s_0e8f9281378060::t_347ff041e9b01a 1
+riddle/target/debug/.fingerprint/simd-adler32-e83cbe9c9008feeb/lib-simd_adler32
+  s_0e8f9281378060::t_0a1869d6c93752 1
+riddle/target/debug/.fingerprint/simd-adler32-e83cbe9c9008feeb/lib-simd_adler32.json
+  s_0e8f9281378060::t_d475fee8941fdd 1
+riddle/target/debug/.fingerprint/smallvec-234c324eec3703af/invoked.timestamp
+  s_0e8f9281378060::t_1db23de1426695 1
+riddle/target/debug/.fingerprint/smallvec-234c324eec3703af/lib-smallvec
+  s_0e8f9281378060::t_f4b3edda8219d7 1
+riddle/target/debug/.fingerprint/smallvec-234c324eec3703af/lib-smallvec.json
+  s_0e8f9281378060::t_2f6858593acb3f 1
+riddle/target/debug/.fingerprint/smallvec-536794a419b6a118/invoked.timestamp
+  s_0e8f9281378060::t_28f2d2618297d4 1
+riddle/target/debug/.fingerprint/smallvec-536794a419b6a118/lib-smallvec
+  s_0e8f9281378060::t_9190da32e346fa 1
+riddle/target/debug/.fingerprint/smallvec-536794a419b6a118/lib-smallvec.json
+  s_0e8f9281378060::t_47f33c0c062218 1
+riddle/target/debug/.fingerprint/stable_deref_trait-540312001fcfb14d/invoked.timestamp
+  s_0e8f9281378060::t_c20784a66bef5a 1
+riddle/target/debug/.fingerprint/stable_deref_trait-540312001fcfb14d/lib-stable_deref_trait
+  s_0e8f9281378060::t_ce01a288834e51 1
+riddle/target/debug/.fingerprint/stable_deref_trait-540312001fcfb14d/lib-stable_deref_trait.json
+  s_0e8f9281378060::t_486f08430cfe78 1
+riddle/target/debug/.fingerprint/stable_deref_trait-541c506b227465b5/invoked.timestamp
+  s_0e8f9281378060::t_28d567cbafd9d5 1
+riddle/target/debug/.fingerprint/stable_deref_trait-541c506b227465b5/lib-stable_deref_trait
+  s_0e8f9281378060::t_d7cd844bb3a490 1
+riddle/target/debug/.fingerprint/stable_deref_trait-541c506b227465b5/lib-stable_deref_trait.json
+  s_0e8f9281378060::t_9f58c5674bbb82 1
+riddle/target/debug/.fingerprint/subtle-3d4ae896dbd530ed/invoked.timestamp
+  s_0e8f9281378060::t_56afcdd6d7af5b 1
+riddle/target/debug/.fingerprint/subtle-3d4ae896dbd530ed/lib-subtle
+  s_0e8f9281378060::t_b7af7df8e7fbd5 1
+riddle/target/debug/.fingerprint/subtle-3d4ae896dbd530ed/lib-subtle.json
+  s_0e8f9281378060::t_988b9546d2732c 1
+riddle/target/debug/.fingerprint/subtle-8cbd56d7fd82671b/invoked.timestamp
+  s_0e8f9281378060::t_b15e042f5d375e 1
+riddle/target/debug/.fingerprint/subtle-8cbd56d7fd82671b/lib-subtle
+  s_0e8f9281378060::t_fdf4174990bfca 1
+riddle/target/debug/.fingerprint/subtle-8cbd56d7fd82671b/lib-subtle.json
+  s_0e8f9281378060::t_ec134494a13845 1
+riddle/target/debug/.fingerprint/syn-8857239abe27e4ef/invoked.timestamp
+  s_0e8f9281378060::t_10ddd67554c349 1
+riddle/target/debug/.fingerprint/syn-8857239abe27e4ef/lib-syn
+  s_0e8f9281378060::t_778f455cba6236 1
+riddle/target/debug/.fingerprint/syn-8857239abe27e4ef/lib-syn.json
+  s_0e8f9281378060::t_dc6b66bc2dd6df 1
+riddle/target/debug/.fingerprint/syn-bbc7665d0f0c97fd/invoked.timestamp
+  s_0e8f9281378060::t_d4587b54029453 1
+riddle/target/debug/.fingerprint/synstructure-06b59d1d608bbca4/invoked.timestamp
+  s_0e8f9281378060::t_ec958b2ac97be6 1
+riddle/target/debug/.fingerprint/synstructure-06b59d1d608bbca4/lib-synstructure
+  s_0e8f9281378060::t_e26f80b342d2a1 1
+riddle/target/debug/.fingerprint/synstructure-06b59d1d608bbca4/lib-synstructure.json
+  s_0e8f9281378060::t_81341fe2a63586 1
+riddle/target/debug/.fingerprint/tinystr-4cb70376804b81ad/invoked.timestamp
+  s_0e8f9281378060::t_d1962825e21342 1
+riddle/target/debug/.fingerprint/tinystr-4cb70376804b81ad/lib-tinystr
+  s_0e8f9281378060::t_4c98aa14ddfe11 1
+riddle/target/debug/.fingerprint/tinystr-4cb70376804b81ad/lib-tinystr.json
+  s_0e8f9281378060::t_667f317cec95e1 1
+riddle/target/debug/.fingerprint/tinystr-d2c849269d88aa3f/invoked.timestamp
+  s_0e8f9281378060::t_bff0476182a576 1
+riddle/target/debug/.fingerprint/tinystr-d2c849269d88aa3f/lib-tinystr
+  s_0e8f9281378060::t_d725e16be4c5d3 1
+riddle/target/debug/.fingerprint/tinystr-d2c849269d88aa3f/lib-tinystr.json
+  s_0e8f9281378060::t_0af60816f9d7a2 1
+riddle/target/debug/.fingerprint/ttf-parser-d7e141e2f88e7655/invoked.timestamp
+  s_0e8f9281378060::t_93a7012d2c496c 1
+riddle/target/debug/.fingerprint/ttf-parser-d7e141e2f88e7655/lib-ttf_parser
+  s_0e8f9281378060::t_b99c4c02d36241 1
+riddle/target/debug/.fingerprint/ttf-parser-d7e141e2f88e7655/lib-ttf_parser.json
+  s_0e8f9281378060::t_0e0e2ee378ce6b 1
+riddle/target/debug/.fingerprint/ttf-parser-f4ea78496e858e51/invoked.timestamp
+  s_0e8f9281378060::t_e9f0ab00791a89 1
+riddle/target/debug/.fingerprint/ttf-parser-f4ea78496e858e51/lib-ttf_parser
+  s_0e8f9281378060::t_23296284c230e3 1
+riddle/target/debug/.fingerprint/ttf-parser-f4ea78496e858e51/lib-ttf_parser.json
+  s_0e8f9281378060::t_79820ad48d3d7f 1
+riddle/target/debug/.fingerprint/unicode-ident-eac911d12ba49da7/invoked.timestamp
+  s_0e8f9281378060::t_72668a1668151d 1
+riddle/target/debug/.fingerprint/unicode-ident-eac911d12ba49da7/lib-unicode_ident
+  s_0e8f9281378060::t_ad5676a98f8270 1
+riddle/target/debug/.fingerprint/unicode-ident-eac911d12ba49da7/lib-unicode_ident.json
+  s_0e8f9281378060::t_09be0f912a67d3 1
+riddle/target/debug/.fingerprint/untrusted-991c95f7cd83f229/invoked.timestamp
+  s_0e8f9281378060::t_cbf7098ae8d73e 1
+riddle/target/debug/.fingerprint/untrusted-991c95f7cd83f229/lib-untrusted
+  s_0e8f9281378060::t_23c91a302d3359 1
+riddle/target/debug/.fingerprint/untrusted-991c95f7cd83f229/lib-untrusted.json
+  s_0e8f9281378060::t_9a2ee1033fa3e1 1
+riddle/target/debug/.fingerprint/untrusted-dc42ec4353491db7/invoked.timestamp
+  s_0e8f9281378060::t_efc1780b1cd540 1
+riddle/target/debug/.fingerprint/untrusted-dc42ec4353491db7/lib-untrusted
+  s_0e8f9281378060::t_57129d731cdb78 1
+riddle/target/debug/.fingerprint/untrusted-dc42ec4353491db7/lib-untrusted.json
+  s_0e8f9281378060::t_7ce5eb99ec34a2 1
+riddle/target/debug/.fingerprint/ureq-12719380d7e1f021/invoked.timestamp
+  s_0e8f9281378060::t_2be0f69ab351a2 1
+riddle/target/debug/.fingerprint/ureq-12719380d7e1f021/lib-ureq
+  s_0e8f9281378060::t_edc87a7f2b0c91 1
+riddle/target/debug/.fingerprint/ureq-12719380d7e1f021/lib-ureq.json
+  s_0e8f9281378060::t_ed49d37317aefb 1
+riddle/target/debug/.fingerprint/ureq-356d7cd54630fed9/invoked.timestamp
+  s_0e8f9281378060::t_fbcedf8afb2e2f 1
+riddle/target/debug/.fingerprint/ureq-356d7cd54630fed9/lib-ureq
+  s_0e8f9281378060::t_888b90b26f177c 1
+riddle/target/debug/.fingerprint/ureq-356d7cd54630fed9/lib-ureq.json
+  s_0e8f9281378060::t_733bcf9858d360 1
+riddle/target/debug/.fingerprint/url-096a8a0f5eaa0785/invoked.timestamp
+  s_0e8f9281378060::t_3f3e77dcd50f21 1
+riddle/target/debug/.fingerprint/url-096a8a0f5eaa0785/lib-url
+  s_0e8f9281378060::t_7817bfa18cd819 1
+riddle/target/debug/.fingerprint/url-096a8a0f5eaa0785/lib-url.json
+  s_0e8f9281378060::t_b98f83143c6189 1
+riddle/target/debug/.fingerprint/url-d7ad9b6ca1a1a164/invoked.timestamp
+  s_0e8f9281378060::t_1a4f9f743f8976 1
+riddle/target/debug/.fingerprint/url-d7ad9b6ca1a1a164/lib-url
+  s_0e8f9281378060::t_c82d4be389ad50 1
+riddle/target/debug/.fingerprint/url-d7ad9b6ca1a1a164/lib-url.json
+  s_0e8f9281378060::t_1e3a84a3441d53 1
+riddle/target/debug/.fingerprint/utf8_iter-dadf8158f9932f06/invoked.timestamp
+  s_0e8f9281378060::t_dec608d720c0dd 1
+riddle/target/debug/.fingerprint/utf8_iter-dadf8158f9932f06/lib-utf8_iter
+  s_0e8f9281378060::t_8cc15cc4018bd9 1
+riddle/target/debug/.fingerprint/utf8_iter-dadf8158f9932f06/lib-utf8_iter.json
+  s_0e8f9281378060::t_e36a8625c8653a 1
+riddle/target/debug/.fingerprint/utf8_iter-e9837f5ef229563c/invoked.timestamp
+  s_0e8f9281378060::t_42e4df1c6d0d47 1
+riddle/target/debug/.fingerprint/utf8_iter-e9837f5ef229563c/lib-utf8_iter
+  s_0e8f9281378060::t_388e67381af25a 1
+riddle/target/debug/.fingerprint/utf8_iter-e9837f5ef229563c/lib-utf8_iter.json
+  s_0e8f9281378060::t_7ede18e57a584c 1
+riddle/target/debug/.fingerprint/webpki-roots-0d8783b8259ac0e7/invoked.timestamp
+  s_0e8f9281378060::t_f872aae723a181 1
+riddle/target/debug/.fingerprint/webpki-roots-0d8783b8259ac0e7/lib-webpki_roots
+  s_0e8f9281378060::t_e9c1de62cd1c33 1
+riddle/target/debug/.fingerprint/webpki-roots-0d8783b8259ac0e7/lib-webpki_roots.json
+  s_0e8f9281378060::t_318cb4e3b66e2e 1
+riddle/target/debug/.fingerprint/webpki-roots-5a52c6b584aa0ca3/invoked.timestamp
+  s_0e8f9281378060::t_3d18fbc241e48f 1
+riddle/target/debug/.fingerprint/webpki-roots-5a52c6b584aa0ca3/lib-webpki_roots
+  s_0e8f9281378060::t_e575018ac9b94c 1
+riddle/target/debug/.fingerprint/webpki-roots-5a52c6b584aa0ca3/lib-webpki_roots.json
+  s_0e8f9281378060::t_f6329dae449551 1
+riddle/target/debug/.fingerprint/webpki-roots-658ba024c7cb8347/invoked.timestamp
+  s_0e8f9281378060::t_17911f1baa8361 1
+riddle/target/debug/.fingerprint/webpki-roots-658ba024c7cb8347/lib-webpki_roots
+  s_0e8f9281378060::t_1faad40a6e62bb 1
+riddle/target/debug/.fingerprint/webpki-roots-658ba024c7cb8347/lib-webpki_roots.json
+  s_0e8f9281378060::t_44d01b5f0b1261 1
+riddle/target/debug/.fingerprint/webpki-roots-aa4e2a7f12e413a4/invoked.timestamp
+  s_0e8f9281378060::t_876a44777b6ab9 1
+riddle/target/debug/.fingerprint/webpki-roots-aa4e2a7f12e413a4/lib-webpki_roots
+  s_0e8f9281378060::t_a3fd7c9bf21fb8 1
+riddle/target/debug/.fingerprint/webpki-roots-aa4e2a7f12e413a4/lib-webpki_roots.json
+  s_0e8f9281378060::t_ccdbd5f797bec5 1
+riddle/target/debug/.fingerprint/writeable-8a7fbb93fbbe1515/invoked.timestamp
+  s_0e8f9281378060::t_058fbbd49cfcba 1
+riddle/target/debug/.fingerprint/writeable-8a7fbb93fbbe1515/lib-writeable
+  s_0e8f9281378060::t_a6408ae49cc558 1
+riddle/target/debug/.fingerprint/writeable-8a7fbb93fbbe1515/lib-writeable.json
+  s_0e8f9281378060::t_588ed3ac7b7b3a 1
+riddle/target/debug/.fingerprint/writeable-c7636a65e86bd205/invoked.timestamp
+  s_0e8f9281378060::t_2fb55b1cfc53dc 1
+riddle/target/debug/.fingerprint/writeable-c7636a65e86bd205/lib-writeable
+  s_0e8f9281378060::t_493f732cefc953 1
+riddle/target/debug/.fingerprint/writeable-c7636a65e86bd205/lib-writeable.json
+  s_0e8f9281378060::t_15632f335f0310 1
+riddle/target/debug/.fingerprint/yoke-0c94db7aa381b8bc/invoked.timestamp
+  s_0e8f9281378060::t_c28de88471aaf4 1
+riddle/target/debug/.fingerprint/yoke-0c94db7aa381b8bc/lib-yoke
+  s_0e8f9281378060::t_d967c59513ed94 1
+riddle/target/debug/.fingerprint/yoke-0c94db7aa381b8bc/lib-yoke.json
+  s_0e8f9281378060::t_7ba15e667c41a6 1
+riddle/target/debug/.fingerprint/yoke-60003dabfc7ce843/invoked.timestamp
+  s_0e8f9281378060::t_3a48a5d467f66d 1
+riddle/target/debug/.fingerprint/yoke-60003dabfc7ce843/lib-yoke
+  s_0e8f9281378060::t_d77d26c971181c 1
+riddle/target/debug/.fingerprint/yoke-60003dabfc7ce843/lib-yoke.json
+  s_0e8f9281378060::t_fc82122b2f664e 1
+riddle/target/debug/.fingerprint/yoke-derive-a8cb677049ed0afc/invoked.timestamp
+  s_0e8f9281378060::t_b9dfbc4dbce5e5 1
+riddle/target/debug/.fingerprint/yoke-derive-a8cb677049ed0afc/lib-yoke_derive
+  s_0e8f9281378060::t_756efeb6f91925 1
+riddle/target/debug/.fingerprint/yoke-derive-a8cb677049ed0afc/lib-yoke_derive.json
+  s_0e8f9281378060::t_0d7d3ca26d0be8 1
+riddle/target/debug/.fingerprint/zerofrom-b522c8df94bb7d11/invoked.timestamp
+  s_0e8f9281378060::t_4b1978ce242f49 1
+riddle/target/debug/.fingerprint/zerofrom-b522c8df94bb7d11/lib-zerofrom
+  s_0e8f9281378060::t_25dfb3c3e83f9e 1
+riddle/target/debug/.fingerprint/zerofrom-b522c8df94bb7d11/lib-zerofrom.json
+  s_0e8f9281378060::t_0785c8ee81928d 1
+riddle/target/debug/.fingerprint/zerofrom-derive-7816a791b637d471/invoked.timestamp
+  s_0e8f9281378060::t_e143083303befa 1
+riddle/target/debug/.fingerprint/zerofrom-derive-7816a791b637d471/lib-zerofrom_derive
+  s_0e8f9281378060::t_6814cd391ed45b 1
+riddle/target/debug/.fingerprint/zerofrom-derive-7816a791b637d471/lib-zerofrom_derive.json
+  s_0e8f9281378060::t_67e25c19300a6a 1
+riddle/target/debug/.fingerprint/zerofrom-f83d17c1d1a86cdc/invoked.timestamp
+  s_0e8f9281378060::t_579c3c68e2c6a9 1
+riddle/target/debug/.fingerprint/zerofrom-f83d17c1d1a86cdc/lib-zerofrom
+  s_0e8f9281378060::t_30d46269c5f0cb 1
+riddle/target/debug/.fingerprint/zerofrom-f83d17c1d1a86cdc/lib-zerofrom.json
+  s_0e8f9281378060::t_3444a9d5ded044 1
+riddle/target/debug/.fingerprint/zeroize-47b8cb8fe43c9152/invoked.timestamp
+  s_0e8f9281378060::t_87ac06110ac86d 1
+riddle/target/debug/.fingerprint/zeroize-47b8cb8fe43c9152/lib-zeroize
+  s_0e8f9281378060::t_3389813e1921b5 1
+riddle/target/debug/.fingerprint/zeroize-47b8cb8fe43c9152/lib-zeroize.json
+  s_0e8f9281378060::t_9a4bb4cd0b5374 1
+riddle/target/debug/.fingerprint/zeroize-a6ceb9a6642d5525/invoked.timestamp
+  s_0e8f9281378060::t_e5e46f7a8c1a0f 1
+riddle/target/debug/.fingerprint/zeroize-a6ceb9a6642d5525/lib-zeroize
+  s_0e8f9281378060::t_0a31073494eaba 1
+riddle/target/debug/.fingerprint/zeroize-a6ceb9a6642d5525/lib-zeroize.json
+  s_0e8f9281378060::t_742fd543ef7c3b 1
+riddle/target/debug/.fingerprint/zerotrie-69545c6999891bb9/invoked.timestamp
+  s_0e8f9281378060::t_5047ebc1c8ecb1 1
+riddle/target/debug/.fingerprint/zerotrie-69545c6999891bb9/lib-zerotrie
+  s_0e8f9281378060::t_4eab9ba1b1c0bc 1
+riddle/target/debug/.fingerprint/zerotrie-69545c6999891bb9/lib-zerotrie.json
+  s_0e8f9281378060::t_100d045f8ab1ca 1
+riddle/target/debug/.fingerprint/zerotrie-da88e35a8002cfea/invoked.timestamp
+  s_0e8f9281378060::t_9e3799f9d0a073 1
+riddle/target/debug/.fingerprint/zerotrie-da88e35a8002cfea/lib-zerotrie
+  s_0e8f9281378060::t_e7213585302244 1
+riddle/target/debug/.fingerprint/zerotrie-da88e35a8002cfea/lib-zerotrie.json
+  s_0e8f9281378060::t_43b524bd055099 1
+riddle/target/debug/.fingerprint/zerovec-2ee0d784360c7f65/invoked.timestamp
+  s_0e8f9281378060::t_c3f3cda16e3f93 1
+riddle/target/debug/.fingerprint/zerovec-2ee0d784360c7f65/lib-zerovec
+  s_0e8f9281378060::t_b67e5855074097 1
+riddle/target/debug/.fingerprint/zerovec-2ee0d784360c7f65/lib-zerovec.json
+  s_0e8f9281378060::t_48ee3a3e1f0de9 1
+riddle/target/debug/.fingerprint/zerovec-93bbb66fa225e068/invoked.timestamp
+  s_0e8f9281378060::t_3675bcce4ee714 1
+riddle/target/debug/.fingerprint/zerovec-93bbb66fa225e068/lib-zerovec
+  s_0e8f9281378060::t_2aaa50b5d15d67 1
+riddle/target/debug/.fingerprint/zerovec-93bbb66fa225e068/lib-zerovec.json
+  s_0e8f9281378060::t_2adfabe5c6a1cd 1
+riddle/target/debug/.fingerprint/zerovec-derive-8ac03ac8ccc383d7/invoked.timestamp
+  s_0e8f9281378060::t_99f7eff097768a 1
+riddle/target/debug/.fingerprint/zerovec-derive-8ac03ac8ccc383d7/lib-zerovec_derive
+  s_0e8f9281378060::t_da193a563c9ac2 1
+riddle/target/debug/.fingerprint/zerovec-derive-8ac03ac8ccc383d7/lib-zerovec_derive.json
+  s_0e8f9281378060::t_fd4d4d7341a38c 1
+riddle/target/debug/build/crc32fast-2142b8607ae96ec5/build_script_build-2142b8607ae96ec5.d
+  s_00d291913afd40::t_6d5b5256e3d31a 1-5
+riddle/target/debug/build/crc32fast-2effd4628f3044bc/build_script_build-2effd4628f3044bc.d
+  s_0e8f9281378060::t_e420ec4418dc5b 1-5
+riddle/target/debug/build/crc32fast-63bb31c998f9c753/invoked.timestamp
+  s_0e8f9281378060::t_724c9cac4e6fd3 1
+riddle/target/debug/build/crc32fast-63bb31c998f9c753/output
+  s_0e8f9281378060::t_48ccd380e18c60 1-2
+riddle/target/debug/build/crc32fast-63bb31c998f9c753/root-output
+  s_0e8f9281378060::t_366a59f303b679 1
+riddle/target/debug/build/icu_normalizer_data-2b0507016294efc1/invoked.timestamp
+  s_0e8f9281378060::t_c1dc4c84539ec6 1
+riddle/target/debug/build/icu_normalizer_data-2b0507016294efc1/output
+  s_0e8f9281378060::t_d9c4315c79e9bf 1-2
+riddle/target/debug/build/icu_normalizer_data-2b0507016294efc1/root-output
+  s_0e8f9281378060::t_1e4e33e77b46ff 1
+riddle/target/debug/build/icu_normalizer_data-888ed9af342c59d4/build_script_build-888ed9af342c59d4.d
+  s_0e8f9281378060::t_599c1bd3d1fa71 1-5
+riddle/target/debug/build/icu_properties_data-25001a155985658b/build_script_build-25001a155985658b.d
+  s_0e8f9281378060::t_a4aa48e426f195 1-5
+riddle/target/debug/build/icu_properties_data-392560d9d4e63487/invoked.timestamp
+  s_0e8f9281378060::t_cbad705853a142 1
+riddle/target/debug/build/icu_properties_data-392560d9d4e63487/output
+  s_0e8f9281378060::t_81bc9b22f652f0 1-2
+riddle/target/debug/build/icu_properties_data-392560d9d4e63487/root-output
+  s_0e8f9281378060::t_cc857890b8e17a 1
+riddle/target/debug/build/libc-e9aa4decb4d275de/build_script_build-e9aa4decb4d275de.d
+  s_0e8f9281378060::t_c89fdfec3ccdf1 1-5
+riddle/target/debug/build/libc-ff35aac0c372988d/invoked.timestamp
+  s_0e8f9281378060::t_753fbc75fa6232 1
+riddle/target/debug/build/libc-ff35aac0c372988d/output
+  s_0e8f9281378060::t_78407e7514d038 1-27
+riddle/target/debug/build/libc-ff35aac0c372988d/root-output
+  s_0e8f9281378060::t_7f9c70677def27 1
+riddle/target/debug/build/proc-macro2-2daee3d61d392c8f/invoked.timestamp
+  s_00d291913afd40::t_797b1b0583ec5e 1
+riddle/target/debug/build/proc-macro2-78dea9461882b558/build_script_build-78dea9461882b558.d
+  s_0e8f9281378060::t_3be8f20ade0788 1-5
+riddle/target/debug/build/proc-macro2-aa50def7f9f19485/invoked.timestamp
+  s_0e8f9281378060::t_0d39bd77b74402 1
+riddle/target/debug/build/proc-macro2-aa50def7f9f19485/output
+  s_0e8f9281378060::t_05610ea8d9f32c 1-23
+riddle/target/debug/build/proc-macro2-aa50def7f9f19485/root-output
+  s_0e8f9281378060::t_a9394922a9379c 1
+riddle/target/debug/build/quote-8b839510b3454d32/invoked.timestamp
+  s_0e8f9281378060::t_9ccf101f8b79d3 1
+riddle/target/debug/build/quote-8b839510b3454d32/output
+  s_0e8f9281378060::t_a0923c8a07b601 1-2
+riddle/target/debug/build/quote-8b839510b3454d32/root-output
+  s_0e8f9281378060::t_40f5f5987a06a7 1
+riddle/target/debug/build/quote-95bf1eb7851a8b61/build_script_build-95bf1eb7851a8b61.d
+  s_0e8f9281378060::t_e8612ac30cf8d1 1-5
+riddle/target/debug/build/riddle-0533d0088dbf3601/invoked.timestamp
+  s_0e8f9281378060::t_3488e183ca0150 1
+riddle/target/debug/build/riddle-0533d0088dbf3601/root-output
+  s_0e8f9281378060::t_befeae792fe958 1
+riddle/target/debug/build/riddle-982b24549ccbab7f/build_script_build-982b24549ccbab7f.d
+  s_0e8f9281378060::t_a12e2edb08e19b 1-7
+riddle/target/debug/build/riddle-a30680cea713f208/build_script_build-a30680cea713f208.d
+  s_0e8f9281378060::t_d2620a0610ae03 1-7
+riddle/target/debug/build/riddle-b3b97ea605851b93/build_script_build-b3b97ea605851b93.d
+  s_0e8f9281378060::t_dea877421ec4b3 1-7
+riddle/target/debug/build/riddle-f824382b45c5ba61/invoked.timestamp
+  s_0e8f9281378060::t_ffd33ed28b04f4 1
+riddle/target/debug/build/riddle-f824382b45c5ba61/output
+  s_0e8f9281378060::t_c28d504369c03a 1-6
+riddle/target/debug/build/riddle-f824382b45c5ba61/root-output
+  s_0e8f9281378060::t_f6294b72a75e52 1
+riddle/target/debug/build/ring-06868d34ea336bfb/build_script_build-06868d34ea336bfb.d
+  s_0e8f9281378060::t_29468869bce92c 1-5
+riddle/target/debug/build/ring-27f1b2dfc90ab0bf/invoked.timestamp
+  s_0e8f9281378060::t_c490c6022df722 1
+riddle/target/debug/build/ring-27f1b2dfc90ab0bf/output
+  s_0e8f9281378060::t_918d6d6bface94 1-146
+riddle/target/debug/build/ring-27f1b2dfc90ab0bf/root-output
+  s_0e8f9281378060::t_b919c893a8f042 1
+riddle/target/debug/build/rustls-7ebec8db97d5a913/build_script_build-7ebec8db97d5a913.d
+  s_00d291913afd40::t_2fa74372c0ea84 1-5
+riddle/target/debug/build/rustls-c78cf05f72720b52/invoked.timestamp
+  s_0e8f9281378060::t_0dbe36ae731290 1
+riddle/target/debug/build/rustls-c78cf05f72720b52/root-output
+  s_0e8f9281378060::t_646d92971bdce2 1
+riddle/target/debug/build/rustls-ea6ab790ebb65a2a/build_script_build-ea6ab790ebb65a2a.d
+  s_0e8f9281378060::t_698bb5b08a89bf 1-5
+riddle/target/debug/build/signal-hook-119a1978810815dc/build_script_build-119a1978810815dc.d
+  s_00d291913afd40::t_48a091cbcce124 1-5
+riddle/target/debug/build/signal-hook-474d247bcb237f00/invoked.timestamp
+  s_0e8f9281378060::t_e52307bbfd5855 1
+riddle/target/debug/build/signal-hook-474d247bcb237f00/root-output
+  s_0e8f9281378060::t_759395275677fb 1
+riddle/target/debug/build/signal-hook-a6a0940aea6cc6a2/build_script_build-a6a0940aea6cc6a2.d
+  s_0e8f9281378060::t_6e6a366b6b49f5 1-5
+riddle/target/debug/deps/ab_glyph-0d714b87ad523c0c.d
+  s_0e8f9281378060::t_14d87c71c20bff 1-16
+riddle/target/debug/deps/ab_glyph-309c7cbffd9597c4.d
+  s_0e8f9281378060::t_34e0c41438eea3 1-18
+riddle/target/debug/deps/ab_glyph_rasterizer-958a8d2151253235.d
+  s_0e8f9281378060::t_f0132ad4a34175 1-9
+riddle/target/debug/deps/ab_glyph_rasterizer-cad12c37d9d92f2a.d
+  s_0e8f9281378060::t_61c524fb8b8faf 1-7
+riddle/target/debug/deps/adler2-553450e4e87a4ba3.d
+  s_0e8f9281378060::t_d35de5a151d39f 1-6
+riddle/target/debug/deps/adler2-c49499412e382432.d
+  s_0e8f9281378060::t_fcf04d5dcaf152 1-8
+riddle/target/debug/deps/base64-32a16f0c3f5cc4c9.d
+  s_0e8f9281378060::t_96cf6808cbeef5 1-20
+riddle/target/debug/deps/base64-f87e431b22978310.d
+  s_0e8f9281378060::t_949724371416af 1-22
+riddle/target/debug/deps/bitflags-0f41663f91b96d60.d
+  s_0e8f9281378060::t_bf6b34ba3dd2dc 1-5
+riddle/target/debug/deps/bitflags-1530101c9ae1c8e0.d
+  s_0e8f9281378060::t_0dd605dda6ea1d 1-7
+riddle/target/debug/deps/cc-125b67851188423c.d
+  s_0e8f9281378060::t_5cf03a904fe157 1-18
+riddle/target/debug/deps/cc-df403d4a81276841.d
+  s_00d291913afd40::t_84bde071168d1a 1-18
+riddle/target/debug/deps/cfg_if-0ae1c8e84680e82e.d
+  s_0e8f9281378060::t_f99d20b434c827 1-7
+riddle/target/debug/deps/cfg_if-d3a2e93bda4adf48.d
+  s_0e8f9281378060::t_1509247358fd62 1-5
+riddle/target/debug/deps/crc32fast-e022771755453b3c.d
+  s_0e8f9281378060::t_d9f5587e8d281c 1-12
+riddle/target/debug/deps/crc32fast-fab1ad5af680167d.d
+  s_0e8f9281378060::t_1c71b335e4f0a7 1-10
+riddle/target/debug/deps/displaydoc-c7c38215614612d9.d
+  s_0e8f9281378060::t_14ca0b51a14050 1-8
+riddle/target/debug/deps/errno-a57adda38e92ca10.d
+  s_0e8f9281378060::t_36ac20c0b2c9d0 1-8
+riddle/target/debug/deps/errno-d590717e1d54175b.d
+  s_0e8f9281378060::t_6ca5738a4180c5 1-6
+riddle/target/debug/deps/fdeflate-0ddf210fb089a268.d
+  s_0e8f9281378060::t_6cb2edba00b545 1-9
+riddle/target/debug/deps/fdeflate-9050f37563caa939.d
+  s_0e8f9281378060::t_8930e8451ca79a 1-11
+riddle/target/debug/deps/find_msvc_tools-d1e32aabc1dcf5bc.d
+  s_0e8f9281378060::t_cbdd4e61e59632 1-9
+riddle/target/debug/deps/flate2-72794c69f02ea446.d
+  s_0e8f9281378060::t_13ce6c33b27a49 1-23
+riddle/target/debug/deps/flate2-f91b6df211fbf4df.d
+  s_0e8f9281378060::t_da568431b99bbc 1-25
+riddle/target/debug/deps/form_urlencoded-7745dce9dc2faf08.d
+  s_0e8f9281378060::t_23d08d20828c5f 1-5
+riddle/target/debug/deps/form_urlencoded-95a8373e40f82648.d
+  s_0e8f9281378060::t_cf7e7360c5c673 1-7
+riddle/target/debug/deps/getrandom-66c5e668d192b92b.d
+  s_0e8f9281378060::t_1756d6c7bd44be 1-11
+riddle/target/debug/deps/getrandom-72800bc9bd311169.d
+  s_0e8f9281378060::t_cbb58b571b6a7a 1-9
+riddle/target/debug/deps/icu_collections-4ad22c718b5704b6.d
+  s_0e8f9281378060::t_82cf6ac7a379d4 1-19
+riddle/target/debug/deps/icu_collections-9ad3c520fee22940.d
+  s_0e8f9281378060::t_c6c88bdf9238bc 1-17
+riddle/target/debug/deps/icu_locale_core-e66bd9183a676f83.d
+  s_0e8f9281378060::t_f23a6294386f64 1-64
+riddle/target/debug/deps/icu_locale_core-e875b75dcdd480a8.d
+  s_0e8f9281378060::t_4c31d1c2870e11 1-66
+riddle/target/debug/deps/icu_normalizer-680ad9b1647f09f1.d
+  s_0e8f9281378060::t_76457b7e533bea 1-10
+riddle/target/debug/deps/icu_normalizer-8a12e8ff0d17ac4f.d
+  s_0e8f9281378060::t_ea3e0c17f114f9 1-8
+riddle/target/debug/deps/icu_normalizer_data-2c2d188eb244662e.d
+  s_0e8f9281378060::t_0b56bdda377c54 1-15
+riddle/target/debug/deps/icu_normalizer_data-f95331a7d40976a1.d
+  s_0e8f9281378060::t_5e2dd47b0a7fd2 1-13
+riddle/target/debug/deps/icu_properties-14aa8d551e4e092e.d
+  s_0e8f9281378060::t_07870cdfd9c099 1-16
+riddle/target/debug/deps/icu_properties-389c4cb3f3e3bee7.d
+  s_0e8f9281378060::t_c4c6d7923cdf00 1-18
+riddle/target/debug/deps/icu_properties_data-79caba66ce376897.d
+  s_0e8f9281378060::t_e354dc5a0a7e70 1-143
+riddle/target/debug/deps/icu_properties_data-f299fbd7f8418d92.d
+  s_0e8f9281378060::t_0caedfc8d0dc0d 1-145
+riddle/target/debug/deps/icu_provider-886b67ad9ae0821d.d
+  s_0e8f9281378060::t_0d9d5d62b073c7 1-17
+riddle/target/debug/deps/icu_provider-ea19f9487b78c30b.d
+  s_0e8f9281378060::t_8c14e44c3550b4 1-19
+riddle/target/debug/deps/idna-2d273c94b68c4aa2.d
+  s_0e8f9281378060::t_c689b667cb77f1 1-8
+riddle/target/debug/deps/idna-4d31a0e9dbe09fc3.d
+  s_0e8f9281378060::t_f924d0c005e4d6 1-10
+riddle/target/debug/deps/idna_adapter-70d00dda5d64f25d.d
+  s_0e8f9281378060::t_9feb07436340c0 1-7
+riddle/target/debug/deps/idna_adapter-71f4f1e24279b129.d
+  s_0e8f9281378060::t_abec77792c3683 1-5
+riddle/target/debug/deps/libc-288fa2a08e10f745.d
+  s_0e8f9281378060::t_1ea367ef1ea275 1-45
+riddle/target/debug/deps/libc-cda0002aa538d070.d
+  s_0e8f9281378060::t_f0f067a89e2d26 1-43
+riddle/target/debug/deps/litemap-2b6b1fb223c013da.d
+  s_0e8f9281378060::t_087d3e4dcfeda3 1-10
+riddle/target/debug/deps/litemap-8c5b8069baedca2d.d
+  s_0e8f9281378060::t_a98b06289da468 1-8
+riddle/target/debug/deps/log-142e5ee6bc16c6a4.d
+  s_0e8f9281378060::t_74dc5cf7a01dd7 1-10
+riddle/target/debug/deps/log-e13cb70c1f523a68.d
+  s_0e8f9281378060::t_d0281931bb22c3 1-8
+riddle/target/debug/deps/miniz_oxide-2bb138e21b86c880.d
+  s_0e8f9281378060::t_20e684cc785560 1-18
+riddle/target/debug/deps/miniz_oxide-2c0e8401bac858b9.d
+  s_0e8f9281378060::t_25965fba73825b 1-16
+riddle/target/debug/deps/once_cell-276e8fd83a628875.d
+  s_0e8f9281378060::t_6771396e7e96a8 1-7
+riddle/target/debug/deps/once_cell-a3c870353a5f2150.d
+  s_0e8f9281378060::t_4500cc0d28ea1b 1-9
+riddle/target/debug/deps/owned_ttf_parser-19752d795f8c8b14.d
+  s_0e8f9281378060::t_5cc6261d99d7e6 1-8
+riddle/target/debug/deps/owned_ttf_parser-ec8200155448ab75.d
+  s_0e8f9281378060::t_d430c2b27ce3f6 1-10
+riddle/target/debug/deps/percent_encoding-9c87315b2d7d6cfa.d
+  s_0e8f9281378060::t_838bfff62c9ac9 1-6
+riddle/target/debug/deps/percent_encoding-e9ef25200d43534f.d
+  s_0e8f9281378060::t_93da284e186879 1-8
+riddle/target/debug/deps/png-5dbcc9904c388000.d
+  s_0e8f9281378060::t_2831fd644574fe 1-21
+riddle/target/debug/deps/png-f6a4e7194028e338.d
+  s_0e8f9281378060::t_109551e42bbfc9 1-23
+riddle/target/debug/deps/potential_utf-8bc1c0ddfd596041.d
+  s_0e8f9281378060::t_db14f018c883bd 1-9
+riddle/target/debug/deps/potential_utf-b218cb143eff4b5c.d
+  s_0e8f9281378060::t_15fea0487ba219 1-7
+riddle/target/debug/deps/proc_macro2-4bac70bc5a93b39a.d
+  s_0e8f9281378060::t_f9895363b07818 1-17
+riddle/target/debug/deps/proc_macro2-6ed9591127a1b6f3.d
+  s_0e8f9281378060::t_e87febb6d763f5 1-17
+riddle/target/debug/deps/quote-167ff6c02049d5c0.d
+  s_0e8f9281378060::t_b2c65e5db072de 1-13
+riddle/target/debug/deps/quote-e8689463c4146eb3.d
+  s_0e8f9281378060::t_a4a29262457fa1 1-13
+riddle/target/debug/deps/riddle-478074a28c1c57f9.d
+  s_0e8f9281378060::t_4095a9b93bd156 1-20
+riddle/target/debug/deps/riddle-dc3e2ad36646a2ca.d
+  s_0e8f9281378060::t_cb05611b99c4d5 1-20
+riddle/target/debug/deps/riddle-ecd1230ec8f56b18.d
+  s_0e8f9281378060::t_89f626a553cb65 1-20
+riddle/target/debug/deps/ring-3230d7c29d7bed50.d
+  s_0e8f9281378060::t_2ac7c75fa9d1f9 1-158
+riddle/target/debug/deps/ring-44ac32acedca5ec4.d
+  s_0e8f9281378060::t_a5b4c7aeee5074 1-160
+riddle/target/debug/deps/rustls-5bda977dd27e5265.d
+  s_0e8f9281378060::t_76b8aea7c99dd4 1-98
+riddle/target/debug/deps/rustls-d9333984cfbd1304.d
+  s_0e8f9281378060::t_1af130f5a16566 1-96
+riddle/target/debug/deps/rustls_pki_types-229d9a1cc1d017b4.d
+  s_0e8f9281378060::t_91c5e72fa5326e 1-30
+riddle/target/debug/deps/rustls_pki_types-8fb3522483f0e6e9.d
+  s_0e8f9281378060::t_16d3c1fbefeb73 1-28
+riddle/target/debug/deps/shlex-f9994ad8dc0f0a1d.d
+  s_0e8f9281378060::t_2223d7e1ac5437 1-8
+riddle/target/debug/deps/signal_hook-438f7716d721edba.d
+  s_0e8f9281378060::t_17ef1c4e661b6c 1-14
+riddle/target/debug/deps/signal_hook-44b408f0e4e9244d.d
+  s_0e8f9281378060::t_d03f71cd4582d0 1-16
+riddle/target/debug/deps/signal_hook_registry-c87696b4cdd4f3f9.d
+  s_0e8f9281378060::t_ca1708c9af5b05 1-9
+riddle/target/debug/deps/signal_hook_registry-da102418ae42cbf4.d
+  s_0e8f9281378060::t_3c5c289a72bf57 1-7
+riddle/target/debug/deps/simd_adler32-1e2107c871adacc2.d
+  s_0e8f9281378060::t_4daa291d45df3b 1-14
+riddle/target/debug/deps/simd_adler32-e83cbe9c9008feeb.d
+  s_0e8f9281378060::t_6fc30bdb8cd4e0 1-16
+riddle/target/debug/deps/smallvec-234c324eec3703af.d
+  s_0e8f9281378060::t_c3a76a71a0faba 1-5
+riddle/target/debug/deps/smallvec-536794a419b6a118.d
+  s_0e8f9281378060::t_c48f4e446902d3 1-7
+riddle/target/debug/deps/stable_deref_trait-540312001fcfb14d.d
+  s_0e8f9281378060::t_8a5589cb023b0a 1-5
+riddle/target/debug/deps/stable_deref_trait-541c506b227465b5.d
+  s_0e8f9281378060::t_8e1103e3090b1d 1-7
+riddle/target/debug/deps/subtle-3d4ae896dbd530ed.d
+  s_0e8f9281378060::t_cd43bdd58fb43b 1-7
+riddle/target/debug/deps/subtle-8cbd56d7fd82671b.d
+  s_0e8f9281378060::t_cc9e1d2899f752 1-5
+riddle/target/debug/deps/syn-8857239abe27e4ef.d
+  s_0e8f9281378060::t_cf8914c25a6646 1-55
+riddle/target/debug/deps/syn-bbc7665d0f0c97fd.d
+  s_0e8f9281378060::t_e98c873f0a9ca4 1-55
+riddle/target/debug/deps/synstructure-06b59d1d608bbca4.d
+  s_0e8f9281378060::t_d9e32dab130ddd 1-8
+riddle/target/debug/deps/tinystr-4cb70376804b81ad.d
+  s_0e8f9281378060::t_e1e343de6f6d90 1-14
+riddle/target/debug/deps/tinystr-d2c849269d88aa3f.d
+  s_0e8f9281378060::t_dce7af4a62f6ad 1-12
+riddle/target/debug/deps/ttf_parser-d7e141e2f88e7655.d
+  s_0e8f9281378060::t_bf0268d04b0217 1-70
+riddle/target/debug/deps/ttf_parser-f4ea78496e858e51.d
+  s_0e8f9281378060::t_d5d3fe67f81c88 1-72
+riddle/target/debug/deps/unicode_ident-eac911d12ba49da7.d
+  s_0e8f9281378060::t_3badf1109c4aa2 1-8
+riddle/target/debug/deps/untrusted-991c95f7cd83f229.d
+  s_0e8f9281378060::t_b262def5659370 1-8
+riddle/target/debug/deps/untrusted-dc42ec4353491db7.d
+  s_0e8f9281378060::t_3b1a02e86d19a1 1-10
+riddle/target/debug/deps/ureq-12719380d7e1f021.d
+  s_0e8f9281378060::t_3f840d7e87ba2e 1-25
+riddle/target/debug/deps/ureq-356d7cd54630fed9.d
+  s_0e8f9281378060::t_032cdd01efaa9e 1-23
+riddle/target/debug/deps/url-096a8a0f5eaa0785.d
+  s_0e8f9281378060::t_8c1b960fb89028 1-13
+riddle/target/debug/deps/url-d7ad9b6ca1a1a164.d
+  s_0e8f9281378060::t_5519b9b83b9fad 1-11
+riddle/target/debug/deps/utf8_iter-dadf8158f9932f06.d
+  s_0e8f9281378060::t_250853df946904 1-7
+riddle/target/debug/deps/utf8_iter-e9837f5ef229563c.d
+  s_0e8f9281378060::t_9ec3214a89d252 1-9
+riddle/target/debug/deps/webpki-dabef4acdffd3347.d
+  s_0e8f9281378060::t_ca5666fc02a3fb 1-26
+riddle/target/debug/deps/webpki-dc03af6af465224e.d
+  s_0e8f9281378060::t_a0536ab8b44df2 1-24
+riddle/target/debug/deps/webpki_roots-0d8783b8259ac0e7.d
+  s_0e8f9281378060::t_fe9aa67f60f475 1-5
+riddle/target/debug/deps/webpki_roots-5a52c6b584aa0ca3.d
+  s_0e8f9281378060::t_021dfd65135ebb 1-7
+riddle/target/debug/deps/webpki_roots-658ba024c7cb8347.d
+  s_0e8f9281378060::t_39cf2b620fd106 1-7
+riddle/target/debug/deps/webpki_roots-aa4e2a7f12e413a4.d
+  s_0e8f9281378060::t_7cdcfbb79f0dbf 1-5
+riddle/target/debug/deps/writeable-8a7fbb93fbbe1515.d
+  s_0e8f9281378060::t_4a6c8ebe1350c7 1-11
+riddle/target/debug/deps/writeable-c7636a65e86bd205.d
+  s_0e8f9281378060::t_487d7c0ba355d4 1-13
+riddle/target/debug/deps/yoke-0c94db7aa381b8bc.d
+  s_0e8f9281378060::t_dce660f4f79b71 1-15
+riddle/target/debug/deps/yoke-60003dabfc7ce843.d
+  s_0e8f9281378060::t_828d4467595b34 1-13
+riddle/target/debug/deps/yoke_derive-a8cb677049ed0afc.d
+  s_0e8f9281378060::t_2d878e657a8f11 1-7
+riddle/target/debug/deps/zerofrom-b522c8df94bb7d11.d
+  s_0e8f9281378060::t_4db95ab2d049cb 1-9
+riddle/target/debug/deps/zerofrom-f83d17c1d1a86cdc.d
+  s_0e8f9281378060::t_92a10de56fc7b2 1-7
+riddle/target/debug/deps/zerofrom_derive-7816a791b637d471.d
+  s_0e8f9281378060::t_aa3cb6eae37cd2 1-6
+riddle/target/debug/deps/zeroize-47b8cb8fe43c9152.d
+  s_0e8f9281378060::t_733d7763c08f38 1-11
+riddle/target/debug/deps/zeroize-a6ceb9a6642d5525.d
+  s_0e8f9281378060::t_e1e211c34f2339 1-9
+riddle/target/debug/deps/zerotrie-69545c6999891bb9.d
+  s_0e8f9281378060::t_e19623f57d9ee7 1-21
+riddle/target/debug/deps/zerotrie-da88e35a8002cfea.d
+  s_0e8f9281378060::t_a95c19fabcd465 1-19
+riddle/target/debug/deps/zerovec-2ee0d784360c7f65.d
+  s_0e8f9281378060::t_3334f3b180ce5a 1-28
+riddle/target/debug/deps/zerovec-93bbb66fa225e068.d
+  s_0e8f9281378060::t_bf2c1b2984cdbc 1-30
+riddle/target/debug/deps/zerovec_derive-8ac03ac8ccc383d7.d
+  s_0e8f9281378060::t_2a5180f4297a1a 1-10
+riddle/target/release/.fingerprint/cc-62c2b7aa5a8f2133/invoked.timestamp
+  s_0e8f9281378060::t_e9cce3b4d8108c 1
+riddle/target/release/.fingerprint/cc-62c2b7aa5a8f2133/lib-cc
+  s_0e8f9281378060::t_a82bedd779dc03 1
+riddle/target/release/.fingerprint/cc-62c2b7aa5a8f2133/lib-cc.json
+  s_0e8f9281378060::t_88d2fe4bee9845 1
+riddle/target/release/.fingerprint/crc32fast-94771e0819d8732b/build-script-build-script-build
+  s_0e8f9281378060::t_e4adbe620d07f9 1
+riddle/target/release/.fingerprint/crc32fast-94771e0819d8732b/build-script-build-script-build.json
+  s_0e8f9281378060::t_066790b67e84ea 1
+riddle/target/release/.fingerprint/crc32fast-94771e0819d8732b/invoked.timestamp
+  s_0e8f9281378060::t_6977d1f05584d5 1
+riddle/target/release/.fingerprint/displaydoc-5068680cc114b31c/invoked.timestamp
+  s_0e8f9281378060::t_2b6d6540ea3b76 1
+riddle/target/release/.fingerprint/displaydoc-5068680cc114b31c/lib-displaydoc
+  s_0e8f9281378060::t_788b6a4ada41ca 1
+riddle/target/release/.fingerprint/displaydoc-5068680cc114b31c/lib-displaydoc.json
+  s_0e8f9281378060::t_bbce3029046f77 1
+riddle/target/release/.fingerprint/find-msvc-tools-dea2795d73351ac8/invoked.timestamp
+  s_0e8f9281378060::t_4dc039bc7552dc 1
+riddle/target/release/.fingerprint/find-msvc-tools-dea2795d73351ac8/lib-find_msvc_tools
+  s_0e8f9281378060::t_6980984ebb8be5 1
+riddle/target/release/.fingerprint/find-msvc-tools-dea2795d73351ac8/lib-find_msvc_tools.json
+  s_0e8f9281378060::t_a8ec2c7a78d4fa 1
+riddle/target/release/.fingerprint/icu_normalizer_data-d04a1541e309cd30/build-script-build-script-build
+  s_0e8f9281378060::t_603ce60246f189 1
+riddle/target/release/.fingerprint/icu_normalizer_data-d04a1541e309cd30/build-script-build-script-build.json
+  s_0e8f9281378060::t_7e9b7c52957ef0 1
+riddle/target/release/.fingerprint/icu_normalizer_data-d04a1541e309cd30/invoked.timestamp
+  s_0e8f9281378060::t_09ef94597ab032 1
+riddle/target/release/.fingerprint/icu_properties_data-62dd93450e26705b/build-script-build-script-build
+  s_0e8f9281378060::t_468b4ae0a32c66 1
+riddle/target/release/.fingerprint/icu_properties_data-62dd93450e26705b/build-script-build-script-build.json
+  s_0e8f9281378060::t_c5eeb3d1979752 1
+riddle/target/release/.fingerprint/icu_properties_data-62dd93450e26705b/invoked.timestamp
+  s_0e8f9281378060::t_ae6bef26454085 1
+riddle/target/release/.fingerprint/libc-9c4af938f0d845ff/build-script-build-script-build
+  s_0e8f9281378060::t_85ba626a0b2e68 1
+riddle/target/release/.fingerprint/libc-9c4af938f0d845ff/build-script-build-script-build.json
+  s_0e8f9281378060::t_a2c1f5d63f3971 1
+riddle/target/release/.fingerprint/libc-9c4af938f0d845ff/invoked.timestamp
+  s_0e8f9281378060::t_d5a59addc1e9dc 1
+riddle/target/release/.fingerprint/proc-macro2-916e7eebb654b113/run-build-script-build-script-build
+  s_0e8f9281378060::t_a481f8528cec54 1
+riddle/target/release/.fingerprint/proc-macro2-916e7eebb654b113/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_9005ba9f6e8aad 1
+riddle/target/release/.fingerprint/proc-macro2-ec1247a4ee239a4c/build-script-build-script-build
+  s_0e8f9281378060::t_15740ab0a92b74 1
+riddle/target/release/.fingerprint/proc-macro2-ec1247a4ee239a4c/build-script-build-script-build.json
+  s_0e8f9281378060::t_086f1463be08ff 1
+riddle/target/release/.fingerprint/proc-macro2-ec1247a4ee239a4c/invoked.timestamp
+  s_0e8f9281378060::t_3bcbb4252be788 1
+riddle/target/release/.fingerprint/proc-macro2-fae4e98c916de7df/invoked.timestamp
+  s_0e8f9281378060::t_403374b2803060 1
+riddle/target/release/.fingerprint/proc-macro2-fae4e98c916de7df/lib-proc_macro2
+  s_0e8f9281378060::t_5640127cd23bbd 1
+riddle/target/release/.fingerprint/proc-macro2-fae4e98c916de7df/lib-proc_macro2.json
+  s_0e8f9281378060::t_a86613f2142b53 1
+riddle/target/release/.fingerprint/quote-2892657f92a862a2/run-build-script-build-script-build
+  s_0e8f9281378060::t_6254252f09843e 1
+riddle/target/release/.fingerprint/quote-2892657f92a862a2/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_5a3fda846ca56d 1
+riddle/target/release/.fingerprint/quote-32a2b3166cc09da7/invoked.timestamp
+  s_0e8f9281378060::t_2ab9031902dbe1 1
+riddle/target/release/.fingerprint/quote-32a2b3166cc09da7/lib-quote
+  s_0e8f9281378060::t_c61ab15727a883 1
+riddle/target/release/.fingerprint/quote-32a2b3166cc09da7/lib-quote.json
+  s_0e8f9281378060::t_3989bdfe7484c6 1
+riddle/target/release/.fingerprint/quote-b91a062e893eb422/build-script-build-script-build
+  s_0e8f9281378060::t_4cb352b5649734 1
+riddle/target/release/.fingerprint/quote-b91a062e893eb422/build-script-build-script-build.json
+  s_0e8f9281378060::t_662618aa8b089e 1
+riddle/target/release/.fingerprint/quote-b91a062e893eb422/invoked.timestamp
+  s_0e8f9281378060::t_c42c6fa35f37c5 1
+riddle/target/release/.fingerprint/riddle-d83e35ab4ed231f1/build-script-build-script-build
+  s_0e8f9281378060::t_54af2b5f1302f1 1
+riddle/target/release/.fingerprint/riddle-d83e35ab4ed231f1/build-script-build-script-build.json
+  s_0e8f9281378060::t_e5d62837894dde 1
+riddle/target/release/.fingerprint/riddle-d83e35ab4ed231f1/invoked.timestamp
+  s_0e8f9281378060::t_58c0ea7f44af22 1
+riddle/target/release/.fingerprint/ring-73c007e701474c15/build-script-build-script-build
+  s_0e8f9281378060::t_ae7458caea558c 1
+riddle/target/release/.fingerprint/ring-73c007e701474c15/build-script-build-script-build.json
+  s_0e8f9281378060::t_a74ed7427c2843 1
+riddle/target/release/.fingerprint/ring-73c007e701474c15/invoked.timestamp
+  s_0e8f9281378060::t_73443f122222cd 1
+riddle/target/release/.fingerprint/rustls-1d7a6cea4bcb4bb5/build-script-build-script-build
+  s_0e8f9281378060::t_eb04bb9b9da832 1
+riddle/target/release/.fingerprint/rustls-1d7a6cea4bcb4bb5/build-script-build-script-build.json
+  s_0e8f9281378060::t_ca83707fa1c0e1 1
+riddle/target/release/.fingerprint/rustls-1d7a6cea4bcb4bb5/invoked.timestamp
+  s_0e8f9281378060::t_d9264a30d062f9 1
+riddle/target/release/.fingerprint/shlex-5386c2d4b46828c1/invoked.timestamp
+  s_0e8f9281378060::t_fcfa3d8bd03612 1
+riddle/target/release/.fingerprint/shlex-5386c2d4b46828c1/lib-shlex
+  s_0e8f9281378060::t_0d029d6bd625a8 1
+riddle/target/release/.fingerprint/shlex-5386c2d4b46828c1/lib-shlex.json
+  s_0e8f9281378060::t_7b767f03406e7f 1
+riddle/target/release/.fingerprint/signal-hook-8454f1e7e616fc47/build-script-build-script-build
+  s_0e8f9281378060::t_121e871a6596af 1
+riddle/target/release/.fingerprint/signal-hook-8454f1e7e616fc47/build-script-build-script-build.json
+  s_0e8f9281378060::t_068860cb800076 1
+riddle/target/release/.fingerprint/signal-hook-8454f1e7e616fc47/invoked.timestamp
+  s_0e8f9281378060::t_31eb363464ca0b 1
+riddle/target/release/.fingerprint/syn-41c014d2f26d388f/invoked.timestamp
+  s_0e8f9281378060::t_09b440de3d029b 1
+riddle/target/release/.fingerprint/syn-41c014d2f26d388f/lib-syn
+  s_0e8f9281378060::t_bb494e5273da0c 1
+riddle/target/release/.fingerprint/syn-41c014d2f26d388f/lib-syn.json
+  s_0e8f9281378060::t_6c4246bde0c86b 1
+riddle/target/release/.fingerprint/synstructure-e98d18593cdcce02/invoked.timestamp
+  s_0e8f9281378060::t_11389d79c56bde 1
+riddle/target/release/.fingerprint/synstructure-e98d18593cdcce02/lib-synstructure
+  s_0e8f9281378060::t_16a3322b20f418 1
+riddle/target/release/.fingerprint/synstructure-e98d18593cdcce02/lib-synstructure.json
+  s_0e8f9281378060::t_4ba965dd4718eb 1
+riddle/target/release/.fingerprint/unicode-ident-6191d05bfb499278/invoked.timestamp
+  s_0e8f9281378060::t_199bf053228ef6 1
+riddle/target/release/.fingerprint/unicode-ident-6191d05bfb499278/lib-unicode_ident
+  s_0e8f9281378060::t_2d9a1dbe13a9f4 1
+riddle/target/release/.fingerprint/unicode-ident-6191d05bfb499278/lib-unicode_ident.json
+  s_0e8f9281378060::t_9f19e50c442172 1
+riddle/target/release/.fingerprint/yoke-derive-561226ca35799702/invoked.timestamp
+  s_0e8f9281378060::t_b3a6cab8fe991e 1
+riddle/target/release/.fingerprint/yoke-derive-561226ca35799702/lib-yoke_derive
+  s_0e8f9281378060::t_2f6dbc56ada780 1
+riddle/target/release/.fingerprint/yoke-derive-561226ca35799702/lib-yoke_derive.json
+  s_0e8f9281378060::t_c46c08cd5ed161 1
+riddle/target/release/.fingerprint/zerofrom-derive-7ff448bb75817951/invoked.timestamp
+  s_0e8f9281378060::t_c804caecd04ffa 1
+riddle/target/release/.fingerprint/zerofrom-derive-7ff448bb75817951/lib-zerofrom_derive
+  s_0e8f9281378060::t_cbb0bb6f07603c 1
+riddle/target/release/.fingerprint/zerofrom-derive-7ff448bb75817951/lib-zerofrom_derive.json
+  s_0e8f9281378060::t_262671d3027e6d 1
+riddle/target/release/.fingerprint/zerovec-derive-aed69974bdd7e2e0/invoked.timestamp
+  s_0e8f9281378060::t_6072c665568244 1
+riddle/target/release/.fingerprint/zerovec-derive-aed69974bdd7e2e0/lib-zerovec_derive
+  s_0e8f9281378060::t_b185b9f13047fa 1
+riddle/target/release/.fingerprint/zerovec-derive-aed69974bdd7e2e0/lib-zerovec_derive.json
+  s_0e8f9281378060::t_c5f2dfebdaba7b 1
+riddle/target/release/build/crc32fast-94771e0819d8732b/build_script_build-94771e0819d8732b.d
+  s_0e8f9281378060::t_e7be52e09f1f8d 1-5
+riddle/target/release/build/icu_normalizer_data-d04a1541e309cd30/build_script_build-d04a1541e309cd30.d
+  s_0e8f9281378060::t_477dbabf2a381a 1-5
+riddle/target/release/build/icu_properties_data-62dd93450e26705b/build_script_build-62dd93450e26705b.d
+  s_0e8f9281378060::t_6fc3bf9d1469f9 1-5
+riddle/target/release/build/libc-9c4af938f0d845ff/build_script_build-9c4af938f0d845ff.d
+  s_0e8f9281378060::t_6823c91a91f112 1-5
+riddle/target/release/build/proc-macro2-916e7eebb654b113/invoked.timestamp
+  s_0e8f9281378060::t_27ac905f14832a 1
+riddle/target/release/build/proc-macro2-916e7eebb654b113/output
+  s_0e8f9281378060::t_086ea8f947d20b 1-23
+riddle/target/release/build/proc-macro2-916e7eebb654b113/root-output
+  s_0e8f9281378060::t_93fb1eecd09fa9 1
+riddle/target/release/build/proc-macro2-ec1247a4ee239a4c/build_script_build-ec1247a4ee239a4c.d
+  s_0e8f9281378060::t_59908d2592c84d 1-5
+riddle/target/release/build/quote-2892657f92a862a2/invoked.timestamp
+  s_0e8f9281378060::t_6852e8051dd046 1
+riddle/target/release/build/quote-2892657f92a862a2/output
+  s_0e8f9281378060::t_859ae586876f3e 1-2
+riddle/target/release/build/quote-2892657f92a862a2/root-output
+  s_0e8f9281378060::t_5004aea1bba075 1
+riddle/target/release/build/quote-b91a062e893eb422/build_script_build-b91a062e893eb422.d
+  s_0e8f9281378060::t_74ef884afac7b6 1-5
+riddle/target/release/build/riddle-d83e35ab4ed231f1/build_script_build-d83e35ab4ed231f1.d
+  s_0e8f9281378060::t_c223190c0473cf 1-7
+riddle/target/release/build/ring-73c007e701474c15/build_script_build-73c007e701474c15.d
+  s_0e8f9281378060::t_90db1b4c08c8d5 1-5
+riddle/target/release/build/rustls-1d7a6cea4bcb4bb5/build_script_build-1d7a6cea4bcb4bb5.d
+  s_0e8f9281378060::t_5d3bf8c2f9dd20 1-5
+riddle/target/release/build/signal-hook-8454f1e7e616fc47/build_script_build-8454f1e7e616fc47.d
+  s_0e8f9281378060::t_b611f0807f84c1 1-5
+riddle/target/release/deps/cc-62c2b7aa5a8f2133.d
+  s_0e8f9281378060::t_3f3b4fce8abbeb 1-18
+riddle/target/release/deps/displaydoc-5068680cc114b31c.d
+  s_0e8f9281378060::t_c1a753c499d9f1 1-8
+riddle/target/release/deps/find_msvc_tools-dea2795d73351ac8.d
+  s_0e8f9281378060::t_99c82af8c538ec 1-9
+riddle/target/release/deps/proc_macro2-fae4e98c916de7df.d
+  s_0e8f9281378060::t_861200758b6a04 1-17
+riddle/target/release/deps/quote-32a2b3166cc09da7.d
+  s_0e8f9281378060::t_98a5f5d50cbf61 1-13
+riddle/target/release/deps/shlex-5386c2d4b46828c1.d
+  s_0e8f9281378060::t_23e33e7eb63171 1-8
+riddle/target/release/deps/syn-41c014d2f26d388f.d
+  s_0e8f9281378060::t_db17f5c9ccd78c 1-55
+riddle/target/release/deps/synstructure-e98d18593cdcce02.d
+  s_0e8f9281378060::t_04ed4029b97da7 1-8
+riddle/target/release/deps/unicode_ident-6191d05bfb499278.d
+  s_0e8f9281378060::t_3998b94e90e83b 1-8
+riddle/target/release/deps/yoke_derive-561226ca35799702.d
+  s_0e8f9281378060::t_6335cf09590b7d 1-7
+riddle/target/release/deps/zerofrom_derive-7ff448bb75817951.d
+  s_0e8f9281378060::t_d71db48ec71e65 1-6
+riddle/target/release/deps/zerovec_derive-aed69974bdd7e2e0.d
+  s_0e8f9281378060::t_dd1bb9e65352bf 1-10
+riddle/target/CACHEDIR.TAG
+  s_0e8f9281378060::t_1cf1ece55bcb3e 1-3
+riddle/target/aarch64-unknown-linux-gnu/CACHEDIR.TAG
+  s_0e8f9281378060::t_ab38f414f660ef 1-3
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph-296609420a657d9c/invoked.timestamp
+  s_0e8f9281378060::t_b74b2d8d8cef55 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph-296609420a657d9c/lib-ab_glyph
+  s_0e8f9281378060::t_19cebf8b7dfe48 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph-296609420a657d9c/lib-ab_glyph.json
+  s_0e8f9281378060::t_0cdebc2dadfe51 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ab_glyph_rasterizer-5c5ab26ccea6c187/lib-ab_glyph_rasterizer.json
+  s_00d291913afd40::t_0d5f460f2a3343 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/adler2-54d0a24fb49d9b83/lib-adler2
+  s_00d291913afd40::t_ffb51614d36ab2 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/base64-ed93a1357ce36faa/invoked.timestamp
+  s_00d291913afd40::t_855c88407c398c 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/cfg-if-3e292547cfa4b25a/invoked.timestamp
+  s_0e8f9281378060::t_a16cb48e72a202 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/crc32fast-55ff0ec86478c760/run-build-script-build-script-build
+  s_0e8f9281378060::t_df981fb9c6b4a6 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/crc32fast-55ff0ec86478c760/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_c3630d019a85a7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/crc32fast-58e31ffc8a4bdf7e/invoked.timestamp
+  s_0e8f9281378060::t_b1fc426e8d422b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/crc32fast-58e31ffc8a4bdf7e/lib-crc32fast
+  s_0e8f9281378060::t_57bd05d6c1eebf 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/crc32fast-58e31ffc8a4bdf7e/lib-crc32fast.json
+  s_0e8f9281378060::t_f37df026d21817 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/errno-2dad337dc33b639e/invoked.timestamp
+  s_0e8f9281378060::t_b9a9d6108df5af 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/errno-2dad337dc33b639e/lib-errno
+  s_0e8f9281378060::t_deb86d6469417e 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/errno-2dad337dc33b639e/lib-errno.json
+  s_0e8f9281378060::t_0dbd6deecb42bb 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/fdeflate-6a3219ad0bd7c9e9/lib-fdeflate
+  s_00d291913afd40::t_88776c63209470 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/flate2-fb6598204ddf3be4/invoked.timestamp
+  s_0e8f9281378060::t_f6c6be6b1e2095 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/flate2-fb6598204ddf3be4/lib-flate2
+  s_0e8f9281378060::t_5d4c759f9c2b67 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/flate2-fb6598204ddf3be4/lib-flate2.json
+  s_0e8f9281378060::t_3cebe5bcf6e196 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/form_urlencoded-ef407df5cc139225/lib-form_urlencoded
+  s_00d291913afd40::t_e9bbfbce513793 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/getrandom-3a2ce33236e8c093/invoked.timestamp
+  s_0e8f9281378060::t_da2bd272d4ade3 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/getrandom-3a2ce33236e8c093/lib-getrandom
+  s_0e8f9281378060::t_71fe0c176b4080 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/getrandom-3a2ce33236e8c093/lib-getrandom.json
+  s_0e8f9281378060::t_e3e88bf9cc442c 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_normalizer_data-235439c33d3403be/invoked.timestamp
+  s_0e8f9281378060::t_c318165169e5ab 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_normalizer_data-235439c33d3403be/lib-icu_normalizer_data
+  s_0e8f9281378060::t_938758c4754094 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_normalizer_data-235439c33d3403be/lib-icu_normalizer_data.json
+  s_0e8f9281378060::t_a216b2e53e24d8 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_normalizer_data-c3b4a96ea43235de/run-build-script-build-script-build
+  s_0e8f9281378060::t_b07e7f5beeec99 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_normalizer_data-c3b4a96ea43235de/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_7547e2a4d69b07 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_properties_data-1a58242dc02516a3/run-build-script-build-script-build
+  s_0e8f9281378060::t_e2f950f212472d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_properties_data-1a58242dc02516a3/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_283bcf4391506b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_properties_data-d970208918119f11/invoked.timestamp
+  s_0e8f9281378060::t_41c23d346d1fad 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_properties_data-d970208918119f11/lib-icu_properties_data
+  s_0e8f9281378060::t_7f8648bd757ae0 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/icu_properties_data-d970208918119f11/lib-icu_properties_data.json
+  s_0e8f9281378060::t_3e9e92f9dfedfc 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/libc-347e064247dd5062/invoked.timestamp
+  s_0e8f9281378060::t_df30fce44a8d01 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/libc-347e064247dd5062/lib-libc
+  s_0e8f9281378060::t_bd4d7ce2364a9b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/libc-347e064247dd5062/lib-libc.json
+  s_0e8f9281378060::t_877146394fb110 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/libc-a850d107caa26a35/run-build-script-build-script-build
+  s_0e8f9281378060::t_7c09be39ebab6b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/libc-a850d107caa26a35/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_3393244cb49ac7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/litemap-78ea1a230a13d9a6/invoked.timestamp
+  s_00d291913afd40::t_2a25bdcad3d857 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/litemap-78ea1a230a13d9a6/lib-litemap
+  s_00d291913afd40::t_1f4c6e844a16f6 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/log-c3ae960784dc766c/invoked.timestamp
+  s_00d291913afd40::t_0446f04bf7df05 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/once_cell-a1e01fb28f01eb7e/lib-once_cell.json
+  s_00d291913afd40::t_da9b812e447726 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/owned_ttf_parser-145acd4872f8017a/invoked.timestamp
+  s_0e8f9281378060::t_e99a56ff0cbf96 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/owned_ttf_parser-145acd4872f8017a/lib-owned_ttf_parser
+  s_0e8f9281378060::t_e97a775c9292fe 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/owned_ttf_parser-145acd4872f8017a/lib-owned_ttf_parser.json
+  s_0e8f9281378060::t_43e7171a502e3d 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/percent-encoding-17a69f8600bf7d33/invoked.timestamp
+  s_0e8f9281378060::t_fbb84ab30a2956 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/png-cb8c44b215f8a8d0/invoked.timestamp
+  s_0e8f9281378060::t_19fda188097a2b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/png-cb8c44b215f8a8d0/lib-png
+  s_0e8f9281378060::t_9f7c4bc89c0303 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/png-cb8c44b215f8a8d0/lib-png.json
+  s_0e8f9281378060::t_22c2df4a0a4452 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/riddle-f3acc488977c14e0/run-build-script-build-script-build
+  s_0e8f9281378060::t_7a0081af540792 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/riddle-f3acc488977c14e0/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_425fe69492dcb6 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/rustls-pki-types-eb7c62419fa886f1/lib-rustls_pki_types
+  s_00d291913afd40::t_ffde503f044b4f 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-3a7072184813d2a4/run-build-script-build-script-build
+  s_0e8f9281378060::t_a34d170ecb5ebd 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-3a7072184813d2a4/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_d0fe7942ce4ade 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-6099146fe58d5c17/invoked.timestamp
+  s_0e8f9281378060::t_b85d5416f87ea6 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-6099146fe58d5c17/lib-signal_hook
+  s_0e8f9281378060::t_c3c951a34b0bd1 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-6099146fe58d5c17/lib-signal_hook.json
+  s_0e8f9281378060::t_2a7b644d184cc7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-registry-bbab1248f00dd8d8/invoked.timestamp
+  s_0e8f9281378060::t_bb2078d2914bee 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-registry-bbab1248f00dd8d8/lib-signal_hook_registry
+  s_0e8f9281378060::t_4c5335e6c392a1 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/signal-hook-registry-bbab1248f00dd8d8/lib-signal_hook_registry.json
+  s_0e8f9281378060::t_7a6b73d4bc2870 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/simd-adler32-38c69c0aba78813a/invoked.timestamp
+  s_00d291913afd40::t_8759b0628db9b0 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/stable_deref_trait-61be03aafcdc8159/invoked.timestamp
+  s_0e8f9281378060::t_6a988fca4cd9ca 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/stable_deref_trait-61be03aafcdc8159/lib-stable_deref_trait.json
+  s_00d291913afd40::t_a118a3e8afc5f7 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ttf-parser-73b717f54f38ef22/lib-ttf_parser
+  s_0e8f9281378060::t_ed24bcc945f767 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/ttf-parser-73b717f54f38ef22/lib-ttf_parser.json
+  s_0e8f9281378060::t_678cf1390bb222 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/utf8_iter-e381ed083c55465e/lib-utf8_iter
+  s_00d291913afd40::t_62004a57801ff6 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/webpki-roots-4d1b5af9a16b786a/lib-webpki_roots.json
+  s_00d291913afd40::t_d74e5fc8808e94 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/writeable-ef3992c8d9648f78/invoked.timestamp
+  s_00d291913afd40::t_6f583260fc4c8b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/writeable-ef3992c8d9648f78/lib-writeable.json
+  s_00d291913afd40::t_3bb08bb00ed187 1
+riddle/target/aarch64-unknown-linux-gnu/debug/.fingerprint/zeroize-e67475f11ee61919/lib-zeroize
+  s_00d291913afd40::t_5a6b2c1a4348bb 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/crc32fast-55ff0ec86478c760/output
+  s_0e8f9281378060::t_695b970e31fefa 1-2
+riddle/target/aarch64-unknown-linux-gnu/debug/build/crc32fast-55ff0ec86478c760/root-output
+  s_0e8f9281378060::t_71e9e0deeb6d6e 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_normalizer_data-c3b4a96ea43235de/output
+  s_00d291913afd40::t_440ed06cb53c7c 1-2
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_normalizer_data-c3b4a96ea43235de/root-output
+  s_0e8f9281378060::t_0b35f13b795740 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_properties_data-1a58242dc02516a3/invoked.timestamp
+  s_0e8f9281378060::t_62b26dd8919e8a 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_properties_data-1a58242dc02516a3/output
+  s_00d291913afd40::t_562fdbd583fc34 1-2
+riddle/target/aarch64-unknown-linux-gnu/debug/build/icu_properties_data-1a58242dc02516a3/root-output
+  s_00d291913afd40::t_f1d39752adeb7b 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/libc-a850d107caa26a35/output
+  s_00d291913afd40::t_e854a87e2cb67b 1-27
+riddle/target/aarch64-unknown-linux-gnu/debug/build/libc-a850d107caa26a35/root-output
+  s_0e8f9281378060::t_1d3ef1249cf294 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/riddle-f3acc488977c14e0/root-output
+  s_0e8f9281378060::t_eb05537433b8ae 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/ring-b305d17c98b9a6a6/invoked.timestamp
+  s_0e8f9281378060::t_981688ed93cdfc 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/signal-hook-3a7072184813d2a4/invoked.timestamp
+  s_00d291913afd40::t_6df6a0ca5ac9c5 1
+riddle/target/aarch64-unknown-linux-gnu/debug/build/signal-hook-3a7072184813d2a4/root-output
+  s_0e8f9281378060::t_e9fb912ef9828c 1
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/ab_glyph-296609420a657d9c.d
+  s_0e8f9281378060::t_46cd43906b088e 1-16
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/ab_glyph_rasterizer-5c5ab26ccea6c187.d
+  s_00d291913afd40::t_fb5a499d6bfdac 1-7
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/adler2-54d0a24fb49d9b83.d
+  s_00d291913afd40::t_4d24c918142b68 1-6
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/bitflags-5f6ff30d0c5dc320.d
+  s_00d291913afd40::t_e3e69b8a9f058c 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/cfg_if-3e292547cfa4b25a.d
+  s_00d291913afd40::t_4d77876ff8679c 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/crc32fast-58e31ffc8a4bdf7e.d
+  s_0e8f9281378060::t_63bd1534af3e08 1-10
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/errno-2dad337dc33b639e.d
+  s_0e8f9281378060::t_633a4c6ff89be3 1-6
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/fdeflate-6a3219ad0bd7c9e9.d
+  s_00d291913afd40::t_37415604d7b02c 1-9
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/flate2-fb6598204ddf3be4.d
+  s_0e8f9281378060::t_12825e2c887d2c 1-23
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/form_urlencoded-ef407df5cc139225.d
+  s_00d291913afd40::t_ae70c89a22fb59 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/getrandom-3a2ce33236e8c093.d
+  s_0e8f9281378060::t_d3c96dc9efbbb4 1-11
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/icu_normalizer_data-235439c33d3403be.d
+  s_0e8f9281378060::t_c9a9de5e3193f2 1-13
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/icu_properties_data-d970208918119f11.d
+  s_00d291913afd40::t_c4e3e8fae82875 1-143
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/libc-347e064247dd5062.d
+  s_00d291913afd40::t_df0f6353031a86 1-44
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/litemap-78ea1a230a13d9a6.d
+  s_00d291913afd40::t_e27b44adef06f0 1-8
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/log-c3ae960784dc766c.d
+  s_00d291913afd40::t_e2d9af8a104c09 1-8
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/miniz_oxide-7ab02affec4a9508.d
+  s_00d291913afd40::t_f9130bedb1df88 1-16
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/once_cell-a1e01fb28f01eb7e.d
+  s_00d291913afd40::t_5d77f9c2e5eabd 1-7
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/owned_ttf_parser-145acd4872f8017a.d
+  s_0e8f9281378060::t_a3f34119e099da 1-8
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/percent_encoding-17a69f8600bf7d33.d
+  s_00d291913afd40::t_53b6b73444bd61 1-6
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/png-cb8c44b215f8a8d0.d
+  s_0e8f9281378060::t_93f66669646ff3 1-21
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/rustls_pki_types-eb7c62419fa886f1.d
+  s_00d291913afd40::t_9f637956fe2051 1-28
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/signal_hook-6099146fe58d5c17.d
+  s_0e8f9281378060::t_f320aabcf3380d 1-14
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/signal_hook_registry-bbab1248f00dd8d8.d
+  s_0e8f9281378060::t_e8220b8a0d2a01 1-7
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/simd_adler32-38c69c0aba78813a.d
+  s_00d291913afd40::t_21b4cec8448876 1-14
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/stable_deref_trait-61be03aafcdc8159.d
+  s_00d291913afd40::t_2cb301423b77f2 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/untrusted-43c11d6c4ca28378.d
+  s_00d291913afd40::t_f542cc66af835e 1-8
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/utf8_iter-e381ed083c55465e.d
+  s_00d291913afd40::t_f42ecae8831dba 1-7
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/webpki_roots-4d1b5af9a16b786a.d
+  s_00d291913afd40::t_87de3140e04560 1-5
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/writeable-ef3992c8d9648f78.d
+  s_00d291913afd40::t_745a1c9edcb429 1-11
+riddle/target/aarch64-unknown-linux-gnu/debug/deps/zeroize-e67475f11ee61919.d
+  s_00d291913afd40::t_715c0c072a3f35 1-9
+riddle/target/debug/.fingerprint/cc-df403d4a81276841/lib-cc
+  s_0e8f9281378060::t_e0f59ac3cffc82 1
+riddle/target/debug/.fingerprint/cc-df403d4a81276841/lib-cc.json
+  s_0e8f9281378060::t_4db5dde76e3903 1
+riddle/target/debug/.fingerprint/find-msvc-tools-7b4728f328ffbfa9/invoked.timestamp
+  s_0e8f9281378060::t_b8cac1f6bd2920 1
+riddle/target/debug/.fingerprint/find-msvc-tools-7b4728f328ffbfa9/lib-find_msvc_tools
+  s_0e8f9281378060::t_88d343740966b6 1
+riddle/target/debug/.fingerprint/find-msvc-tools-7b4728f328ffbfa9/lib-find_msvc_tools.json
+  s_0e8f9281378060::t_0f53086089c30c 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-0e9551949dd53e10/build-script-build-script-build
+  s_0e8f9281378060::t_3985f24f21b5fe 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-0e9551949dd53e10/build-script-build-script-build.json
+  s_0e8f9281378060::t_daa68c6b130d93 1
+riddle/target/debug/.fingerprint/icu_normalizer_data-0e9551949dd53e10/invoked.timestamp
+  s_0e8f9281378060::t_d2f69733653e17 1
+riddle/target/debug/.fingerprint/icu_properties_data-799db8dfa0158562/build-script-build-script-build
+  s_0e8f9281378060::t_69315634776952 1
+riddle/target/debug/.fingerprint/icu_properties_data-799db8dfa0158562/build-script-build-script-build.json
+  s_0e8f9281378060::t_005d6dbe8fbdef 1
+riddle/target/debug/.fingerprint/icu_properties_data-799db8dfa0158562/invoked.timestamp
+  s_0e8f9281378060::t_7900a06e1ce957 1
+riddle/target/debug/.fingerprint/libc-518452999a1633db/build-script-build-script-build
+  s_0e8f9281378060::t_9196923a442896 1
+riddle/target/debug/.fingerprint/libc-518452999a1633db/build-script-build-script-build.json
+  s_0e8f9281378060::t_6856cb9d3aa101 1
+riddle/target/debug/.fingerprint/libc-518452999a1633db/invoked.timestamp
+  s_0e8f9281378060::t_45f4da87d924ee 1
+riddle/target/debug/.fingerprint/proc-macro2-2daee3d61d392c8f/run-build-script-build-script-build
+  s_00d291913afd40::t_a6b410100ac10d 1
+riddle/target/debug/.fingerprint/proc-macro2-2daee3d61d392c8f/run-build-script-build-script-build.json
+  s_00d291913afd40::t_b7a7af4c04db15 1
+riddle/target/debug/.fingerprint/proc-macro2-433c46965a4f06ec/build-script-build-script-build
+  s_0e8f9281378060::t_4bd362942643fb 1
+riddle/target/debug/.fingerprint/proc-macro2-433c46965a4f06ec/build-script-build-script-build.json
+  s_0e8f9281378060::t_931d1d6eca8c03 1
+riddle/target/debug/.fingerprint/proc-macro2-433c46965a4f06ec/invoked.timestamp
+  s_0e8f9281378060::t_94e0bd3df185be 1
+riddle/target/debug/.fingerprint/proc-macro2-4bac70bc5a93b39a/invoked.timestamp
+  s_0e8f9281378060::t_8ae7ec40453d8d 1
+riddle/target/debug/.fingerprint/proc-macro2-4bac70bc5a93b39a/lib-proc_macro2
+  s_0e8f9281378060::t_1baebb8e672e8d 1
+riddle/target/debug/.fingerprint/proc-macro2-4bac70bc5a93b39a/lib-proc_macro2.json
+  s_0e8f9281378060::t_ad2ab8e32d0c23 1
+riddle/target/debug/.fingerprint/quote-167ff6c02049d5c0/invoked.timestamp
+  s_0e8f9281378060::t_b51c1bf721335f 1
+riddle/target/debug/.fingerprint/quote-167ff6c02049d5c0/lib-quote
+  s_0e8f9281378060::t_588704e77b19c2 1
+riddle/target/debug/.fingerprint/quote-167ff6c02049d5c0/lib-quote.json
+  s_0e8f9281378060::t_f049f48646fc51 1
+riddle/target/debug/.fingerprint/quote-37b9548b4d22c248/run-build-script-build-script-build
+  s_0e8f9281378060::t_283e8a8adb433d 1
+riddle/target/debug/.fingerprint/quote-37b9548b4d22c248/run-build-script-build-script-build.json
+  s_0e8f9281378060::t_9fcb39f60512fe 1
+riddle/target/debug/.fingerprint/quote-5f887f9fa1b9e4a5/build-script-build-script-build
+  s_0e8f9281378060::t_6454d60af27fc2 1
+riddle/target/debug/.fingerprint/quote-5f887f9fa1b9e4a5/build-script-build-script-build.json
+  s_0e8f9281378060::t_954d457a242922 1
+riddle/target/debug/.fingerprint/quote-5f887f9fa1b9e4a5/invoked.timestamp
+  s_0e8f9281378060::t_e955b0c1fd6537 1
+riddle/target/debug/.fingerprint/ring-b57032e9671d12c8/build-script-build-script-build
+  s_0e8f9281378060::t_e1090f9a040cd7 1
+riddle/target/debug/.fingerprint/ring-b57032e9671d12c8/build-script-build-script-build.json
+  s_0e8f9281378060::t_507ba642596b98 1
+riddle/target/debug/.fingerprint/ring-b57032e9671d12c8/invoked.timestamp
+  s_00d291913afd40::t_e1aac2150e6f38 1
+riddle/target/debug/.fingerprint/rustls-7ebec8db97d5a913/build-script-build-script-build.json
+  s_00d291913afd40::t_fe18cf1bf8bea5 1
+riddle/target/debug/.fingerprint/rustls-7ebec8db97d5a913/invoked.timestamp
+  s_00d291913afd40::t_469cdcfe6371bd 1
+riddle/target/debug/.fingerprint/shlex-8fd64a9bb8750583/invoked.timestamp
+  s_0e8f9281378060::t_2c7caa6cbd9c0f 1
+riddle/target/debug/.fingerprint/shlex-8fd64a9bb8750583/lib-shlex
+  s_0e8f9281378060::t_a110e1acda7669 1
+riddle/target/debug/.fingerprint/shlex-8fd64a9bb8750583/lib-shlex.json
+  s_0e8f9281378060::t_fcb3a5811ad50d 1
+riddle/target/debug/.fingerprint/signal-hook-119a1978810815dc/build-script-build-script-build.json
+  s_00d291913afd40::t_746a5645c3f661 1
+riddle/target/debug/.fingerprint/syn-bbc7665d0f0c97fd/lib-syn
+  s_0e8f9281378060::t_af7d06f144c490 1
+riddle/target/debug/.fingerprint/syn-bbc7665d0f0c97fd/lib-syn.json
+  s_0e8f9281378060::t_16003690a6e27e 1
+riddle/target/debug/.fingerprint/unicode-ident-26a97d5066a2a372/invoked.timestamp
+  s_0e8f9281378060::t_e0b269157ced0a 1
+riddle/target/debug/.fingerprint/unicode-ident-26a97d5066a2a372/lib-unicode_ident
+  s_0e8f9281378060::t_9bd573fd38a0c2 1
+riddle/target/debug/.fingerprint/unicode-ident-26a97d5066a2a372/lib-unicode_ident.json
+  s_0e8f9281378060::t_78247ac2b7386f 1
+riddle/target/debug/build/icu_normalizer_data-0e9551949dd53e10/build_script_build-0e9551949dd53e10.d
+  s_0e8f9281378060::t_3d613fcd5a5c06 1-5
+riddle/target/debug/build/icu_properties_data-799db8dfa0158562/build_script_build-799db8dfa0158562.d
+  s_0e8f9281378060::t_c0fb567e390c63 1-5
+riddle/target/debug/build/libc-518452999a1633db/build_script_build-518452999a1633db.d
+  s_0e8f9281378060::t_9d3dd780225a70 1-5
+riddle/target/debug/build/proc-macro2-2daee3d61d392c8f/output
+  s_00d291913afd40::t_d3f493ab3d5a51 1-23
+riddle/target/debug/build/proc-macro2-2daee3d61d392c8f/root-output
+  s_00d291913afd40::t_ee97abeaa775fa 1
+riddle/target/debug/build/proc-macro2-433c46965a4f06ec/build_script_build-433c46965a4f06ec.d
+  s_0e8f9281378060::t_0393943a834e26 1-5
+riddle/target/debug/build/quote-37b9548b4d22c248/invoked.timestamp
+  s_00d291913afd40::t_ae36a4250b9a67 1
+riddle/target/debug/build/quote-37b9548b4d22c248/output
+  s_0e8f9281378060::t_50cddccc3f0321 1-2
+riddle/target/debug/build/quote-37b9548b4d22c248/root-output
+  s_0e8f9281378060::t_51273938456768 1
+riddle/target/debug/build/quote-5f887f9fa1b9e4a5/build_script_build-5f887f9fa1b9e4a5.d
+  s_0e8f9281378060::t_5caa657ea28fac 1-5
+riddle/target/debug/build/ring-b57032e9671d12c8/build_script_build-b57032e9671d12c8.d
+  s_00d291913afd40::t_0b88a3e36b6318 1-5
+riddle/target/debug/deps/find_msvc_tools-7b4728f328ffbfa9.d
+  s_0e8f9281378060::t_19f94c807e76fa 1-9
+riddle/target/debug/deps/shlex-8fd64a9bb8750583.d
+  s_0e8f9281378060::t_cb0095260db79c 1-8
+riddle/target/debug/deps/unicode_ident-26a97d5066a2a372.d
+  s_0e8f9281378060::t_ed2b37304d8651 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "45561079d19bbf2cc0c663f88f1df149c956af36",
+  "prompts": {},
+  "sessions": {
+    "s_00d291913afd40": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2ee681fa-0717-4b0b-8767-bf7777bfe149",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
