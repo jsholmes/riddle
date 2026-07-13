@@ -431,6 +431,11 @@ pub struct PiOracle {
     pending: Arc<Mutex<Option<Sender<Result<Event, String>>>>>,
     /// The current turn's stream parser (routing + transcription).
     parser: Arc<Mutex<Option<StreamParser>>>,
+    /// True while pi is still streaming a turn the diary walked away from
+    /// (timeout, page bottom). Its remaining output is discarded up to its
+    /// agent_end — otherwise the old answer would land on the NEW turn's
+    /// page and the new answer would be dropped.
+    stale: Arc<Mutex<bool>>,
     /// When the current prompt was sent; the reader thread logs the time to
     /// first delivered chunk (the latency the writer actually feels).
     asked: Arc<Mutex<Option<std::time::Instant>>>,
@@ -496,6 +501,8 @@ impl PiOracle {
         // the model streams, so the rest arrives while the first line is drawn.
         let pending_r = Arc::clone(&pending);
         let parser_r = Arc::clone(&parser);
+        let stale: Arc<Mutex<bool>> = Arc::new(Mutex::new(false));
+        let stale_r = Arc::clone(&stale);
         let asked: Arc<Mutex<Option<std::time::Instant>>> = Arc::new(Mutex::new(None));
         let asked_r = Arc::clone(&asked);
         thread::spawn(move || {
@@ -532,6 +539,12 @@ impl PiOracle {
                     // also contains user messages, which extract_assistant_text
                     // would wrongly concatenate in a multi-turn session.)
                     Some("message_update") | Some("message_end") => {
+                        // A turn the diary abandoned: pi is still talking,
+                        // but nobody is listening — and the armed parser
+                        // belongs to the NEXT turn.
+                        if *stale_r.lock().unwrap() {
+                            continue;
+                        }
                         if let Some(t) = extract_assistant_text(s) {
                             if !t.is_empty() {
                                 last_text = t;
@@ -544,6 +557,17 @@ impl PiOracle {
                     // agent_end: the turn is over. Flush the parser, then drop
                     // the sender so the diary's receiver disconnects.
                     Some("agent_end") => {
+                        let mut stale_now = stale_r.lock().unwrap();
+                        if *stale_now {
+                            // The abandoned turn just finished; its text dies
+                            // here. parser/pending already belong to the new
+                            // turn and stay armed for what pi says next.
+                            *stale_now = false;
+                            last_text.clear();
+                            eprintln!("riddle: oracle: abandoned turn's stream discarded");
+                            continue;
+                        }
+                        drop(stale_now);
                         if let Some(p) = parser_r.lock().unwrap().as_mut() {
                             emit(p.advance(&last_text, true));
                         }
@@ -560,7 +584,7 @@ impl PiOracle {
             }
         });
 
-        Ok(Self { stdin: Arc::new(Mutex::new(stdin)), pending, parser, asked, _child: child })
+        Ok(Self { stdin: Arc::new(Mutex::new(stdin)), pending, parser, stale, asked, _child: child })
     }
 
     /// Send a handwriting turn. Reply events are delivered on `tx` as they
@@ -573,7 +597,16 @@ impl PiOracle {
                 return;
             }
         };
-        *self.pending.lock().unwrap() = Some(tx.clone());
+        {
+            let mut pending = self.pending.lock().unwrap();
+            if pending.is_some() {
+                // The previous turn is still streaming but the diary has
+                // moved on: flag it so the reader drops the rest of it.
+                *self.stale.lock().unwrap() = true;
+                eprintln!("riddle: oracle: previous turn still streaming; will discard it");
+            }
+            *pending = Some(tx.clone());
+        }
         *self.parser.lock().unwrap() = Some(StreamParser::new(ctx.catalog_ids.clone()));
         *self.asked.lock().unwrap() = Some(std::time::Instant::now());
 
