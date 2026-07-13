@@ -1,0 +1,23 @@
+src/oracle.rs
+  s_0e8f9281378060::t_cf1b9f582f2483 600-609
+  s_0e8f9281378060::t_d94736530e67d6 434-438
+  s_0e8f9281378060::t_50decb0b5c8ebe 587
+  s_0e8f9281378060::t_314438585f0fda 504-505
+  s_0e8f9281378060::t_4aaa7e975cec0b 542-547,560-570
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "3b74f1be855e2fe7f681c5c219668c78c29f213e",
+  "prompts": {},
+  "sessions": {
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
