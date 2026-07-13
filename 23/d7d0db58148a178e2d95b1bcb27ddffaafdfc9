@@ -11,6 +11,7 @@ src/main.rs
   s_00d291913afd40::t_70ce8cf2f09c9a 743
   s_00d291913afd40::t_eb66b1e5ae29c4 1457-1458,1463,1470,1493-1494
   s_00d291913afd40::t_b93317614d57ac 1573,1593-1601,1603-1605,1616
+  s_0e8f9281378060::t_dd5be427faf3b4 1459-1462,1464-1467,1478-1479,1484,1492
 src/display.rs
   s_e943be9326de3f::t_415280e2cc8c54 122-141
 src/oracle.rs
@@ -38,6 +39,14 @@ src/help.rs
       "agent_id": {
         "tool": "claude",
         "id": "2ee681fa-0717-4b0b-8767-bf7777bfe149",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    },
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
         "model": "claude-fable-5"
       },
       "human_author": "jsholmes <john@hudson-trading.com>"
