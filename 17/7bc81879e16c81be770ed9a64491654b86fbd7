@@ -1,0 +1,20 @@
+src/main.rs
+  s_0e8f9281378060::t_7c8451be1b2ca2 1441-1444,1446-1451,1453-1474,1597
+  s_0e8f9281378060::t_a6638320f1b542 1584,1588-1596
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "177bc81879e16c81be770ed9a64491654b86fbd7",
+  "prompts": {},
+  "sessions": {
+    "s_0e8f9281378060": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be8f2159-ccd8-4d86-b783-b0126a6bbfdf",
+        "model": "claude-fable-5"
+      },
+      "human_author": "jsholmes <john@hudson-trading.com>"
+    }
+  }
+}
